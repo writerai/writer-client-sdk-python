@@ -19,6 +19,16 @@ pip install writerai-api
 ```
 <!-- End SDK Installation -->
 
+## Authentication
+
+Writer authenticates your API requests using your account’s API keys. If you do not include your key when making an API request, or use one that is incorrect or outdated, Writer returns an error.
+
+Your API keys are available in the account dashboard. We include randomly generated API keys in our code examples if you are not logged in. Replace these with your own or log in to see code examples populated with your own API keys.
+
+<img width="1070" alt="writer-auth" src="https://user-images.githubusercontent.com/6267663/223578295-89087c24-c55a-48bf-b74a-5f057e21e14f.png">
+
+If you cannot see your secret API keys in the Dashboard, this means you do not have access to them. Contact your Writer account owner and ask to be added to their team as a developer.
+
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```python
