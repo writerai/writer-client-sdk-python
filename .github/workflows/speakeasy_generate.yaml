@@ -1,0 +1,28 @@
+name: Generate
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force the generation of the SDKs"
+        type: boolean
+        default: false
+  schedule:
+    - cron: 0 0 * * *
+
+jobs:
+  generate:
+    name: Generate SDK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: speakeasy-api/sdk-generation-action@v13
+        with:
+          speakeasy_version: latest
+          openapi_doc_location: https://raw.githubusercontent.com/writerai/swagger/main/enterprise-api.yaml?token=GHSAT0AAAAAAB7GJAT3OHON4WJCKOQFM6HIZAHYOVA
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          languages: |-
+            - python
+          publish_python: true
+          mode: pr
+          speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
+          force: ${{ github.event.inputs.force }}

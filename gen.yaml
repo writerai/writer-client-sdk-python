@@ -1,0 +1,9 @@
+configVersion: 1.0.0
+generation:
+  telemetryEnabled: false
+  sdkClassName: writer
+  sdkFlattening: true
+python:
+  version: 0.1.0
+  author: writerai
+  packageName: 'writerai-api'
