@@ -18,7 +18,7 @@ jobs:
       - uses: speakeasy-api/sdk-generation-action@v13
         with:
           speakeasy_version: latest
-          openapi_doc_location: https://raw.githubusercontent.com/writerai/swagger/main/enterprise-api.yaml?token=GHSAT0AAAAAAB7GJAT3OHON4WJCKOQFM6HIZAHYOVA
+          openapi_doc_location: https://raw.githubusercontent.com/writerai/swagger/main/enterprise-api.yaml
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
           languages: |-
             - python
