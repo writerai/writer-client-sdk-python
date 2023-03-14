@@ -3,7 +3,7 @@ from . import utils
 from typing import Any, Optional
 from writer.models import operations, shared
 
-class Terminology:
+class ModelCustomization:
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str
@@ -21,16 +21,16 @@ class Terminology:
         self._gen_version = gen_version
         self._globals = gbls
         
-    def add(self, request: operations.AddTermsRequest) -> operations.AddTermsResponse:
-        r"""Add terms
+    def create(self, request: operations.CreateModelCustomizationRequest) -> operations.CreateModelCustomizationResponse:
+        r"""Create model customization
         """
         
         base_url = self._server_url
         
-        url = utils.generate_url(operations.AddTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self._globals)
+        url = utils.generate_url(operations.CreateModelCustomizationRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization', request, self._globals)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "create_terms_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "create_customization_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -41,14 +41,14 @@ class Terminology:
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.AddTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateModelCustomizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.CreateTermsResponse])
-                res.create_terms_response = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ModelCustomization])
+                res.model_customization = out
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
@@ -58,30 +58,28 @@ class Terminology:
 
         return res
 
-    def delete(self, request: operations.DeleteTermsRequest) -> operations.DeleteTermsResponse:
-        r"""Delete terms
+    def delete(self, request: operations.DeleteModelCustomizationRequest) -> operations.DeleteModelCustomizationResponse:
+        r"""Delete Model customization
         """
         
         base_url = self._server_url
         
-        url = utils.generate_url(operations.DeleteTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self._globals)
+        url = utils.generate_url(operations.DeleteModelCustomizationRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization/{customizationId}', request, self._globals)
         
-        headers = utils.get_headers(request)
-        query_params = utils.get_query_params(operations.DeleteTermsRequest, request, self._globals)
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url, params=query_params, headers=headers)
+        http_res = client.request('DELETE', url)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.DeleteTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteModelCustomizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteResponse])
-                res.delete_response = out
+                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                res.delete_model_customization_200_application_json_object = out
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
@@ -91,29 +89,28 @@ class Terminology:
 
         return res
 
-    def find(self, request: operations.FindTermsRequest) -> operations.FindTermsResponse:
-        r"""Find terms
+    def get(self, request: operations.GetModelCustomizationRequest) -> operations.GetModelCustomizationResponse:
+        r"""Get model customization
         """
         
         base_url = self._server_url
         
-        url = utils.generate_url(operations.FindTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self._globals)
+        url = utils.generate_url(operations.GetModelCustomizationRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization/{customizationId}', request, self._globals)
         
-        query_params = utils.get_query_params(operations.FindTermsRequest, request, self._globals)
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.FindTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetModelCustomizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PaginatedResultFullTermWithUser])
-                res.paginated_result_full_term_with_user = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ModelCustomization])
+                res.model_customization = out
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
@@ -123,34 +120,28 @@ class Terminology:
 
         return res
 
-    def update(self, request: operations.UpdateTermsRequest) -> operations.UpdateTermsResponse:
-        r"""Update terms
+    def list(self, request: operations.ListModelCustomizationsRequest) -> operations.ListModelCustomizationsResponse:
+        r"""List model customizations
         """
         
         base_url = self._server_url
         
-        url = utils.generate_url(operations.UpdateTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self._globals)
+        url = utils.generate_url(operations.ListModelCustomizationsRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization', request, self._globals)
         
-        headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "update_terms_request", 'json')
-        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        if data is None and form is None:
-            raise Exception('request body is required')
         
         client = self._security_client
         
-        http_res = client.request('PUT', url, data=data, files=form, headers=headers)
+        http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.UpdateTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ListModelCustomizationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.CreateTermsResponse])
-                res.create_terms_response = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.CustomizationsResponse])
+                res.customizations_response = out
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             

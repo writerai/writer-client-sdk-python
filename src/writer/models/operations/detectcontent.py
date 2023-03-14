@@ -8,24 +8,13 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ContentDetectorAPIPathParams:
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
+class DetectContentRequest:
+    content_detector_request: shared_contentdetectorrequest.ContentDetectorRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass
-class ContentDetectorAPIHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class ContentDetectorAPIRequest:
-    headers: ContentDetectorAPIHeaders = dataclasses.field()
-    path_params: ContentDetectorAPIPathParams = dataclasses.field()
-    request: shared_contentdetectorrequest.ContentDetectorRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    
-
-@dataclasses.dataclass
-class ContentDetectorAPIResponse:
+class DetectContentResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     content_detector_responses: Optional[list[shared_contentdetectorresponse.ContentDetectorResponse]] = dataclasses.field(default=None)

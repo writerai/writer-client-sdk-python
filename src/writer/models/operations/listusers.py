@@ -21,23 +21,12 @@ class ListUsersSortOrderEnum(str, Enum):
 
 
 @dataclasses.dataclass
-class ListUsersQueryParams:
+class ListUsersRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     search: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'search', 'style': 'form', 'explode': True }})
     sort_field: Optional[ListUsersSortFieldEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
     sort_order: Optional[ListUsersSortOrderEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class ListUsersHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class ListUsersRequest:
-    headers: ListUsersHeaders = dataclasses.field()
-    query_params: ListUsersQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

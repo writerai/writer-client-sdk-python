@@ -8,20 +8,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class UploadFilePathParams:
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class UploadFileHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class UploadFileRequest:
-    headers: UploadFileHeaders = dataclasses.field()
-    path_params: UploadFilePathParams = dataclasses.field()
-    request: shared_uploadmodelfilerequest.UploadModelFileRequest = dataclasses.field(metadata={'request': { 'media_type': 'multipart/form-data' }})
+    upload_model_file_request: shared_uploadmodelfilerequest.UploadModelFileRequest = dataclasses.field(metadata={'request': { 'media_type': 'multipart/form-data' }})
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

@@ -8,26 +8,14 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CustomizationCompletionsPathParams:
-    customization_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'customizationId', 'style': 'simple', 'explode': False }})
+class CreateCompletionRequest:
+    completion_request: shared_completionrequest.CompletionRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass
-class CustomizationCompletionsHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class CustomizationCompletionsRequest:
-    headers: CustomizationCompletionsHeaders = dataclasses.field()
-    path_params: CustomizationCompletionsPathParams = dataclasses.field()
-    request: shared_completionrequest.CompletionRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    
-
-@dataclasses.dataclass
-class CustomizationCompletionsResponse:
+class CreateCompletionResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     completion_response: Optional[shared_completionresponse.CompletionResponse] = dataclasses.field(default=None)

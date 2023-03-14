@@ -12,21 +12,10 @@ class ListPagesStatusEnum(str, Enum):
 
 
 @dataclasses.dataclass
-class ListPagesQueryParams:
+class ListPagesRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     status: Optional[ListPagesStatusEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'status', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class ListPagesHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class ListPagesRequest:
-    headers: ListPagesHeaders = dataclasses.field()
-    query_params: ListPagesQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

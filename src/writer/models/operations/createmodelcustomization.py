@@ -8,21 +8,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateModelCustomizationPathParams:
-    model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class CreateModelCustomizationHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class CreateModelCustomizationRequest:
-    headers: CreateModelCustomizationHeaders = dataclasses.field()
-    path_params: CreateModelCustomizationPathParams = dataclasses.field()
-    request: shared_createcustomizationrequest.CreateCustomizationRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    create_customization_request: shared_createcustomizationrequest.CreateCustomizationRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

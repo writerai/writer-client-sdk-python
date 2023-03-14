@@ -7,16 +7,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetSubscriptionDetailsHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class GetSubscriptionDetailsRequest:
-    headers: GetSubscriptionDetailsHeaders = dataclasses.field()
-    
-
-@dataclasses.dataclass
 class GetSubscriptionDetailsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
