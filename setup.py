@@ -7,8 +7,8 @@ except FileNotFoundError:
     long_description = ""
 
 setuptools.setup(
-    name="writer",
-    version="0.3.0",
+    name="writerai",
+    version="0.3.1",
     author="writerai",
     description="Python SDK for Writer API",
     long_description=long_description,
