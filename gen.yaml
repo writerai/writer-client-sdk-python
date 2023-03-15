@@ -2,7 +2,7 @@ configVersion: 1.0.0
 management:
   docChecksum: 28627d621492146a1a575363c9dd9235
   docVersion: "1.6"
-  speakeasyVersion: 1.11.0
+  speakeasyVersion: 1.11.2
 generation:
   telemetryEnabled: false
   sdkClassName: writer

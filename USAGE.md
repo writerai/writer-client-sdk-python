@@ -15,7 +15,6 @@ req = operations.DetectContentRequest(
     content_detector_request=shared.ContentDetectorRequest(
         input="deserunt",
     ),
-    organization_id=715190,
 )
     
 res = s.ai_content_detector.detect(req)

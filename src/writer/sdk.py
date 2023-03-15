@@ -40,7 +40,7 @@ class Writer:
     _server_url: str = SERVERS[0]
     _language: str = "python"
     _sdk_version: str = "0.3.0"
-    _gen_version: str = "1.11.0"
+    _gen_version: str = "1.11.2"
     _globals: dict[str, dict[str, dict[str, Any]]]
 
     def __init__(self,
