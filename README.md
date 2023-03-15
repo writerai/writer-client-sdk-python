@@ -13,7 +13,7 @@
 ## SDK Installation
 
 ```bash
-pip install writer
+pip install writerai
 ```
 <!-- End SDK Installation -->
 
