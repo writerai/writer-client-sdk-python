@@ -8,26 +8,15 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ContetnCorrectPathParams:
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
+class ContentCorrectRequest:
+    content_request: shared_contentrequest.ContentRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class ContetnCorrectHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     x_request_id: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'X-Request-ID', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass
-class ContetnCorrectRequest:
-    headers: ContetnCorrectHeaders = dataclasses.field()
-    path_params: ContetnCorrectPathParams = dataclasses.field()
-    request: shared_contentrequest.ContentRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    
-
-@dataclasses.dataclass
-class ContetnCorrectResponse:
+class ContentCorrectResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     correction_response: Optional[shared_correctionresponse.CorrectionResponse] = dataclasses.field(default=None)

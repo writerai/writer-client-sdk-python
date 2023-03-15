@@ -7,19 +7,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class PageDetailsPathParams:
-    page_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'pageId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class PageDetailsHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class PageDetailsRequest:
-    headers: PageDetailsHeaders = dataclasses.field()
-    path_params: PageDetailsPathParams = dataclasses.field()
+    page_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'pageId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

@@ -6,12 +6,6 @@ from ..shared import paginatedresult_fulltermwithuser as shared_paginatedresult_
 from enum import Enum
 from typing import Optional
 
-
-@dataclasses.dataclass
-class FindTermsPathParams:
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
-    team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})
-    
 class FindTermsPartOfSpeechEnum(str, Enum):
     NOUN = "noun"
     VERB = "verb"
@@ -35,27 +29,17 @@ class FindTermsTypeEnum(str, Enum):
 
 
 @dataclasses.dataclass
-class FindTermsQueryParams:
+class FindTermsRequest:
+    team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     part_of_speech: Optional[FindTermsPartOfSpeechEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'partOfSpeech', 'style': 'form', 'explode': True }})
     sort_field: Optional[FindTermsSortFieldEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
     sort_order: Optional[FindTermsSortOrderEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
     tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'tags', 'style': 'form', 'explode': True }})
     term: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'term', 'style': 'form', 'explode': True }})
     type: Optional[FindTermsTypeEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class FindTermsHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class FindTermsRequest:
-    headers: FindTermsHeaders = dataclasses.field()
-    path_params: FindTermsPathParams = dataclasses.field()
-    query_params: FindTermsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

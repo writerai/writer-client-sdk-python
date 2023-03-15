@@ -3,7 +3,7 @@ from . import utils
 from typing import Any, Optional
 from writer.models import operations, shared
 
-class Billing:
+class Models:
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str
@@ -21,13 +21,13 @@ class Billing:
         self._gen_version = gen_version
         self._globals = gbls
         
-    def get_subscription_details(self) -> operations.GetSubscriptionDetailsResponse:
-        r"""Get your organization subscription details
+    def list(self, request: operations.ListModelsRequest) -> operations.ListModelsResponse:
+        r"""List available LLM models
         """
         
         base_url = self._server_url
         
-        url = base_url.removesuffix('/') + '/billing/subscription'
+        url = utils.generate_url(operations.ListModelsRequest, base_url, '/llm/organization/{organizationId}/model', request, self._globals)
         
         
         client = self._security_client
@@ -35,14 +35,14 @@ class Billing:
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GetSubscriptionDetailsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ListModelsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.SubscriptionPublicResponseAPI])
-                res.subscription_public_response_api = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.GenerationModelsResponse])
+                res.generation_models_response = out
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             

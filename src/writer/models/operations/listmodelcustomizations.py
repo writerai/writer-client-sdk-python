@@ -7,24 +7,13 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CustomizationsPathParams:
+class ListModelCustomizationsRequest:
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass
-class CustomizationsHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class CustomizationsRequest:
-    headers: CustomizationsHeaders = dataclasses.field()
-    path_params: CustomizationsPathParams = dataclasses.field()
-    
-
-@dataclasses.dataclass
-class CustomizationsResponse:
+class ListModelCustomizationsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     customizations_response: Optional[shared_customizationsresponse.CustomizationsResponse] = dataclasses.field(default=None)

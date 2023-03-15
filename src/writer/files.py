@@ -10,25 +10,27 @@ class Files:
     _language: str
     _sdk_version: str
     _gen_version: str
+    _globals: dict[str, dict[str, dict[str, Any]]]
 
-    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str) -> None:
+    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str, gbls: dict[str, dict[str, dict[str, Any]]]) -> None:
         self._client = client
         self._security_client = security_client
         self._server_url = server_url
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
+        self._globals = gbls
         
-    def delete_file(self, request: operations.DeleteFileRequest) -> operations.DeleteFileResponse:
+    def delete(self, request: operations.DeleteFileRequest) -> operations.DeleteFileResponse:
         r"""Delete file
         """
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/llm/organization/{organizationId}/file/{fileId}', request.path_params)
+        url = utils.generate_url(operations.DeleteFileRequest, base_url, '/llm/organization/{organizationId}/file/{fileId}', request, self._globals)
         
         
-        client = self._client
+        client = self._security_client
         
         http_res = client.request('DELETE', url)
         content_type = http_res.headers.get('Content-Type')
@@ -41,31 +43,7 @@ class Files:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
                 res.delete_file_200_application_json_object = out
-        elif http_res.status_code == 400:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 401:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 403:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 404:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
@@ -74,75 +52,18 @@ class Files:
 
         return res
 
-    def files(self, request: operations.FilesRequest) -> operations.FilesResponse:
-        r"""List files
-        """
-        
-        base_url = self._server_url
-        
-        url = utils.generate_url(base_url, '/llm/organization/{organizationId}/file', request.path_params)
-        
-        headers = utils.get_headers(request.headers)
-        
-        client = self._client
-        
-        http_res = client.request('GET', url, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.FilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.ModelFilesResponse])
-                res.model_files_response = out
-        elif http_res.status_code == 400:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 401:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 403:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 404:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 500:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-
-        return res
-
-    def get_file(self, request: operations.GetFileRequest) -> operations.GetFileResponse:
+    def get(self, request: operations.GetFileRequest) -> operations.GetFileResponse:
         r"""Get file
         """
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/llm/organization/{organizationId}/file/{fileId}', request.path_params)
+        url = utils.generate_url(operations.GetFileRequest, base_url, '/llm/organization/{organizationId}/file/{fileId}', request, self._globals)
         
-        headers = utils.get_headers(request.headers)
         
-        client = self._client
+        client = self._security_client
         
-        http_res = client.request('GET', url, headers=headers)
+        http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -153,31 +74,7 @@ class Files:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ModelFile])
                 res.model_file = out
-        elif http_res.status_code == 400:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 401:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 403:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 404:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
@@ -186,22 +83,53 @@ class Files:
 
         return res
 
-    def upload_file(self, request: operations.UploadFileRequest) -> operations.UploadFileResponse:
+    def list(self, request: operations.ListFilesRequest) -> operations.ListFilesResponse:
+        r"""List files
+        """
+        
+        base_url = self._server_url
+        
+        url = utils.generate_url(operations.ListFilesRequest, base_url, '/llm/organization/{organizationId}/file', request, self._globals)
+        
+        
+        client = self._security_client
+        
+        http_res = client.request('GET', url)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.ListFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            res.headers = http_res.headers
+            
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ModelFilesResponse])
+                res.model_files_response = out
+        elif http_res.status_code in [400, 401, 403, 404, 500]:
+            res.headers = http_res.headers
+            
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
+                res.fail_response = out
+
+        return res
+
+    def upload(self, request: operations.UploadFileRequest) -> operations.UploadFileResponse:
         r"""Upload file
         """
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/llm/organization/{organizationId}/file', request.path_params)
+        url = utils.generate_url(operations.UploadFileRequest, base_url, '/llm/organization/{organizationId}/file', request, self._globals)
         
-        headers = utils.get_headers(request.headers)
-        req_content_type, data, form = utils.serialize_request_body(request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "upload_model_file_request", 'multipart')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         
-        client = self._client
+        client = self._security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -214,31 +142,7 @@ class Files:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ModelFile])
                 res.model_file = out
-        elif http_res.status_code == 400:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 401:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 403:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 404:
-            res.headers = http_res.headers
-            
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.FailResponse])
-                res.fail_response = out
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):

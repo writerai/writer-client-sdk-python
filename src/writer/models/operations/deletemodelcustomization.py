@@ -6,15 +6,10 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class DeleteModelCustomizationPathParams:
+class DeleteModelCustomizationRequest:
     customization_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'customizationId', 'style': 'simple', 'explode': False }})
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class DeleteModelCustomizationRequest:
-    path_params: DeleteModelCustomizationPathParams = dataclasses.field()
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

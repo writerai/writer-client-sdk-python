@@ -3,21 +3,21 @@
 import writer
 from writer.models import operations, shared
 
-s = writer.Writer()
-   
-req = operations.ContentDetectorAPIRequest(
-    path_params=operations.ContentDetectorAPIPathParams(
-        organization_id=548814,
+s = writer.Writer(
+    security=shared.Security(
+        api_key="YOUR_API_KEY_HERE",
     ),
-    headers=operations.ContentDetectorAPIHeaders(
-        authorization="deserunt",
-    ),
-    request=shared.ContentDetectorRequest(
-        input="porro",
+    organization_id=548814,
+)
+
+
+req = operations.DetectContentRequest(
+    content_detector_request=shared.ContentDetectorRequest(
+        input="deserunt",
     ),
 )
     
-res = s.ai_content_detector.content_detector_api(req)
+res = s.ai_content_detector.detect(req)
 
 if res.content_detector_responses is not None:
     # handle response

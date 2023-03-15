@@ -6,21 +6,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class FetchCustomizedModelFilePathParams:
+class FetchCustomizedModelFileRequest:
     customization_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'customizationId', 'style': 'simple', 'explode': False }})
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class FetchCustomizedModelFileHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class FetchCustomizedModelFileRequest:
-    headers: FetchCustomizedModelFileHeaders = dataclasses.field()
-    path_params: FetchCustomizedModelFilePathParams = dataclasses.field()
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

@@ -8,21 +8,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class AddTermsPathParams:
-    organization_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
-    team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class AddTermsHeaders:
-    authorization: str = dataclasses.field(metadata={'header': { 'field_name': 'Authorization', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class AddTermsRequest:
-    headers: AddTermsHeaders = dataclasses.field()
-    path_params: AddTermsPathParams = dataclasses.field()
-    request: shared_createtermsrequest.CreateTermsRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    create_terms_request: shared_createtermsrequest.CreateTermsRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass
