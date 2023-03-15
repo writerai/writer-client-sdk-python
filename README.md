@@ -1,8 +1,6 @@
 <div align="center">
-    <picture>
         <source srcset="https://user-images.githubusercontent.com/6267663/223574357-9a053550-02f9-49f1-b453-1b11db148d7b.svg" media="(prefers-color-scheme: dark)" width="500">
         <img src="https://user-images.githubusercontent.com/6267663/223574369-77805bfe-6d95-44e8-ac48-f9494101e1dc.svg" width="500">
-    </picture>
     <h1>Python SDK</h1>
    <p>AI for everyone.</p>
    <a href="https://dev.writer.com/docs"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000000&style=for-the-badge" /></a>
@@ -45,7 +43,7 @@ s = writer.Writer(
 
 req = operations.DetectContentRequest(
     content_detector_request=shared.ContentDetectorRequest(
-        input="deserunt",
+        input="example",
     ),
 )
     
