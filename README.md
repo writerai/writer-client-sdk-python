@@ -42,7 +42,7 @@ s = writer.Writer(
 
 req = operations.DetectContentRequest(
     content_detector_request=shared.ContentDetectorRequest(
-        input="example",
+        input="provident",
     ),
 )
     
@@ -54,7 +54,7 @@ if res.content_detector_responses is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
 ### ai_content_detector
