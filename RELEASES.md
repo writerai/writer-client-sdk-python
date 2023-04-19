@@ -39,3 +39,11 @@ Based on:
 - Speakeasy CLI 1.20.1 (2.18.1) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [PyPI v0.4.1] https://pypi.org/project/writerai/0.4.1 - .
+
+## 2023-04-19 00:18:49
+### Changes
+Based on:
+- OpenAPI Doc 1.6 https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
+- Speakeasy CLI 1.20.2 (2.18.2) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v0.4.2] https://pypi.org/project/writerai/0.4.2 - .
