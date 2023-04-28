@@ -18,8 +18,12 @@ class TermMistakeCreatePosEnum(str, Enum):
 @dataclasses.dataclass
 class TermMistakeCreate:
     
-    case_sensitive: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('caseSensitive') }})  
-    mistake: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mistake') }})  
-    pos: Optional[TermMistakeCreatePosEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pos'), 'exclude': lambda f: f is None }})  
-    reference: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reference'), 'exclude': lambda f: f is None }})  
+    case_sensitive: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('caseSensitive') }})
+
+    mistake: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mistake') }})
+
+    pos: Optional[TermMistakeCreatePosEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pos'), 'exclude': lambda f: f is None }})
+
+    reference: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reference'), 'exclude': lambda f: f is None }})
+
     

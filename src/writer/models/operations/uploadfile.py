@@ -12,18 +12,26 @@ from typing import Optional
 @dataclasses.dataclass
 class UploadFileRequest:
     
-    upload_model_file_request: shared_uploadmodelfilerequest.UploadModelFileRequest = dataclasses.field(metadata={'request': { 'media_type': 'multipart/form-data' }})  
-    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})  
+    upload_model_file_request: shared_uploadmodelfilerequest.UploadModelFileRequest = dataclasses.field(metadata={'request': { 'media_type': 'multipart/form-data' }})
+
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
+
     
 
 @dataclasses.dataclass
 class UploadFileResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""  
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)  
-    model_file: Optional[shared_modelfile.ModelFile] = dataclasses.field(default=None)  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Bad Request"""
+    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+
+    model_file: Optional[shared_modelfile.ModelFile] = dataclasses.field(default=None)
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

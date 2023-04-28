@@ -12,5 +12,6 @@ from writer import utils
 @dataclasses.dataclass
 class ProcessedContent:
     
-    issues: Optional[list[shared_contentissue.ContentIssue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issues'), 'exclude': lambda f: f is None }})  
+    issues: Optional[list[shared_contentissue.ContentIssue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issues'), 'exclude': lambda f: f is None }})
+
     

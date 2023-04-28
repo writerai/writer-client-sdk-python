@@ -10,5 +10,6 @@ from writer import utils
 @dataclasses.dataclass
 class HyperParameters:
     
-    num_virtual_tokens: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numVirtualTokens') }})  
+    num_virtual_tokens: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numVirtualTokens') }})
+
     

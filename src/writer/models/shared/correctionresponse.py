@@ -10,5 +10,6 @@ from writer import utils
 @dataclasses.dataclass
 class CorrectionResponse:
     
-    correct: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('correct') }})  
+    correct: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('correct') }})
+
     

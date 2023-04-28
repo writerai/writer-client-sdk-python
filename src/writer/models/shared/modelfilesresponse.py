@@ -12,5 +12,6 @@ from writer import utils
 @dataclasses.dataclass
 class ModelFilesResponse:
     
-    files: Optional[list[shared_modelfile.ModelFile]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})  
+    files: Optional[list[shared_modelfile.ModelFile]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
+
     

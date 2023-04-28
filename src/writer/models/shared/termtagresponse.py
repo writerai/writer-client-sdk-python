@@ -10,8 +10,12 @@ from writer import utils
 @dataclasses.dataclass
 class TermTagResponse:
     
-    id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})  
-    parent_tag_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentTagId') }})  
-    tag: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag') }})  
-    term_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termId') }})  
+    id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+
+    parent_tag_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentTagId') }})
+
+    tag: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag') }})
+
+    term_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termId') }})
+
     

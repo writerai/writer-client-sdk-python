@@ -19,6 +19,8 @@ class CreateTermsRequestFailHandlingEnum(str, Enum):
 @dataclasses.dataclass
 class CreateTermsRequest:
     
-    fail_handling: Optional[CreateTermsRequestFailHandlingEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failHandling'), 'exclude': lambda f: f is None }})  
-    models: Optional[list[shared_termcreate.TermCreate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})  
+    fail_handling: Optional[CreateTermsRequestFailHandlingEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failHandling'), 'exclude': lambda f: f is None }})
+
+    models: Optional[list[shared_termcreate.TermCreate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})
+
     

@@ -11,9 +11,14 @@ from writer import utils
 @dataclasses.dataclass
 class ApprovedTermExtension:
     
-    capitalize: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capitalize') }})  
-    fix_case: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fixCase') }})  
-    fix_common_mistakes: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fixCommonMistakes') }})  
-    term_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termId') }})  
-    id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})  
+    capitalize: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capitalize') }})
+
+    fix_case: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fixCase') }})
+
+    fix_common_mistakes: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fixCommonMistakes') }})
+
+    term_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termId') }})
+
+    id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+
     

@@ -10,5 +10,6 @@ from writer import utils
 @dataclasses.dataclass
 class DeleteResponse:
     
-    deleted: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted') }})  
+    deleted: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted') }})
+
     

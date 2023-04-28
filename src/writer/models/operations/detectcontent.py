@@ -12,18 +12,26 @@ from typing import Optional
 @dataclasses.dataclass
 class DetectContentRequest:
     
-    content_detector_request: shared_contentdetectorrequest.ContentDetectorRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
-    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})  
+    content_detector_request: shared_contentdetectorrequest.ContentDetectorRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
+
     
 
 @dataclasses.dataclass
 class DetectContentResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    content_detector_responses: Optional[list[shared_contentdetectorresponse.ContentDetectorResponse]] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    content_detector_responses: Optional[list[shared_contentdetectorresponse.ContentDetectorResponse]] = dataclasses.field(default=None)
+
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""  
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Bad Request"""
+    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

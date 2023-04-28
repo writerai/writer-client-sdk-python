@@ -10,19 +10,28 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class DeleteModelCustomizationRequest:
     
-    customization_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'customizationId', 'style': 'simple', 'explode': False }})  
-    model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})  
-    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})  
+    customization_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'customizationId', 'style': 'simple', 'explode': False }})
+
+    model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})
+
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
+
     
 
 @dataclasses.dataclass
 class DeleteModelCustomizationResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    delete_model_customization_200_application_json_object: Optional[dict[str, Any]] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    delete_model_customization_200_application_json_object: Optional[dict[str, Any]] = dataclasses.field(default=None)
+
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""  
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Bad Request"""
+    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

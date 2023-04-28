@@ -12,6 +12,8 @@ from writer import utils
 @dataclasses.dataclass
 class CompletionGenerationChoice:
     
-    text: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('text') }})  
-    logprobs: Optional[shared_completiongenerationchoicelogprobs.CompletionGenerationChoiceLogprobs] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logprobs'), 'exclude': lambda f: f is None }})  
+    text: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('text') }})
+
+    logprobs: Optional[shared_completiongenerationchoicelogprobs.CompletionGenerationChoiceLogprobs] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logprobs'), 'exclude': lambda f: f is None }})
+
     

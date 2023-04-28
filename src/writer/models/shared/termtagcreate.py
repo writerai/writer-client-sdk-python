@@ -10,5 +10,6 @@ from writer import utils
 @dataclasses.dataclass
 class TermTagCreate:
     
-    tag: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag') }})  
+    tag: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag') }})
+
     
