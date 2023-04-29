@@ -12,16 +12,10 @@ from typing import Optional
 class GetSubscriptionDetailsResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-
     r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     subscription_public_response_api: Optional[shared_subscriptionpublicresponseapi.SubscriptionPublicResponseAPI] = dataclasses.field(default=None)
-
     

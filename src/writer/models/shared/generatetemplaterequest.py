@@ -13,7 +13,5 @@ from writer import utils
 class GenerateTemplateRequest:
     
     template_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('templateId') }})
-
     inputs: Optional[list[shared_magicrequestinput.MagicRequestInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('inputs'), 'exclude': lambda f: f is None }})
-
     

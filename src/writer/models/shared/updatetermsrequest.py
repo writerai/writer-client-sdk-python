@@ -20,7 +20,5 @@ class UpdateTermsRequestFailHandlingEnum(str, Enum):
 class UpdateTermsRequest:
     
     fail_handling: Optional[UpdateTermsRequestFailHandlingEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failHandling'), 'exclude': lambda f: f is None }})
-
     models: Optional[list[shared_termupdate.TermUpdate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})
-
     

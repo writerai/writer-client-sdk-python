@@ -13,5 +13,4 @@ from writer import utils
 class CustomizationsResponse:
     
     customizations: Optional[list[shared_modelcustomization.ModelCustomization]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customizations'), 'exclude': lambda f: f is None }})
-
     

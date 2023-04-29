@@ -16,7 +16,5 @@ class TermExampleCreateTypeEnum(str, Enum):
 class TermExampleCreate:
     
     example: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('example') }})
-
     type: TermExampleCreateTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-
     

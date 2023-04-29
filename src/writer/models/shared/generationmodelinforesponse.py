@@ -16,9 +16,6 @@ class GenerationModelInfoResponseTypeEnum(str, Enum):
 class GenerationModelInfoResponse:
     
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-
     type: GenerationModelInfoResponseTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-
     

@@ -11,7 +11,5 @@ from writer import utils
 class UsageItem:
     
     limit: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit') }})
-
     value: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
-
     

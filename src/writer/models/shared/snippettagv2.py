@@ -11,5 +11,4 @@ from writer import utils
 class SnippetTagV2:
     
     tag: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag') }})
-
     

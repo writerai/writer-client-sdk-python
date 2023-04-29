@@ -16,7 +16,5 @@ class ContentDetectorResponseLabelEnum(str, Enum):
 class ContentDetectorResponse:
     
     label: ContentDetectorResponseLabelEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
-
     score: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('score') }})
-
     

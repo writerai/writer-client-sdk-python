@@ -13,5 +13,4 @@ from writer import utils
 class GenerationModelsResponse:
     
     data: Optional[list[shared_generationmodelinforesponse.GenerationModelInfoResponse]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-
     

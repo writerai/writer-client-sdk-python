@@ -12,11 +12,7 @@ from writer import utils
 class Usage:
     
     co_write_words: shared_usageitem.UsageItem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coWriteWords') }})
-
     team: shared_usageitem.UsageItem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('team') }})
-
     user: shared_usageitem.UsageItem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
-
     words: shared_usageitem.UsageItem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('words') }})
-
     

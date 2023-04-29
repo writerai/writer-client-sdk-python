@@ -14,7 +14,5 @@ from writer import utils
 class CreateTermsResponse:
     
     fails: Optional[list[shared_failmessage.FailMessage]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fails'), 'exclude': lambda f: f is None }})
-
     models: Optional[list[shared_fulltermwithuser.FullTermWithUser]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})
-
     
