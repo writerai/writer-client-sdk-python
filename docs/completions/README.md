@@ -36,14 +36,14 @@ req = operations.CreateCompletionRequest(
         min_tokens=461479,
         n=520478,
         presence_penalty=7805.29,
-        prompt="dolorum",
+        prompt='dolorum',
         stop=[
-            "nam",
+            'nam',
         ],
         temperature=6399.21,
         top_p=5820.2,
     ),
-    model_id="fugit",
+    model_id='fugit',
 )
 
 res = s.completions.create(req)
@@ -79,18 +79,18 @@ req = operations.CreateModelCustomizationCompletionRequest(
         min_tokens=414662,
         n=473600,
         presence_penalty=2645.55,
-        prompt="qui",
+        prompt='qui',
         stop=[
-            "cum",
-            "esse",
-            "ipsum",
-            "excepturi",
+            'cum',
+            'esse',
+            'ipsum',
+            'excepturi',
         ],
         temperature=1352.18,
         top_p=187.89,
     ),
-    customization_id="ad",
-    model_id="natus",
+    customization_id='ad',
+    model_id='natus',
 )
 
 res = s.completions.create_model_customization_completion(req)

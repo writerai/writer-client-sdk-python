@@ -58,7 +58,7 @@ s = writer.Writer(
 req = operations.ListPagesRequest(
     limit=352312,
     offset=714242,
-    status="live",
+    status=operations.ListPagesStatusEnum.LIVE,
 )
 
 res = s.styleguide.list_pages(req)

@@ -29,7 +29,7 @@ s = writer.Writer(
 
 req = operations.ContentCheckRequest(
     content_request=shared.ContentRequest(
-        content="iste",
+        content='iste',
         settings=shared.ContentSettings(
             age_and_family_status=False,
             confidence=False,
@@ -78,7 +78,7 @@ s = writer.Writer(
 
 req = operations.ContentCorrectRequest(
     content_request=shared.ContentRequest(
-        content="laboriosam",
+        content='laboriosam',
         settings=shared.ContentSettings(
             age_and_family_status=False,
             confidence=False,
@@ -98,7 +98,7 @@ req = operations.ContentCorrectRequest(
             wordiness=False,
         ),
     ),
-    x_request_id="hic",
+    x_request_id='hic',
     team_id=902599,
 )
 

@@ -31,7 +31,7 @@ s = writer.Writer(
 
 req = operations.AddTermsRequest(
     create_terms_request=shared.CreateTermsRequest(
-        fail_handling="validateOnly",
+        fail_handling=shared.CreateTermsRequestFailHandlingEnum.VALIDATE_ONLY,
         models=[
             shared.TermCreate(
                 approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -40,73 +40,73 @@ req = operations.AddTermsRequest(
                     fix_common_mistakes=False,
                 ),
                 case_sensitive=False,
-                description="saepe",
+                description='saepe',
                 examples=[
                     shared.TermExampleCreate(
-                        example="accusantium",
-                        type="good",
+                        example='accusantium',
+                        type=shared.TermExampleCreateTypeEnum.GOOD,
                     ),
                     shared.TermExampleCreate(
-                        example="praesentium",
-                        type="bad",
+                        example='praesentium',
+                        type=shared.TermExampleCreateTypeEnum.BAD,
                     ),
                     shared.TermExampleCreate(
-                        example="magni",
-                        type="good",
+                        example='magni',
+                        type=shared.TermExampleCreateTypeEnum.GOOD,
                     ),
                     shared.TermExampleCreate(
-                        example="quo",
-                        type="bad",
+                        example='quo',
+                        type=shared.TermExampleCreateTypeEnum.BAD,
                     ),
                 ],
                 highlight=False,
                 linked_terms=[
                     shared.LinkedTermCreate(
                         linked_term_id=807319,
-                        reference="ea",
+                        reference='ea',
                     ),
                     shared.LinkedTermCreate(
                         linked_term_id=569101,
-                        reference="odit",
+                        reference='odit',
                     ),
                     shared.LinkedTermCreate(
                         linked_term_id=407183,
-                        reference="accusantium",
+                        reference='accusantium',
                     ),
                     shared.LinkedTermCreate(
                         linked_term_id=69167,
-                        reference="maiores",
+                        reference='maiores',
                     ),
                 ],
                 mistakes=[
                     shared.TermMistakeCreate(
                         case_sensitive=False,
-                        mistake="ipsam",
-                        pos="verb",
-                        reference="autem",
+                        mistake='ipsam',
+                        pos=shared.TermMistakeCreatePosEnum.VERB,
+                        reference='autem',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
-                        mistake="nam",
-                        pos="noun",
-                        reference="pariatur",
+                        mistake='nam',
+                        pos=shared.TermMistakeCreatePosEnum.NOUN,
+                        reference='pariatur',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
-                        mistake="nemo",
-                        pos="adjective",
-                        reference="perferendis",
+                        mistake='nemo',
+                        pos=shared.TermMistakeCreatePosEnum.ADJECTIVE,
+                        reference='perferendis',
                     ),
                 ],
-                pos="adjective",
-                reference="amet",
+                pos=shared.TermCreatePosEnum.ADJECTIVE,
+                reference='amet',
                 tags=[
                     shared.TermTagCreate(
-                        tag="cumque",
+                        tag='cumque',
                     ),
                 ],
-                term="corporis",
-                type="pending",
+                term='corporis',
+                type=shared.TermCreateTypeEnum.PENDING,
             ),
         ],
     ),
@@ -138,7 +138,7 @@ s = writer.Writer(
 
 
 req = operations.DeleteTermsRequest(
-    x_request_id="dolores",
+    x_request_id='dolores',
     ids=[
         521037,
         489549,
@@ -173,16 +173,16 @@ s = writer.Writer(
 req = operations.FindTermsRequest(
     limit=199996,
     offset=179490,
-    part_of_speech="noun",
-    sort_field="term",
-    sort_order="desc",
+    part_of_speech=operations.FindTermsPartOfSpeechEnum.NOUN,
+    sort_field=operations.FindTermsSortFieldEnum.TERM,
+    sort_order=operations.FindTermsSortOrderEnum.DESC,
     tags=[
-        "dolor",
-        "vero",
+        'dolor',
+        'vero',
     ],
     team_id=345352,
-    term="hic",
-    type="pending",
+    term='hic',
+    type=operations.FindTermsTypeEnum.PENDING,
 )
 
 res = s.terminology.find(req)
@@ -211,7 +211,7 @@ s = writer.Writer(
 
 req = operations.UpdateTermsRequest(
     update_terms_request=shared.UpdateTermsRequest(
-        fail_handling="skip",
+        fail_handling=shared.UpdateTermsRequestFailHandlingEnum.SKIP,
         models=[
             shared.TermUpdate(
                 approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -220,23 +220,23 @@ req = operations.UpdateTermsRequest(
                     fix_common_mistakes=False,
                 ),
                 case_sensitive=False,
-                description="voluptatem",
+                description='voluptatem',
                 examples=[
                     shared.TermExampleCreate(
-                        example="consequuntur",
-                        type="bad",
+                        example='consequuntur',
+                        type=shared.TermExampleCreateTypeEnum.BAD,
                     ),
                     shared.TermExampleCreate(
-                        example="error",
-                        type="good",
+                        example='error',
+                        type=shared.TermExampleCreateTypeEnum.GOOD,
                     ),
                     shared.TermExampleCreate(
-                        example="occaecati",
-                        type="bad",
+                        example='occaecati',
+                        type=shared.TermExampleCreateTypeEnum.BAD,
                     ),
                     shared.TermExampleCreate(
-                        example="adipisci",
-                        type="bad",
+                        example='adipisci',
+                        type=shared.TermExampleCreateTypeEnum.BAD,
                     ),
                 ],
                 highlight=False,
@@ -244,41 +244,41 @@ req = operations.UpdateTermsRequest(
                 linked_terms=[
                     shared.LinkedTermCreate(
                         linked_term_id=613966,
-                        reference="dolorum",
+                        reference='dolorum',
                     ),
                     shared.LinkedTermCreate(
                         linked_term_id=535633,
-                        reference="pariatur",
+                        reference='pariatur',
                     ),
                 ],
                 mistakes=[
                     shared.TermMistakeCreate(
                         case_sensitive=False,
-                        mistake="nobis",
-                        pos="adverb",
-                        reference="delectus",
+                        mistake='nobis',
+                        pos=shared.TermMistakeCreatePosEnum.ADVERB,
+                        reference='delectus',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
-                        mistake="quaerat",
-                        pos="adverb",
-                        reference="aliquid",
+                        mistake='quaerat',
+                        pos=shared.TermMistakeCreatePosEnum.ADVERB,
+                        reference='aliquid',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
-                        mistake="dolorem",
-                        pos="noun",
-                        reference="dolor",
+                        mistake='dolorem',
+                        pos=shared.TermMistakeCreatePosEnum.NOUN,
+                        reference='dolor',
                     ),
                 ],
-                pos="noun",
+                pos=shared.TermUpdatePosEnum.NOUN,
                 tags=[
                     shared.TermTagCreate(
-                        tag="hic",
+                        tag='hic',
                     ),
                 ],
-                term="excepturi",
-                type="pending",
+                term='excepturi',
+                type=shared.TermUpdateTypeEnum.PENDING,
             ),
             shared.TermUpdate(
                 approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -287,15 +287,15 @@ req = operations.UpdateTermsRequest(
                     fix_common_mistakes=False,
                 ),
                 case_sensitive=False,
-                description="voluptate",
+                description='voluptate',
                 examples=[
                     shared.TermExampleCreate(
-                        example="reiciendis",
-                        type="good",
+                        example='reiciendis',
+                        type=shared.TermExampleCreateTypeEnum.GOOD,
                     ),
                     shared.TermExampleCreate(
-                        example="dolorum",
-                        type="good",
+                        example='dolorum',
+                        type=shared.TermExampleCreateTypeEnum.GOOD,
                     ),
                 ],
                 highlight=False,
@@ -303,37 +303,37 @@ req = operations.UpdateTermsRequest(
                 linked_terms=[
                     shared.LinkedTermCreate(
                         linked_term_id=56418,
-                        reference="iure",
+                        reference='iure',
                     ),
                 ],
                 mistakes=[
                     shared.TermMistakeCreate(
                         case_sensitive=False,
-                        mistake="quaerat",
-                        pos="adjective",
-                        reference="quidem",
+                        mistake='quaerat',
+                        pos=shared.TermMistakeCreatePosEnum.ADJECTIVE,
+                        reference='quidem',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
-                        mistake="voluptatibus",
-                        pos="verb",
-                        reference="natus",
+                        mistake='voluptatibus',
+                        pos=shared.TermMistakeCreatePosEnum.VERB,
+                        reference='natus',
                     ),
                 ],
-                pos="noun",
+                pos=shared.TermUpdatePosEnum.NOUN,
                 tags=[
                     shared.TermTagCreate(
-                        tag="sit",
+                        tag='sit',
                     ),
                     shared.TermTagCreate(
-                        tag="fugiat",
+                        tag='fugiat',
                     ),
                     shared.TermTagCreate(
-                        tag="ab",
+                        tag='ab',
                     ),
                 ],
-                term="soluta",
-                type="pending",
+                term='soluta',
+                type=shared.TermUpdateTypeEnum.PENDING,
             ),
             shared.TermUpdate(
                 approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -342,15 +342,15 @@ req = operations.UpdateTermsRequest(
                     fix_common_mistakes=False,
                 ),
                 case_sensitive=False,
-                description="iusto",
+                description='iusto',
                 examples=[
                     shared.TermExampleCreate(
-                        example="dolorum",
-                        type="bad",
+                        example='dolorum',
+                        type=shared.TermExampleCreateTypeEnum.BAD,
                     ),
                     shared.TermExampleCreate(
-                        example="omnis",
-                        type="bad",
+                        example='omnis',
+                        type=shared.TermExampleCreateTypeEnum.BAD,
                     ),
                 ],
                 highlight=False,
@@ -358,44 +358,44 @@ req = operations.UpdateTermsRequest(
                 linked_terms=[
                     shared.LinkedTermCreate(
                         linked_term_id=469497,
-                        reference="ipsum",
+                        reference='ipsum',
                     ),
                     shared.LinkedTermCreate(
                         linked_term_id=456015,
-                        reference="id",
+                        reference='id',
                     ),
                     shared.LinkedTermCreate(
                         linked_term_id=906418,
-                        reference="eius",
+                        reference='eius',
                     ),
                     shared.LinkedTermCreate(
                         linked_term_id=137220,
-                        reference="perferendis",
+                        reference='perferendis',
                     ),
                 ],
                 mistakes=[
                     shared.TermMistakeCreate(
                         case_sensitive=False,
-                        mistake="optio",
-                        pos="adjective",
-                        reference="ad",
+                        mistake='optio',
+                        pos=shared.TermMistakeCreatePosEnum.ADJECTIVE,
+                        reference='ad',
                     ),
                 ],
-                pos="adjective",
+                pos=shared.TermUpdatePosEnum.ADJECTIVE,
                 tags=[
                     shared.TermTagCreate(
-                        tag="deserunt",
+                        tag='deserunt',
                     ),
                     shared.TermTagCreate(
-                        tag="provident",
+                        tag='provident',
                     ),
                 ],
-                term="minima",
-                type="pending",
+                term='minima',
+                type=shared.TermUpdateTypeEnum.PENDING,
             ),
         ],
     ),
-    x_request_id="totam",
+    x_request_id='totam',
     team_id=628982,
 )
 

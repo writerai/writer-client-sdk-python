@@ -28,7 +28,7 @@ s = writer.Writer(
 
 req = operations.DetectContentRequest(
     content_detector_request=shared.ContentDetectorRequest(
-        input="quibusdam",
+        input='quibusdam',
     ),
 )
 

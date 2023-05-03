@@ -35,15 +35,15 @@ req = operations.CreateModelCustomizationRequest(
             num_virtual_tokens=670638,
         ),
         batch_size=170909,
-        description="dolorem",
+        description='dolorem',
         epochs=358152,
         learning_rate=1289.26,
-        name="Ronnie Mohr",
-        prompt_template="excepturi",
-        training_dataset_file_id="accusantium",
-        validation_dataset_file_id="iure",
+        name='Ronnie Mohr',
+        prompt_template='excepturi',
+        training_dataset_file_id='accusantium',
+        validation_dataset_file_id='iure',
     ),
-    model_id="culpa",
+    model_id='culpa',
 )
 
 res = s.model_customization.create(req)
@@ -71,8 +71,8 @@ s = writer.Writer(
 
 
 req = operations.DeleteModelCustomizationRequest(
-    customization_id="sapiente",
-    model_id="architecto",
+    customization_id='sapiente',
+    model_id='architecto',
 )
 
 res = s.model_customization.delete(req)
@@ -100,8 +100,8 @@ s = writer.Writer(
 
 
 req = operations.GetModelCustomizationRequest(
-    customization_id="dolorem",
-    model_id="culpa",
+    customization_id='dolorem',
+    model_id='culpa',
 )
 
 res = s.model_customization.get(req)
@@ -129,7 +129,7 @@ s = writer.Writer(
 
 
 req = operations.ListModelCustomizationsRequest(
-    model_id="repellat",
+    model_id='repellat',
 )
 
 res = s.model_customization.list(req)

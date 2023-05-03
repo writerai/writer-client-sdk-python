@@ -30,7 +30,7 @@ s = writer.Writer(
 
 
 req = operations.DeleteFileRequest(
-    file_id="iure",
+    file_id='iure',
 )
 
 res = s.files.delete(req)
@@ -58,7 +58,7 @@ s = writer.Writer(
 
 
 req = operations.GetFileRequest(
-    file_id="quidem",
+    file_id='quidem',
 )
 
 res = s.files.get(req)
@@ -114,8 +114,8 @@ s = writer.Writer(
 req = operations.UploadFileRequest(
     upload_model_file_request=shared.UploadModelFileRequest(
         file=shared.UploadModelFileRequestFile(
-            content="reiciendis".encode(),
-            file="est",
+            content='reiciendis'.encode(),
+            file='est',
         ),
     ),
 )

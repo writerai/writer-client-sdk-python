@@ -31,29 +31,29 @@ req = operations.GenerateContentRequest(
     generate_template_request=shared.GenerateTemplateRequest(
         inputs=[
             shared.MagicRequestInput(
-                name="Ben Mueller",
+                name='Ben Mueller',
                 value=[
-                    "magnam",
-                    "debitis",
+                    'magnam',
+                    'debitis',
                 ],
             ),
             shared.MagicRequestInput(
-                name="Lucia Goldner",
+                name='Lucia Goldner',
                 value=[
-                    "placeat",
-                    "voluptatum",
-                    "iusto",
-                    "excepturi",
+                    'placeat',
+                    'voluptatum',
+                    'iusto',
+                    'excepturi',
                 ],
             ),
             shared.MagicRequestInput(
-                name="Mrs. Sophie Smith MD",
+                name='Mrs. Sophie Smith MD',
                 value=[
-                    "ipsam",
+                    'ipsam',
                 ],
             ),
         ],
-        template_id="repellendus",
+        template_id='repellendus',
     ),
     team_id=957156,
 )
@@ -84,7 +84,7 @@ s = writer.Writer(
 
 req = operations.ListTemplatesRequest(
     team_id=140350,
-    template_id="at",
+    template_id='at',
 )
 
 res = s.co_write.list_templates(req)

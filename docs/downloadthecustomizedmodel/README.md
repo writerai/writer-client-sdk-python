@@ -27,8 +27,8 @@ s = writer.Writer(
 
 
 req = operations.FetchCustomizedModelFileRequest(
-    customization_id="in",
-    model_id="corporis",
+    customization_id='in',
+    model_id='corporis',
 )
 
 res = s.download_the_customized_model.fetch_file(req)

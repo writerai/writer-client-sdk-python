@@ -29,9 +29,9 @@ s = writer.Writer(
 req = operations.ListUsersRequest(
     limit=872651,
     offset=311860,
-    search="tempora",
-    sort_field="creationTime",
-    sort_order="desc",
+    search='tempora',
+    sort_field=operations.ListUsersSortFieldEnum.CREATION_TIME,
+    sort_order=operations.ListUsersSortOrderEnum.DESC,
 )
 
 res = s.user.list(req)
