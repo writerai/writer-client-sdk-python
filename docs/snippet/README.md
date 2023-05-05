@@ -27,7 +27,6 @@ s = writer.Writer(
     organization_id=581850,
 )
 
-
 req = operations.DeleteSnippetsRequest(
     x_request_id='numquam',
     ids=[
@@ -59,7 +58,6 @@ s = writer.Writer(
     ),
     organization_id=623510,
 )
-
 
 req = operations.FindSnippetsRequest(
     limit=158969,
@@ -103,7 +101,6 @@ s = writer.Writer(
     ),
     organization_id=622846,
 )
-
 
 req = operations.UpdateSnippetsRequest(
     request_body=[

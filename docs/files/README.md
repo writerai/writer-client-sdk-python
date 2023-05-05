@@ -28,7 +28,6 @@ s = writer.Writer(
     organization_id=613064,
 )
 
-
 req = operations.DeleteFileRequest(
     file_id='iure',
 )
@@ -55,7 +54,6 @@ s = writer.Writer(
     ),
     organization_id=902349,
 )
-
 
 req = operations.GetFileRequest(
     file_id='quidem',
@@ -84,7 +82,6 @@ s = writer.Writer(
     organization_id=99280,
 )
 
-
 req = operations.ListFilesRequest()
 
 res = s.files.list(req)
@@ -109,7 +106,6 @@ s = writer.Writer(
     ),
     organization_id=60225,
 )
-
 
 req = operations.UploadFileRequest(
     upload_model_file_request=shared.UploadModelFileRequest(

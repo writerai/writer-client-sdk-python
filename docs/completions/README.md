@@ -26,7 +26,6 @@ s = writer.Writer(
     organization_id=870088,
 )
 
-
 req = operations.CreateCompletionRequest(
     completion_request=shared.CompletionRequest(
         best_of=978619,
@@ -68,7 +67,6 @@ s = writer.Writer(
     ),
     organization_id=537373,
 )
-
 
 req = operations.CreateModelCustomizationCompletionRequest(
     completion_request=shared.CompletionRequest(

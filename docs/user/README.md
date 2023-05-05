@@ -25,7 +25,6 @@ s = writer.Writer(
     organization_id=55,
 )
 
-
 req = operations.ListUsersRequest(
     limit=872651,
     offset=311860,

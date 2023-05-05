@@ -24,6 +24,7 @@ class ModelCustomization:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def create(self, request: operations.CreateModelCustomizationRequest) -> operations.CreateModelCustomizationResponse:
         r"""Create model customization"""
         base_url = self._server_url
@@ -59,6 +60,7 @@ class ModelCustomization:
 
         return res
 
+    
     def delete(self, request: operations.DeleteModelCustomizationRequest) -> operations.DeleteModelCustomizationResponse:
         r"""Delete Model customization"""
         base_url = self._server_url
@@ -88,6 +90,7 @@ class ModelCustomization:
 
         return res
 
+    
     def get(self, request: operations.GetModelCustomizationRequest) -> operations.GetModelCustomizationResponse:
         r"""Get model customization"""
         base_url = self._server_url
@@ -117,6 +120,7 @@ class ModelCustomization:
 
         return res
 
+    
     def list(self, request: operations.ListModelCustomizationsRequest) -> operations.ListModelCustomizationsResponse:
         r"""List model customizations"""
         base_url = self._server_url

@@ -24,6 +24,7 @@ class Content:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def check(self, request: operations.ContentCheckRequest) -> operations.ContentCheckResponse:
         r"""Check your content against your preset styleguide."""
         base_url = self._server_url
@@ -59,6 +60,7 @@ class Content:
 
         return res
 
+    
     def correct(self, request: operations.ContentCorrectRequest) -> operations.ContentCorrectResponse:
         r"""Apply the style guide suggestions directly to your content."""
         base_url = self._server_url

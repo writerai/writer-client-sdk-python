@@ -28,7 +28,6 @@ s = writer.Writer(
     organization_id=653140,
 )
 
-
 req = operations.CreateModelCustomizationRequest(
     create_customization_request=shared.CreateCustomizationRequest(
         additional_hyper_parameters=shared.HyperParameters(
@@ -69,7 +68,6 @@ s = writer.Writer(
     organization_id=988374,
 )
 
-
 req = operations.DeleteModelCustomizationRequest(
     customization_id='sapiente',
     model_id='architecto',
@@ -98,7 +96,6 @@ s = writer.Writer(
     organization_id=652790,
 )
 
-
 req = operations.GetModelCustomizationRequest(
     customization_id='dolorem',
     model_id='culpa',
@@ -126,7 +123,6 @@ s = writer.Writer(
     ),
     organization_id=161309,
 )
-
 
 req = operations.ListModelCustomizationsRequest(
     model_id='repellat',

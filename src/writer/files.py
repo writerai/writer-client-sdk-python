@@ -24,6 +24,7 @@ class Files:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def delete(self, request: operations.DeleteFileRequest) -> operations.DeleteFileResponse:
         r"""Delete file"""
         base_url = self._server_url
@@ -53,6 +54,7 @@ class Files:
 
         return res
 
+    
     def get(self, request: operations.GetFileRequest) -> operations.GetFileResponse:
         r"""Get file"""
         base_url = self._server_url
@@ -82,6 +84,7 @@ class Files:
 
         return res
 
+    
     def list(self, request: operations.ListFilesRequest) -> operations.ListFilesResponse:
         r"""List files"""
         base_url = self._server_url
@@ -111,6 +114,7 @@ class Files:
 
         return res
 
+    
     def upload(self, request: operations.UploadFileRequest) -> operations.UploadFileResponse:
         r"""Upload file"""
         base_url = self._server_url

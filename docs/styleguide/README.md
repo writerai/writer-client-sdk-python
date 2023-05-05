@@ -26,7 +26,6 @@ s = writer.Writer(
     organization_id=100226,
 )
 
-
 req = operations.PageDetailsRequest(
     page_id=99569,
 )
@@ -53,7 +52,6 @@ s = writer.Writer(
     ),
     organization_id=919483,
 )
-
 
 req = operations.ListPagesRequest(
     limit=352312,

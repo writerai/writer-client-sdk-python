@@ -24,6 +24,7 @@ class Snippet:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def delete(self, request: operations.DeleteSnippetsRequest) -> operations.DeleteSnippetsResponse:
         r"""Delete snippets"""
         base_url = self._server_url
@@ -55,6 +56,7 @@ class Snippet:
 
         return res
 
+    
     def find(self, request: operations.FindSnippetsRequest) -> operations.FindSnippetsResponse:
         r"""Find snippets"""
         base_url = self._server_url
@@ -85,6 +87,7 @@ class Snippet:
 
         return res
 
+    
     def update(self, request: operations.UpdateSnippetsRequest) -> operations.UpdateSnippetsResponse:
         r"""Update snippets"""
         base_url = self._server_url

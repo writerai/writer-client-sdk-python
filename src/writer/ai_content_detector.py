@@ -24,6 +24,7 @@ class AIContentDetector:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def detect(self, request: operations.DetectContentRequest) -> operations.DetectContentResponse:
         r"""Content detector api"""
         base_url = self._server_url

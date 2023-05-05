@@ -26,7 +26,6 @@ s = writer.Writer(
     organization_id=149675,
 )
 
-
 req = operations.ContentCheckRequest(
     content_request=shared.ContentRequest(
         content='iste',
@@ -74,7 +73,6 @@ s = writer.Writer(
     ),
     organization_id=616934,
 )
-
 
 req = operations.ContentCorrectRequest(
     content_request=shared.ContentRequest(

@@ -28,7 +28,6 @@ s = writer.Writer(
     organization_id=998848,
 )
 
-
 req = operations.AddTermsRequest(
     create_terms_request=shared.CreateTermsRequest(
         fail_handling=shared.CreateTermsRequestFailHandlingEnum.VALIDATE_ONLY,
@@ -136,7 +135,6 @@ s = writer.Writer(
     organization_id=749999,
 )
 
-
 req = operations.DeleteTermsRequest(
     x_request_id='dolores',
     ids=[
@@ -168,7 +166,6 @@ s = writer.Writer(
     ),
     organization_id=338985,
 )
-
 
 req = operations.FindTermsRequest(
     limit=199996,
@@ -207,7 +204,6 @@ s = writer.Writer(
     ),
     organization_id=608253,
 )
-
 
 req = operations.UpdateTermsRequest(
     update_terms_request=shared.UpdateTermsRequest(

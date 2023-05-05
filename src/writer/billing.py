@@ -24,6 +24,7 @@ class Billing:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def get_subscription_details(self) -> operations.GetSubscriptionDetailsResponse:
         r"""Get your organization subscription details"""
         base_url = self._server_url

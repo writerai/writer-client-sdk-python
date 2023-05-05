@@ -10,7 +10,6 @@ s = writer.Writer(
     organization_id=548814,
 )
 
-
 req = operations.DetectContentRequest(
     content_detector_request=shared.ContentDetectorRequest(
         input='provident',

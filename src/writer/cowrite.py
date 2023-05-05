@@ -24,6 +24,7 @@ class CoWrite:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def generate_content(self, request: operations.GenerateContentRequest) -> operations.GenerateContentResponse:
         r"""Generate content using predefined templates"""
         base_url = self._server_url
@@ -59,6 +60,7 @@ class CoWrite:
 
         return res
 
+    
     def list_templates(self, request: operations.ListTemplatesRequest) -> operations.ListTemplatesResponse:
         r"""Get a list of your existing CoWrite templates"""
         base_url = self._server_url

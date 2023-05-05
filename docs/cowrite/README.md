@@ -26,7 +26,6 @@ s = writer.Writer(
     organization_id=857946,
 )
 
-
 req = operations.GenerateContentRequest(
     generate_template_request=shared.GenerateTemplateRequest(
         inputs=[
@@ -80,7 +79,6 @@ s = writer.Writer(
     ),
     organization_id=778157,
 )
-
 
 req = operations.ListTemplatesRequest(
     team_id=140350,

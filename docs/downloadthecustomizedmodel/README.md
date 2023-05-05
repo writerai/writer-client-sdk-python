@@ -25,7 +25,6 @@ s = writer.Writer(
     organization_id=681820,
 )
 
-
 req = operations.FetchCustomizedModelFileRequest(
     customization_id='in',
     model_id='corporis',

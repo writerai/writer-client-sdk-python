@@ -24,6 +24,7 @@ class Models:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def list(self, request: operations.ListModelsRequest) -> operations.ListModelsResponse:
         r"""List available LLM models"""
         base_url = self._server_url

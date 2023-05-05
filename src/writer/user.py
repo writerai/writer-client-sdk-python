@@ -24,6 +24,7 @@ class User:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def list(self, request: operations.ListUsersRequest) -> operations.ListUsersResponse:
         r"""List users"""
         base_url = self._server_url

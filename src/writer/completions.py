@@ -24,6 +24,7 @@ class Completions:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def create(self, request: operations.CreateCompletionRequest) -> operations.CreateCompletionResponse:
         r"""Create completion for LLM model"""
         base_url = self._server_url
@@ -59,6 +60,7 @@ class Completions:
 
         return res
 
+    
     def create_model_customization_completion(self, request: operations.CreateModelCustomizationCompletionRequest) -> operations.CreateModelCustomizationCompletionResponse:
         r"""Create completion for LLM customization model"""
         base_url = self._server_url

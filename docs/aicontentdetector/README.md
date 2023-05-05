@@ -25,7 +25,6 @@ s = writer.Writer(
     organization_id=715190,
 )
 
-
 req = operations.DetectContentRequest(
     content_detector_request=shared.ContentDetectorRequest(
         input='quibusdam',

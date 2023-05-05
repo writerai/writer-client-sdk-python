@@ -24,6 +24,7 @@ class Styleguide:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def get(self, request: operations.PageDetailsRequest) -> operations.PageDetailsResponse:
         r"""Page details"""
         base_url = self._server_url
@@ -53,6 +54,7 @@ class Styleguide:
 
         return res
 
+    
     def list_pages(self, request: operations.ListPagesRequest) -> operations.ListPagesResponse:
         r"""List your styleguide pages"""
         base_url = self._server_url

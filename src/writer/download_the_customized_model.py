@@ -24,6 +24,7 @@ class DownloadTheCustomizedModel:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def fetch_file(self, request: operations.FetchCustomizedModelFileRequest) -> operations.FetchCustomizedModelFileResponse:
         r"""Download your fine-tuned model (available only for Palmyra Base and Palmyra Large)"""
         base_url = self._server_url

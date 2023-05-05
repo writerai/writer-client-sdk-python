@@ -25,7 +25,6 @@ s = writer.Writer(
     organization_id=653108,
 )
 
-
 req = operations.ListModelsRequest()
 
 res = s.models.list(req)

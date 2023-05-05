@@ -24,6 +24,7 @@ class Terminology:
         self._gen_version = gen_version
         self._globals = gbls
         
+    
     def add(self, request: operations.AddTermsRequest) -> operations.AddTermsResponse:
         r"""Add terms"""
         base_url = self._server_url
@@ -59,6 +60,7 @@ class Terminology:
 
         return res
 
+    
     def delete(self, request: operations.DeleteTermsRequest) -> operations.DeleteTermsResponse:
         r"""Delete terms"""
         base_url = self._server_url
@@ -90,6 +92,7 @@ class Terminology:
 
         return res
 
+    
     def find(self, request: operations.FindTermsRequest) -> operations.FindTermsResponse:
         r"""Find terms"""
         base_url = self._server_url
@@ -120,6 +123,7 @@ class Terminology:
 
         return res
 
+    
     def update(self, request: operations.UpdateTermsRequest) -> operations.UpdateTermsResponse:
         r"""Update terms"""
         base_url = self._server_url
