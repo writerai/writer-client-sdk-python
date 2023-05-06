@@ -55,8 +55,8 @@ class Writer:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "0.11.0"
-    _gen_version: str = "2.26.0"
+    _sdk_version: str = "0.11.1"
+    _gen_version: str = "2.26.1"
     _globals: dict[str, dict[str, dict[str, Any]]]
 
     def __init__(self,
