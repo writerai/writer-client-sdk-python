@@ -2,14 +2,14 @@ configVersion: 1.0.0
 management:
   docChecksum: 55a1df383e1db4d900f22f65b739c1d5
   docVersion: "1.6"
-  speakeasyVersion: 1.31.1
-  generationVersion: 2.27.0
+  speakeasyVersion: 1.32.0
+  generationVersion: 2.28.0
 generation:
-  telemetryEnabled: false
   sdkClassName: writer
   singleTagPerOp: false
+  telemetryEnabled: false
 python:
-  version: 0.12.0
+  version: 0.13.0
   author: writerai
   description: Python SDK for Writer API
   maxMethodParams: 0
