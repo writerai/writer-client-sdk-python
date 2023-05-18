@@ -30,12 +30,13 @@ class User:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/user'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListUsersRequest, request, self._globals)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

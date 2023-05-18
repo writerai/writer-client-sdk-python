@@ -30,13 +30,13 @@ class ModelCustomization:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreateModelCustomizationRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization', request, self._globals)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "create_customization_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -66,11 +66,12 @@ class ModelCustomization:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteModelCustomizationRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization/{customizationId}', request, self._globals)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteModelCustomizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -96,11 +97,12 @@ class ModelCustomization:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetModelCustomizationRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization/{customizationId}', request, self._globals)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetModelCustomizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -126,11 +128,12 @@ class ModelCustomization:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListModelCustomizationsRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization', request, self._globals)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListModelCustomizationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

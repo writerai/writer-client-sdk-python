@@ -30,13 +30,13 @@ class Completions:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreateCompletionRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/completions', request, self._globals)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "completion_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -66,13 +66,13 @@ class Completions:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreateModelCustomizationCompletionRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization/{customizationId}/completions', request, self._globals)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "completion_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         

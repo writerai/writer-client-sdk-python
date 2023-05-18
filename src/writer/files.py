@@ -30,11 +30,12 @@ class Files:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteFileRequest, base_url, '/llm/organization/{organizationId}/file/{fileId}', request, self._globals)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -60,11 +61,12 @@ class Files:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetFileRequest, base_url, '/llm/organization/{organizationId}/file/{fileId}', request, self._globals)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -90,11 +92,12 @@ class Files:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListFilesRequest, base_url, '/llm/organization/{organizationId}/file', request, self._globals)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -120,13 +123,13 @@ class Files:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UploadFileRequest, base_url, '/llm/organization/{organizationId}/file', request, self._globals)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "upload_model_file_request", 'multipart')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
