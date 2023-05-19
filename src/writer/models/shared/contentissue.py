@@ -7,7 +7,7 @@ from enum import Enum
 from typing import Any, Optional
 from writer import utils
 
-class ContentIssueServiceEnum(str, Enum):
+class ContentIssueService(str, Enum):
     COMMON_MISTAKES = 'common-mistakes'
     BANNED_WORDS = 'banned-words'
     DICTIONARY = 'dictionary'
@@ -52,7 +52,7 @@ class ContentIssueServiceEnum(str, Enum):
 class ContentIssue:
     
     from_: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from') }})
-    service: ContentIssueServiceEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('service') }})
+    service: ContentIssueService = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('service') }})
     until: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('until') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     meta: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})

@@ -8,7 +8,7 @@ from ..shared import paginatedresult_pagepublicapiresponse as shared_paginatedre
 from enum import Enum
 from typing import Optional
 
-class ListPagesStatusEnum(str, Enum):
+class ListPagesStatus(str, Enum):
     LIVE = 'live'
     OFFLINE = 'offline'
 
@@ -18,7 +18,7 @@ class ListPagesRequest:
     
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
-    status: Optional[ListPagesStatusEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'status', 'style': 'form', 'explode': True }})
+    status: Optional[ListPagesStatus] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'status', 'style': 'form', 'explode': True }})
     
 
 @dataclasses.dataclass

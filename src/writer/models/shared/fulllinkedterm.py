@@ -8,7 +8,7 @@ from enum import Enum
 from typing import Optional
 from writer import utils
 
-class FullLinkedTermPosEnum(str, Enum):
+class FullLinkedTermPos(str, Enum):
     NOUN = 'noun'
     VERB = 'verb'
     ADVERB = 'adverb'
@@ -25,5 +25,5 @@ class FullLinkedTerm:
     term_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termId') }})
     approved_term_extension: Optional[shared_approvedtermextension.ApprovedTermExtension] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approvedTermExtension'), 'exclude': lambda f: f is None }})
     id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    pos: Optional[FullLinkedTermPosEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pos'), 'exclude': lambda f: f is None }})
+    pos: Optional[FullLinkedTermPos] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pos'), 'exclude': lambda f: f is None }})
     

@@ -12,13 +12,13 @@ from enum import Enum
 from typing import Optional
 from writer import utils
 
-class TermUpdatePosEnum(str, Enum):
+class TermUpdatePos(str, Enum):
     NOUN = 'noun'
     VERB = 'verb'
     ADVERB = 'adverb'
     ADJECTIVE = 'adjective'
 
-class TermUpdateTypeEnum(str, Enum):
+class TermUpdateType(str, Enum):
     APPROVED = 'approved'
     BANNED = 'banned'
     PENDING = 'pending'
@@ -31,13 +31,13 @@ class TermUpdate:
     case_sensitive: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('caseSensitive') }})
     id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     term: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('term') }})
-    type: TermUpdateTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: TermUpdateType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     approved_term_extension: Optional[shared_approvedtermextensioncreate.ApprovedTermExtensionCreate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approvedTermExtension'), 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     examples: Optional[list[shared_termexamplecreate.TermExampleCreate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('examples'), 'exclude': lambda f: f is None }})
     highlight: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highlight'), 'exclude': lambda f: f is None }})
     linked_terms: Optional[list[shared_linkedtermcreate.LinkedTermCreate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('linkedTerms'), 'exclude': lambda f: f is None }})
     mistakes: Optional[list[shared_termmistakecreate.TermMistakeCreate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mistakes'), 'exclude': lambda f: f is None }})
-    pos: Optional[TermUpdatePosEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pos'), 'exclude': lambda f: f is None }})
+    pos: Optional[TermUpdatePos] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pos'), 'exclude': lambda f: f is None }})
     tags: Optional[list[shared_termtagcreate.TermTagCreate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags'), 'exclude': lambda f: f is None }})
     

@@ -29,8 +29,8 @@ req = operations.ListUsersRequest(
     limit=872651,
     offset=311860,
     search='tempora',
-    sort_field=operations.ListUsersSortFieldEnum.CREATION_TIME,
-    sort_order=operations.ListUsersSortOrderEnum.DESC,
+    sort_field=operations.ListUsersSortField.CREATION_TIME,
+    sort_order=operations.ListUsersSortOrder.DESC,
 )
 
 res = s.user.list(req)

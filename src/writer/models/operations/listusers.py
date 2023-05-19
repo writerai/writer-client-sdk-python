@@ -8,7 +8,7 @@ from ..shared import paginatedresult_userpublicresponse as shared_paginatedresul
 from enum import Enum
 from typing import Optional
 
-class ListUsersSortFieldEnum(str, Enum):
+class ListUsersSortField(str, Enum):
     ID = 'id'
     NAME = 'name'
     CREATION_TIME = 'creationTime'
@@ -17,7 +17,7 @@ class ListUsersSortFieldEnum(str, Enum):
     EMAIL = 'email'
     LAST_SEEN = 'lastSeen'
 
-class ListUsersSortOrderEnum(str, Enum):
+class ListUsersSortOrder(str, Enum):
     ASC = 'asc'
     DESC = 'desc'
 
@@ -28,8 +28,8 @@ class ListUsersRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     search: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'search', 'style': 'form', 'explode': True }})
-    sort_field: Optional[ListUsersSortFieldEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
-    sort_order: Optional[ListUsersSortOrderEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
+    sort_field: Optional[ListUsersSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
+    sort_order: Optional[ListUsersSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
     
 
 @dataclasses.dataclass

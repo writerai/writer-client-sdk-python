@@ -31,6 +31,7 @@ class Styleguide:
         
         url = utils.generate_url(operations.PageDetailsRequest, base_url, '/styleguide/page/{pageId}', request, self._globals)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -63,6 +64,7 @@ class Styleguide:
         url = base_url.removesuffix('/') + '/styleguide/page'
         headers = {}
         query_params = utils.get_query_params(operations.ListPagesRequest, request, self._globals)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

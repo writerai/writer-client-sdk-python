@@ -30,7 +30,7 @@ s = writer.Writer(
 
 req = operations.AddTermsRequest(
     create_terms_request=shared.CreateTermsRequest(
-        fail_handling=shared.CreateTermsRequestFailHandlingEnum.VALIDATE_ONLY,
+        fail_handling=shared.CreateTermsRequestFailHandling.VALIDATE_ONLY,
         models=[
             shared.TermCreate(
                 approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -43,19 +43,19 @@ req = operations.AddTermsRequest(
                 examples=[
                     shared.TermExampleCreate(
                         example='accusantium',
-                        type=shared.TermExampleCreateTypeEnum.GOOD,
+                        type=shared.TermExampleCreateType.GOOD,
                     ),
                     shared.TermExampleCreate(
                         example='praesentium',
-                        type=shared.TermExampleCreateTypeEnum.BAD,
+                        type=shared.TermExampleCreateType.BAD,
                     ),
                     shared.TermExampleCreate(
                         example='magni',
-                        type=shared.TermExampleCreateTypeEnum.GOOD,
+                        type=shared.TermExampleCreateType.GOOD,
                     ),
                     shared.TermExampleCreate(
                         example='quo',
-                        type=shared.TermExampleCreateTypeEnum.BAD,
+                        type=shared.TermExampleCreateType.BAD,
                     ),
                 ],
                 highlight=False,
@@ -81,23 +81,23 @@ req = operations.AddTermsRequest(
                     shared.TermMistakeCreate(
                         case_sensitive=False,
                         mistake='ipsam',
-                        pos=shared.TermMistakeCreatePosEnum.VERB,
+                        pos=shared.TermMistakeCreatePos.VERB,
                         reference='autem',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
                         mistake='nam',
-                        pos=shared.TermMistakeCreatePosEnum.NOUN,
+                        pos=shared.TermMistakeCreatePos.NOUN,
                         reference='pariatur',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
                         mistake='nemo',
-                        pos=shared.TermMistakeCreatePosEnum.ADJECTIVE,
+                        pos=shared.TermMistakeCreatePos.ADJECTIVE,
                         reference='perferendis',
                     ),
                 ],
-                pos=shared.TermCreatePosEnum.ADJECTIVE,
+                pos=shared.TermCreatePos.ADJECTIVE,
                 reference='amet',
                 tags=[
                     shared.TermTagCreate(
@@ -105,7 +105,7 @@ req = operations.AddTermsRequest(
                     ),
                 ],
                 term='corporis',
-                type=shared.TermCreateTypeEnum.PENDING,
+                type=shared.TermCreateType.PENDING,
             ),
         ],
     ),
@@ -170,16 +170,16 @@ s = writer.Writer(
 req = operations.FindTermsRequest(
     limit=199996,
     offset=179490,
-    part_of_speech=operations.FindTermsPartOfSpeechEnum.NOUN,
-    sort_field=operations.FindTermsSortFieldEnum.TERM,
-    sort_order=operations.FindTermsSortOrderEnum.DESC,
+    part_of_speech=operations.FindTermsPartOfSpeech.NOUN,
+    sort_field=operations.FindTermsSortField.TERM,
+    sort_order=operations.FindTermsSortOrder.DESC,
     tags=[
         'dolor',
         'vero',
     ],
     team_id=345352,
     term='hic',
-    type=operations.FindTermsTypeEnum.PENDING,
+    type=operations.FindTermsType.PENDING,
 )
 
 res = s.terminology.find(req)
@@ -207,7 +207,7 @@ s = writer.Writer(
 
 req = operations.UpdateTermsRequest(
     update_terms_request=shared.UpdateTermsRequest(
-        fail_handling=shared.UpdateTermsRequestFailHandlingEnum.SKIP,
+        fail_handling=shared.UpdateTermsRequestFailHandling.SKIP,
         models=[
             shared.TermUpdate(
                 approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -220,19 +220,19 @@ req = operations.UpdateTermsRequest(
                 examples=[
                     shared.TermExampleCreate(
                         example='consequuntur',
-                        type=shared.TermExampleCreateTypeEnum.BAD,
+                        type=shared.TermExampleCreateType.BAD,
                     ),
                     shared.TermExampleCreate(
                         example='error',
-                        type=shared.TermExampleCreateTypeEnum.GOOD,
+                        type=shared.TermExampleCreateType.GOOD,
                     ),
                     shared.TermExampleCreate(
                         example='occaecati',
-                        type=shared.TermExampleCreateTypeEnum.BAD,
+                        type=shared.TermExampleCreateType.BAD,
                     ),
                     shared.TermExampleCreate(
                         example='adipisci',
-                        type=shared.TermExampleCreateTypeEnum.BAD,
+                        type=shared.TermExampleCreateType.BAD,
                     ),
                 ],
                 highlight=False,
@@ -251,30 +251,30 @@ req = operations.UpdateTermsRequest(
                     shared.TermMistakeCreate(
                         case_sensitive=False,
                         mistake='nobis',
-                        pos=shared.TermMistakeCreatePosEnum.ADVERB,
+                        pos=shared.TermMistakeCreatePos.ADVERB,
                         reference='delectus',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
                         mistake='quaerat',
-                        pos=shared.TermMistakeCreatePosEnum.ADVERB,
+                        pos=shared.TermMistakeCreatePos.ADVERB,
                         reference='aliquid',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
                         mistake='dolorem',
-                        pos=shared.TermMistakeCreatePosEnum.NOUN,
+                        pos=shared.TermMistakeCreatePos.NOUN,
                         reference='dolor',
                     ),
                 ],
-                pos=shared.TermUpdatePosEnum.NOUN,
+                pos=shared.TermUpdatePos.NOUN,
                 tags=[
                     shared.TermTagCreate(
                         tag='hic',
                     ),
                 ],
                 term='excepturi',
-                type=shared.TermUpdateTypeEnum.PENDING,
+                type=shared.TermUpdateType.PENDING,
             ),
             shared.TermUpdate(
                 approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -287,11 +287,11 @@ req = operations.UpdateTermsRequest(
                 examples=[
                     shared.TermExampleCreate(
                         example='reiciendis',
-                        type=shared.TermExampleCreateTypeEnum.GOOD,
+                        type=shared.TermExampleCreateType.GOOD,
                     ),
                     shared.TermExampleCreate(
                         example='dolorum',
-                        type=shared.TermExampleCreateTypeEnum.GOOD,
+                        type=shared.TermExampleCreateType.GOOD,
                     ),
                 ],
                 highlight=False,
@@ -306,17 +306,17 @@ req = operations.UpdateTermsRequest(
                     shared.TermMistakeCreate(
                         case_sensitive=False,
                         mistake='quaerat',
-                        pos=shared.TermMistakeCreatePosEnum.ADJECTIVE,
+                        pos=shared.TermMistakeCreatePos.ADJECTIVE,
                         reference='quidem',
                     ),
                     shared.TermMistakeCreate(
                         case_sensitive=False,
                         mistake='voluptatibus',
-                        pos=shared.TermMistakeCreatePosEnum.VERB,
+                        pos=shared.TermMistakeCreatePos.VERB,
                         reference='natus',
                     ),
                 ],
-                pos=shared.TermUpdatePosEnum.NOUN,
+                pos=shared.TermUpdatePos.NOUN,
                 tags=[
                     shared.TermTagCreate(
                         tag='sit',
@@ -329,7 +329,7 @@ req = operations.UpdateTermsRequest(
                     ),
                 ],
                 term='soluta',
-                type=shared.TermUpdateTypeEnum.PENDING,
+                type=shared.TermUpdateType.PENDING,
             ),
             shared.TermUpdate(
                 approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -342,11 +342,11 @@ req = operations.UpdateTermsRequest(
                 examples=[
                     shared.TermExampleCreate(
                         example='dolorum',
-                        type=shared.TermExampleCreateTypeEnum.BAD,
+                        type=shared.TermExampleCreateType.BAD,
                     ),
                     shared.TermExampleCreate(
                         example='omnis',
-                        type=shared.TermExampleCreateTypeEnum.BAD,
+                        type=shared.TermExampleCreateType.BAD,
                     ),
                 ],
                 highlight=False,
@@ -373,11 +373,11 @@ req = operations.UpdateTermsRequest(
                     shared.TermMistakeCreate(
                         case_sensitive=False,
                         mistake='optio',
-                        pos=shared.TermMistakeCreatePosEnum.ADJECTIVE,
+                        pos=shared.TermMistakeCreatePos.ADJECTIVE,
                         reference='ad',
                     ),
                 ],
-                pos=shared.TermUpdatePosEnum.ADJECTIVE,
+                pos=shared.TermUpdatePos.ADJECTIVE,
                 tags=[
                     shared.TermTagCreate(
                         tag='deserunt',
@@ -387,7 +387,7 @@ req = operations.UpdateTermsRequest(
                     ),
                 ],
                 term='minima',
-                type=shared.TermUpdateTypeEnum.PENDING,
+                type=shared.TermUpdateType.PENDING,
             ),
         ],
     ),

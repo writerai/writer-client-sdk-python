@@ -10,7 +10,7 @@ from marshmallow import fields
 from typing import Optional
 from writer import utils
 
-class UserPublicResponseAccountStatusEnum(str, Enum):
+class UserPublicResponseAccountStatus(str, Enum):
     INVITED = 'invited'
     SIGNED_UP = 'signed_up'
 
@@ -19,7 +19,7 @@ class UserPublicResponseAccountStatusEnum(str, Enum):
 @dataclasses.dataclass
 class UserPublicResponse:
     
-    account_status: UserPublicResponseAccountStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accountStatus') }})
+    account_status: UserPublicResponseAccountStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accountStatus') }})
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     first_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('firstName') }})
     full_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fullName') }})

@@ -11,14 +11,14 @@ from enum import Enum
 from marshmallow import fields
 from writer import utils
 
-class SubscriptionPublicResponseAPIProductNameEnum(str, Enum):
+class SubscriptionPublicResponseAPIProductName(str, Enum):
     FREE = 'free'
     PRO = 'pro'
     TEAM = 'team'
     ENTERPRISE = 'enterprise'
     LEGACY = 'legacy'
 
-class SubscriptionPublicResponseAPIStatusEnum(str, Enum):
+class SubscriptionPublicResponseAPIStatus(str, Enum):
     TRIALING = 'trialing'
     ACTIVE = 'active'
     PAST_DUE = 'past_due'
@@ -34,9 +34,9 @@ class SubscriptionPublicResponseAPI:
     
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     meta: shared_metadata.MetaData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta') }})
-    product_name: SubscriptionPublicResponseAPIProductNameEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('productName') }})
+    product_name: SubscriptionPublicResponseAPIProductName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('productName') }})
     seats: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seats') }})
-    status: SubscriptionPublicResponseAPIStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: SubscriptionPublicResponseAPIStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     subscription_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionId') }})
     usage: shared_usage.Usage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('usage') }})
     

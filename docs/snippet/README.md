@@ -68,8 +68,8 @@ req = operations.FindSnippetsRequest(
         'enim',
         'odit',
     ],
-    sort_field=operations.FindSnippetsSortFieldEnum.MODIFICATION_TIME,
-    sort_order=operations.FindSnippetsSortOrderEnum.ASC,
+    sort_field=operations.FindSnippetsSortField.MODIFICATION_TIME,
+    sort_order=operations.FindSnippetsSortOrder.ASC,
     tags=[
         'ipsam',
         'id',

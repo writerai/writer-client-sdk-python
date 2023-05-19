@@ -8,12 +8,12 @@ from ..shared import paginatedresult_snippetwithuser as shared_paginatedresult_s
 from enum import Enum
 from typing import Optional
 
-class FindSnippetsSortFieldEnum(str, Enum):
+class FindSnippetsSortField(str, Enum):
     SHORTCUT = 'shortcut'
     CREATION_TIME = 'creationTime'
     MODIFICATION_TIME = 'modificationTime'
 
-class FindSnippetsSortOrderEnum(str, Enum):
+class FindSnippetsSortOrder(str, Enum):
     ASC = 'asc'
     DESC = 'desc'
 
@@ -27,8 +27,8 @@ class FindSnippetsRequest:
     organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     search: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'search', 'style': 'form', 'explode': True }})
     shortcuts: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'shortcuts', 'style': 'form', 'explode': True }})
-    sort_field: Optional[FindSnippetsSortFieldEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
-    sort_order: Optional[FindSnippetsSortOrderEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
+    sort_field: Optional[FindSnippetsSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
+    sort_order: Optional[FindSnippetsSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
     tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'tags', 'style': 'form', 'explode': True }})
     
 

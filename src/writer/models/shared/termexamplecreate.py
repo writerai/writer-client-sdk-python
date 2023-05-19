@@ -6,7 +6,7 @@ from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from writer import utils
 
-class TermExampleCreateTypeEnum(str, Enum):
+class TermExampleCreateType(str, Enum):
     GOOD = 'good'
     BAD = 'bad'
 
@@ -16,5 +16,5 @@ class TermExampleCreateTypeEnum(str, Enum):
 class TermExampleCreate:
     
     example: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('example') }})
-    type: TermExampleCreateTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: TermExampleCreateType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     

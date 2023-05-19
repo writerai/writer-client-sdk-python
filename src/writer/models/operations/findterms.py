@@ -8,23 +8,23 @@ from ..shared import paginatedresult_fulltermwithuser as shared_paginatedresult_
 from enum import Enum
 from typing import Optional
 
-class FindTermsPartOfSpeechEnum(str, Enum):
+class FindTermsPartOfSpeech(str, Enum):
     NOUN = 'noun'
     VERB = 'verb'
     ADVERB = 'adverb'
     ADJECTIVE = 'adjective'
 
-class FindTermsSortFieldEnum(str, Enum):
+class FindTermsSortField(str, Enum):
     TERM = 'term'
     CREATION_TIME = 'creationTime'
     MODIFICATION_TIME = 'modificationTime'
     TYPE = 'type'
 
-class FindTermsSortOrderEnum(str, Enum):
+class FindTermsSortOrder(str, Enum):
     ASC = 'asc'
     DESC = 'desc'
 
-class FindTermsTypeEnum(str, Enum):
+class FindTermsType(str, Enum):
     APPROVED = 'approved'
     BANNED = 'banned'
     PENDING = 'pending'
@@ -37,12 +37,12 @@ class FindTermsRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
-    part_of_speech: Optional[FindTermsPartOfSpeechEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'partOfSpeech', 'style': 'form', 'explode': True }})
-    sort_field: Optional[FindTermsSortFieldEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
-    sort_order: Optional[FindTermsSortOrderEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
+    part_of_speech: Optional[FindTermsPartOfSpeech] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'partOfSpeech', 'style': 'form', 'explode': True }})
+    sort_field: Optional[FindTermsSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
+    sort_order: Optional[FindTermsSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
     tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'tags', 'style': 'form', 'explode': True }})
     term: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'term', 'style': 'form', 'explode': True }})
-    type: Optional[FindTermsTypeEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
+    type: Optional[FindTermsType] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
     
 
 @dataclasses.dataclass
