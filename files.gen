@@ -1,3 +1,4 @@
+src/writer/sdkconfiguration.py
 src/writer/ai_content_detector.py
 src/writer/billing.py
 src/writer/cowrite.py
