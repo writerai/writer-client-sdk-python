@@ -17,8 +17,8 @@ class SDKConfiguration:
     server_idx: int = 0
     globals: dict[str, dict[str, dict[str, Any]]] = field(default_factory=dict)
     language: str = 'python'
-    sdk_version: str = '0.19.0'
-    gen_version: str = '2.35.3'
+    sdk_version: str = '0.19.1'
+    gen_version: str = '2.35.9'
 
     def get_server_details(self) -> tuple[str, dict[str, str]]:
         if self.server_url:
