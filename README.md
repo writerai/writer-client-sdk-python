@@ -34,7 +34,7 @@ from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(
-        api_key="YOUR_API_KEY_HERE",
+        api_key="",
     ),
     organization_id=548814,
 )
