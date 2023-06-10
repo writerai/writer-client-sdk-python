@@ -18,9 +18,9 @@ class FindSnippetsSortOrder(str, Enum):
     DESC = 'desc'
 
 
+
 @dataclasses.dataclass
 class FindSnippetsRequest:
-    
     team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
@@ -32,9 +32,11 @@ class FindSnippetsRequest:
     tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'tags', 'style': 'form', 'explode': True }})
     
 
+
+
+
 @dataclasses.dataclass
 class FindSnippetsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
@@ -43,3 +45,4 @@ class FindSnippetsResponse:
     paginated_result_snippet_with_user: Optional[shared_paginatedresult_snippetwithuser.PaginatedResultSnippetWithUser] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

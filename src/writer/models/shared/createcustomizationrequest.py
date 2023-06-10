@@ -9,9 +9,9 @@ from writer import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateCustomizationRequest:
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     training_dataset_file_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trainingDatasetFileId') }})
     additional_hyper_parameters: Optional[shared_hyperparameters.HyperParameters] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('additionalHyperParameters'), 'exclude': lambda f: f is None }})
@@ -22,3 +22,4 @@ class CreateCustomizationRequest:
     prompt_template: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('promptTemplate'), 'exclude': lambda f: f is None }})
     validation_dataset_file_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('validationDatasetFileId'), 'exclude': lambda f: f is None }})
     
+

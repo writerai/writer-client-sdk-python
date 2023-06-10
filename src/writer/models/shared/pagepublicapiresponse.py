@@ -18,9 +18,9 @@ class PagePublicAPIResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PagePublicAPIResponse:
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     order: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order') }})
@@ -31,3 +31,4 @@ class PagePublicAPIResponse:
     section: Optional[shared_sectioninfo.SectionInfo] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('section'), 'exclude': lambda f: f is None }})
     updated_by: Optional[shared_simpleuser.SimpleUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedBy'), 'exclude': lambda f: f is None }})
     
+

@@ -8,15 +8,17 @@ from ..shared import modelfilesresponse as shared_modelfilesresponse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ListFilesRequest:
-    
     organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
+
+
+
 @dataclasses.dataclass
 class ListFilesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
@@ -25,3 +27,4 @@ class ListFilesResponse:
     model_files_response: Optional[shared_modelfilesresponse.ModelFilesResponse] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

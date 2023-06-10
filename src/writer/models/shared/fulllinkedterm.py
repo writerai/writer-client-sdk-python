@@ -16,9 +16,9 @@ class FullLinkedTermPos(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class FullLinkedTerm:
-    
     case_sensitive: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('caseSensitive') }})
     linked_term_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('linkedTermId') }})
     term: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('term') }})
@@ -27,3 +27,4 @@ class FullLinkedTerm:
     id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     pos: Optional[FullLinkedTermPos] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pos'), 'exclude': lambda f: f is None }})
     
+

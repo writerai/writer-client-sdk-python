@@ -30,9 +30,9 @@ class FindTermsType(str, Enum):
     PENDING = 'pending'
 
 
+
 @dataclasses.dataclass
 class FindTermsRequest:
-    
     team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
@@ -45,9 +45,11 @@ class FindTermsRequest:
     type: Optional[FindTermsType] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
     
 
+
+
+
 @dataclasses.dataclass
 class FindTermsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
@@ -56,3 +58,4 @@ class FindTermsResponse:
     paginated_result_full_term_with_user: Optional[shared_paginatedresult_fulltermwithuser.PaginatedResultFullTermWithUser] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

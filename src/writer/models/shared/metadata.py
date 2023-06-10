@@ -15,9 +15,9 @@ class MetaDataTier(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class MetaData:
-    
     portal: dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('portal') }})
     reporting: dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reporting') }})
     snippets_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('snippetsCount') }})
@@ -27,3 +27,4 @@ class MetaData:
     terms_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termsCount') }})
     tier: Optional[MetaDataTier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tier'), 'exclude': lambda f: f is None }})
     
+

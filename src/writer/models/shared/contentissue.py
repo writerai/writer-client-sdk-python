@@ -48,9 +48,9 @@ class ContentIssueService(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ContentIssue:
-    
     from_: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from') }})
     service: ContentIssueService = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('service') }})
     until: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('until') }})
@@ -58,3 +58,4 @@ class ContentIssue:
     meta: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
     suggestions: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('suggestions'), 'exclude': lambda f: f is None }})
     
+

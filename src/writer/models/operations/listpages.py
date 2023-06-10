@@ -13,17 +13,19 @@ class ListPagesStatus(str, Enum):
     OFFLINE = 'offline'
 
 
+
 @dataclasses.dataclass
 class ListPagesRequest:
-    
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     status: Optional[ListPagesStatus] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'status', 'style': 'form', 'explode': True }})
     
 
+
+
+
 @dataclasses.dataclass
 class ListPagesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
@@ -32,3 +34,4 @@ class ListPagesResponse:
     paginated_result_page_public_api_response: Optional[shared_paginatedresult_pagepublicapiresponse.PaginatedResultPagePublicAPIResponse] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

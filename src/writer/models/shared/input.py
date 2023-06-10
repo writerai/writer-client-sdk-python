@@ -14,9 +14,9 @@ class InputType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Input:
-    
     dynamic: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dynamic') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     required: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('required') }})
@@ -28,3 +28,4 @@ class Input:
     subtitle: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subtitle'), 'exclude': lambda f: f is None }})
     unit_copy: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unitCopy'), 'exclude': lambda f: f is None }})
     
+

@@ -1,0 +1,16 @@
+# CreateCustomizationRequest
+
+
+## Fields
+
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `additional_hyper_parameters`                                       | [Optional[HyperParameters]](../../models/shared/hyperparameters.md) | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `batch_size`                                                        | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `description`                                                       | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `epochs`                                                            | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `learning_rate`                                                     | *Optional[float]*                                                   | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `name`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `prompt_template`                                                   | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `training_dataset_file_id`                                          | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `validation_dataset_file_id`                                        | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |

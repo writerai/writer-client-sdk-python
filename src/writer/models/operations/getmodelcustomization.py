@@ -8,17 +8,19 @@ from ..shared import modelcustomization as shared_modelcustomization
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetModelCustomizationRequest:
-    
     customization_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'customizationId', 'style': 'simple', 'explode': False }})
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})
     organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetModelCustomizationResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
@@ -27,3 +29,4 @@ class GetModelCustomizationResponse:
     model_customization: Optional[shared_modelcustomization.ModelCustomization] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

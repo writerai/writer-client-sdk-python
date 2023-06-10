@@ -9,18 +9,20 @@ from ..shared import failresponse as shared_failresponse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class CreateModelCustomizationCompletionRequest:
-    
     completion_request: shared_completionrequest.CompletionRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     customization_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'customizationId', 'style': 'simple', 'explode': False }})
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'modelId', 'style': 'simple', 'explode': False }})
     organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
 
+
+
+
 @dataclasses.dataclass
 class CreateModelCustomizationCompletionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     completion_response: Optional[shared_completionresponse.CompletionResponse] = dataclasses.field(default=None)
@@ -29,3 +31,4 @@ class CreateModelCustomizationCompletionResponse:
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -7,9 +7,9 @@ from writer import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ContentSettings:
-    
     age_and_family_status: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ageAndFamilyStatus') }})
     confidence: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confidence') }})
     content_safeguards: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contentSafeguards') }})
@@ -27,3 +27,4 @@ class ContentSettings:
     unclear_reference: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unclearReference') }})
     wordiness: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wordiness') }})
     
+
