@@ -13,7 +13,6 @@ src/writer/styleguide.py
 src/writer/terminology.py
 src/writer/user.py
 src/writer/sdk.py
-.gitignore
 pylintrc
 setup.py
 src/writer/__init__.py
