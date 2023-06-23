@@ -7,10 +7,11 @@ management:
 generation:
   telemetryEnabled: false
   sdkClassName: writer
-  sdkFlattening: false
+  sdkFlattening: true
   singleTagPerOp: false
 python:
   version: 0.4.0
+  maxMethodParams: 4
   author: writerai
   description: Python SDK for Writer API
   packageName: writerai
