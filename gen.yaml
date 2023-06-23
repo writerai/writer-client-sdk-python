@@ -9,7 +9,7 @@ generation:
   singleTagPerOp: false
   telemetryEnabled: false
 python:
-  version: 0.25.0
+  version: 0.25.1
   author: writerai
   description: Python SDK for Writer API
   maxMethodParams: 0
