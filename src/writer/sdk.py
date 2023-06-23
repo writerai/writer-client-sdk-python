@@ -6,6 +6,7 @@ from .billing import Billing
 from .completions import Completions
 from .content import Content
 from .cowrite import CoWrite
+from .document import Document
 from .download_the_customized_model import DownloadTheCustomizedModel
 from .files import Files
 from .modelcustomization import ModelCustomization
@@ -45,6 +46,8 @@ class Writer:
     r"""Methods related to Terminology"""
     user: User
     r"""Methods related to User"""
+    document: Document
+    r"""Methods related to document"""
 
     sdk_configuration: SDKConfiguration
 
@@ -106,4 +109,5 @@ class Writer:
         self.styleguide = Styleguide(self.sdk_configuration)
         self.terminology = Terminology(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
+        self.document = Document(self.sdk_configuration)
     

@@ -12,6 +12,7 @@ src/writer/snippet.py
 src/writer/styleguide.py
 src/writer/terminology.py
 src/writer/user.py
+src/writer/document.py
 src/writer/sdk.py
 pylintrc
 setup.py
@@ -48,6 +49,8 @@ src/writer/models/operations/deleteterms.py
 src/writer/models/operations/findterms.py
 src/writer/models/operations/updateterms.py
 src/writer/models/operations/listusers.py
+src/writer/models/operations/getdocumentdetails.py
+src/writer/models/operations/listteamdocuments.py
 src/writer/models/operations/__init__.py
 src/writer/models/shared/failresponse.py
 src/writer/models/shared/failmessage.py
@@ -111,6 +114,9 @@ src/writer/models/shared/updatetermsrequest.py
 src/writer/models/shared/termupdate.py
 src/writer/models/shared/paginatedresult_userpublicresponse.py
 src/writer/models/shared/userpublicresponse.py
+src/writer/models/shared/document.py
+src/writer/models/shared/briefdocuments.py
+src/writer/models/shared/briefdocument.py
 src/writer/models/shared/security.py
 src/writer/models/shared/__init__.py
 docs/sdks/writer/README.md
@@ -127,6 +133,7 @@ docs/sdks/snippet/README.md
 docs/sdks/styleguide/README.md
 docs/sdks/terminology/README.md
 docs/sdks/user/README.md
+docs/sdks/document/README.md
 USAGE.md
 docs/models/operations/detectcontentrequest.md
 docs/models/operations/detectcontentresponse.md
@@ -194,6 +201,12 @@ docs/models/operations/listuserssortfield.md
 docs/models/operations/listuserssortorder.md
 docs/models/operations/listusersrequest.md
 docs/models/operations/listusersresponse.md
+docs/models/operations/getdocumentdetailsrequest.md
+docs/models/operations/getdocumentdetailsresponse.md
+docs/models/operations/listteamdocumentssortfield.md
+docs/models/operations/listteamdocumentssortorder.md
+docs/models/operations/listteamdocumentsrequest.md
+docs/models/operations/listteamdocumentsresponse.md
 docs/models/shared/failresponse.md
 docs/models/shared/failmessage.md
 docs/models/shared/contentdetectorresponselabel.md
@@ -280,4 +293,9 @@ docs/models/shared/termupdate.md
 docs/models/shared/paginatedresultuserpublicresponse.md
 docs/models/shared/userpublicresponseaccountstatus.md
 docs/models/shared/userpublicresponse.md
+docs/models/shared/documentaccess.md
+docs/models/shared/document.md
+docs/models/shared/briefdocuments.md
+docs/models/shared/briefdocumentaccess.md
+docs/models/shared/briefdocument.md
 docs/models/shared/security.md
