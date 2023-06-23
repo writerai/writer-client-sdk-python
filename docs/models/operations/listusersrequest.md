@@ -1,0 +1,12 @@
+# ListUsersRequest
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `limit`                                                                       | *Optional[int]*                                                               | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `offset`                                                                      | *Optional[int]*                                                               | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `search`                                                                      | *Optional[str]*                                                               | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `sort_field`                                                                  | [Optional[ListUsersSortField]](../../models/operations/listuserssortfield.md) | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `sort_order`                                                                  | [Optional[ListUsersSortOrder]](../../models/operations/listuserssortorder.md) | :heavy_minus_sign:                                                            | N/A                                                                           |

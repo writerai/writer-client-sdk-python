@@ -1,0 +1,18 @@
+# Draft
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `body`                                                               | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `created_user_id`                                                    | *int*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `creation_time`                                                      | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `deleted`                                                            | *bool*                                                               | :heavy_check_mark:                                                   | N/A                                                                  |
+| `document_id`                                                        | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `id`                                                                 | *Optional[int]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `inputs`                                                             | *Any*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `organization_id`                                                    | *int*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `team_id`                                                            | *int*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `template_id`                                                        | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `title`                                                              | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |
