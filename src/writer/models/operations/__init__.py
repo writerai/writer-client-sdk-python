@@ -15,6 +15,7 @@ from .fetchcustomizedmodelfile import *
 from .findsnippets import *
 from .findterms import *
 from .generate_content import *
+from .getdocumentdetails import *
 from .getfile import *
 from .getmodelcustomization import *
 from .getsubscriptiondetails import *
@@ -22,6 +23,7 @@ from .listfiles import *
 from .listmodelcustomizations import *
 from .listmodels import *
 from .listpages import *
+from .listteamdocuments import *
 from .listtemplates import *
 from .listusers import *
 from .pagedetails import *
@@ -29,4 +31,4 @@ from .updatesnippets import *
 from .updateterms import *
 from .uploadfile import *
 
-__all__ = ["AddTermsRequest","AddTermsResponse","ContentCheckRequest","ContentCheckResponse","ContentCorrectRequest","ContentCorrectResponse","CreateCompletionRequest","CreateCompletionResponse","CreateModelCustomizationCompletionRequest","CreateModelCustomizationCompletionResponse","CreateModelCustomizationRequest","CreateModelCustomizationResponse","DeleteFileRequest","DeleteFileResponse","DeleteModelCustomizationRequest","DeleteModelCustomizationResponse","DeleteSnippetsRequest","DeleteSnippetsResponse","DeleteTermsRequest","DeleteTermsResponse","DetectContentRequest","DetectContentResponse","FetchCustomizedModelFileRequest","FetchCustomizedModelFileResponse","FindSnippetsRequest","FindSnippetsResponse","FindSnippetsSortFieldEnum","FindSnippetsSortOrderEnum","FindTermsPartOfSpeechEnum","FindTermsRequest","FindTermsResponse","FindTermsSortFieldEnum","FindTermsSortOrderEnum","FindTermsTypeEnum","GenerateContentRequest","GenerateContentResponse","GetFileRequest","GetFileResponse","GetModelCustomizationRequest","GetModelCustomizationResponse","GetSubscriptionDetailsResponse","ListFilesRequest","ListFilesResponse","ListModelCustomizationsRequest","ListModelCustomizationsResponse","ListModelsRequest","ListModelsResponse","ListPagesRequest","ListPagesResponse","ListPagesStatusEnum","ListTemplatesRequest","ListTemplatesResponse","ListUsersRequest","ListUsersResponse","ListUsersSortFieldEnum","ListUsersSortOrderEnum","PageDetailsRequest","PageDetailsResponse","UpdateSnippetsRequest","UpdateSnippetsResponse","UpdateTermsRequest","UpdateTermsResponse","UploadFileRequest","UploadFileResponse"]
+__all__ = ["AddTermsRequest","AddTermsResponse","ContentCheckRequest","ContentCheckResponse","ContentCorrectRequest","ContentCorrectResponse","CreateCompletionRequest","CreateCompletionResponse","CreateModelCustomizationCompletionRequest","CreateModelCustomizationCompletionResponse","CreateModelCustomizationRequest","CreateModelCustomizationResponse","DeleteFile200ApplicationJSON","DeleteFileRequest","DeleteFileResponse","DeleteModelCustomization200ApplicationJSON","DeleteModelCustomizationRequest","DeleteModelCustomizationResponse","DeleteSnippetsRequest","DeleteSnippetsResponse","DeleteTermsRequest","DeleteTermsResponse","DetectContentRequest","DetectContentResponse","FetchCustomizedModelFileRequest","FetchCustomizedModelFileResponse","FindSnippetsRequest","FindSnippetsResponse","FindSnippetsSortField","FindSnippetsSortOrder","FindTermsPartOfSpeech","FindTermsRequest","FindTermsResponse","FindTermsSortField","FindTermsSortOrder","FindTermsType","GenerateContentRequest","GenerateContentResponse","GetDocumentDetailsRequest","GetDocumentDetailsResponse","GetFileRequest","GetFileResponse","GetModelCustomizationRequest","GetModelCustomizationResponse","GetSubscriptionDetailsResponse","ListFilesRequest","ListFilesResponse","ListModelCustomizationsRequest","ListModelCustomizationsResponse","ListModelsRequest","ListModelsResponse","ListPagesRequest","ListPagesResponse","ListPagesStatus","ListTeamDocumentsRequest","ListTeamDocumentsResponse","ListTeamDocumentsSortField","ListTeamDocumentsSortOrder","ListTemplatesRequest","ListTemplatesResponse","ListUsersRequest","ListUsersResponse","ListUsersSortField","ListUsersSortOrder","PageDetailsRequest","PageDetailsResponse","UpdateSnippetsRequest","UpdateSnippetsResponse","UpdateTermsRequest","UpdateTermsResponse","UploadFileRequest","UploadFileResponse"]

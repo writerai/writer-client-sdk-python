@@ -5,19 +5,15 @@ from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(
-        api_key="YOUR_API_KEY_HERE",
+        api_key="",
     ),
     organization_id=548814,
 )
 
 
-req = operations.DetectContentRequest(
-    content_detector_request=shared.ContentDetectorRequest(
-        input="provident",
-    ),
-)
-    
-res = s.ai_content_detector.detect(req)
+res = s.ai_content_detector.detect(shared.ContentDetectorRequest(
+    input='provident',
+), 715190)
 
 if res.content_detector_responses is not None:
     # handle response

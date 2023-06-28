@@ -9,22 +9,25 @@ from ..shared import processedcontent as shared_processedcontent
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ContentCheckRequest:
+    content_request: shared_contentrequest.ContentRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})
+    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
-    content_request: shared_contentrequest.ContentRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
-    team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})  
-    organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})  
-    
+
+
+
 
 @dataclasses.dataclass
 class ContentCheckResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    status_code: int = dataclasses.field()
     fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""  
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)  
-    processed_content: Optional[shared_processedcontent.ProcessedContent] = dataclasses.field(default=None)  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Bad Request"""
+    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    processed_content: Optional[shared_processedcontent.ProcessedContent] = dataclasses.field(default=None)
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
