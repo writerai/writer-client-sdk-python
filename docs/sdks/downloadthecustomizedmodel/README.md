@@ -16,7 +16,7 @@ Download your fine-tuned model (available only for Palmyra Base and Palmyra Larg
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(

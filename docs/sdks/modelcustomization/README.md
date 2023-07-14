@@ -69,7 +69,7 @@ Delete Model customization
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(
@@ -107,7 +107,7 @@ Get model customization
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(
@@ -145,7 +145,7 @@ List model customizations
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(

@@ -19,7 +19,7 @@ Delete file
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(
@@ -56,7 +56,7 @@ Get file
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(
@@ -93,7 +93,7 @@ List files
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(

@@ -76,7 +76,7 @@ Get a list of your existing CoWrite templates
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(

@@ -17,7 +17,7 @@ Get document details
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(
@@ -55,7 +55,7 @@ List team documents
 
 ```python
 import writer
-from writer.models import operations
+from writer.models import operations, shared
 
 s = writer.Writer(
     security=shared.Security(
