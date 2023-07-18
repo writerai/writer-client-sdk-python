@@ -18,6 +18,7 @@ pylintrc
 setup.py
 src/writer/__init__.py
 src/writer/models/__init__.py
+src/writer/models/errors/sdkerror.py
 src/writer/utils/__init__.py
 src/writer/utils/retries.py
 src/writer/utils/utils.py
@@ -119,6 +120,7 @@ src/writer/models/shared/briefdocuments.py
 src/writer/models/shared/briefdocument.py
 src/writer/models/shared/security.py
 src/writer/models/shared/__init__.py
+src/writer/models/errors/__init__.py
 docs/sdks/writer/README.md
 docs/sdks/aicontentdetector/README.md
 docs/sdks/billing/README.md
