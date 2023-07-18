@@ -16,7 +16,7 @@ Get your organization subscription details
 
 ```python
 import writer
-
+from writer.models import shared
 
 s = writer.Writer(
     security=shared.Security(
