@@ -25,12 +25,12 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=904648,
+    organization_id=301575,
 )
 
 
 res = s.terminology.add(shared.CreateTermsRequest(
-    fail_handling=shared.CreateTermsRequestFailHandling.VALIDATE_ONLY,
+    fail_handling=shared.CreateTermsRequestFailHandling.SKIP,
     models=[
         shared.TermCreate(
             approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -39,75 +39,187 @@ res = s.terminology.add(shared.CreateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='consequuntur',
+            description='labore',
             examples=[
                 shared.TermExampleCreate(
-                    example='natus',
-                    type=shared.TermExampleCreateType.GOOD,
-                ),
-                shared.TermExampleCreate(
-                    example='sunt',
+                    example='suscipit',
                     type=shared.TermExampleCreateType.BAD,
                 ),
                 shared.TermExampleCreate(
-                    example='illum',
+                    example='nobis',
+                    type=shared.TermExampleCreateType.GOOD,
+                ),
+            ],
+            highlight=False,
+            linked_terms=[
+                shared.LinkedTermCreate(
+                    linked_term_id=135474,
+                    reference='architecto',
+                ),
+                shared.LinkedTermCreate(
+                    linked_term_id=298282,
+                    reference='et',
+                ),
+                shared.LinkedTermCreate(
+                    linked_term_id=569965,
+                    reference='ullam',
+                ),
+                shared.LinkedTermCreate(
+                    linked_term_id=590873,
+                    reference='quos',
+                ),
+            ],
+            mistakes=[
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='accusantium',
+                    pos=shared.TermMistakeCreatePos.ADVERB,
+                    reference='reiciendis',
+                ),
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='mollitia',
+                    pos=shared.TermMistakeCreatePos.VERB,
+                    reference='eum',
+                ),
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='dolor',
+                    pos=shared.TermMistakeCreatePos.ADJECTIVE,
+                    reference='odit',
+                ),
+            ],
+            pos=shared.TermCreatePos.VERB,
+            reference='quasi',
+            tags=[
+                shared.TermTagCreate(
+                    tag='doloribus',
+                ),
+                shared.TermTagCreate(
+                    tag='debitis',
+                ),
+            ],
+            term='eius',
+            type=shared.TermCreateType.PENDING,
+        ),
+        shared.TermCreate(
+            approved_term_extension=shared.ApprovedTermExtensionCreate(
+                capitalize=False,
+                fix_case=False,
+                fix_common_mistakes=False,
+            ),
+            case_sensitive=False,
+            description='deleniti',
+            examples=[
+                shared.TermExampleCreate(
+                    example='in',
+                    type=shared.TermExampleCreateType.GOOD,
+                ),
+                shared.TermExampleCreate(
+                    example='architecto',
+                    type=shared.TermExampleCreateType.BAD,
+                ),
+                shared.TermExampleCreate(
+                    example='ullam',
                     type=shared.TermExampleCreateType.BAD,
                 ),
             ],
             highlight=False,
             linked_terms=[
                 shared.LinkedTermCreate(
-                    linked_term_id=411397,
-                    reference='excepturi',
+                    linked_term_id=998848,
+                    reference='quibusdam',
                 ),
                 shared.LinkedTermCreate(
-                    linked_term_id=139972,
-                    reference='ea',
-                ),
-                shared.LinkedTermCreate(
-                    linked_term_id=33222,
-                    reference='ab',
-                ),
-                shared.LinkedTermCreate(
-                    linked_term_id=982575,
-                    reference='quidem',
+                    linked_term_id=149448,
+                    reference='saepe',
                 ),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='voluptate',
-                    pos=shared.TermMistakeCreatePos.VERB,
-                    reference='nam',
+                    mistake='accusantium',
+                    pos=shared.TermMistakeCreatePos.NOUN,
+                    reference='praesentium',
                 ),
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='eaque',
+                    mistake='natus',
+                    pos=shared.TermMistakeCreatePos.NOUN,
+                    reference='sunt',
+                ),
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='quo',
                     pos=shared.TermMistakeCreatePos.ADJECTIVE,
-                    reference='nemo',
+                    reference='pariatur',
+                ),
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='maxime',
+                    pos=shared.TermMistakeCreatePos.VERB,
+                    reference='excepturi',
                 ),
             ],
-            pos=shared.TermCreatePos.ADJECTIVE,
-            reference='perferendis',
+            pos=shared.TermCreatePos.NOUN,
+            reference='ea',
             tags=[
                 shared.TermTagCreate(
-                    tag='amet',
-                ),
-                shared.TermTagCreate(
-                    tag='aut',
-                ),
-                shared.TermTagCreate(
-                    tag='cumque',
-                ),
-                shared.TermTagCreate(
-                    tag='corporis',
+                    tag='ab',
                 ),
             ],
-            term='hic',
+            term='maiores',
             type=shared.TermCreateType.PENDING,
         ),
+        shared.TermCreate(
+            approved_term_extension=shared.ApprovedTermExtensionCreate(
+                capitalize=False,
+                fix_case=False,
+                fix_common_mistakes=False,
+            ),
+            case_sensitive=False,
+            description='ipsam',
+            examples=[
+                shared.TermExampleCreate(
+                    example='autem',
+                    type=shared.TermExampleCreateType.BAD,
+                ),
+                shared.TermExampleCreate(
+                    example='eaque',
+                    type=shared.TermExampleCreateType.BAD,
+                ),
+            ],
+            highlight=False,
+            linked_terms=[
+                shared.LinkedTermCreate(
+                    linked_term_id=975522,
+                    reference='perferendis',
+                ),
+                shared.LinkedTermCreate(
+                    linked_term_id=855804,
+                    reference='amet',
+                ),
+            ],
+            mistakes=[
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='cumque',
+                    pos=shared.TermMistakeCreatePos.VERB,
+                    reference='hic',
+                ),
+            ],
+            pos=shared.TermCreatePos.ADVERB,
+            reference='nobis',
+            tags=[
+                shared.TermTagCreate(
+                    tag='quis',
+                ),
+            ],
+            term='totam',
+            type=shared.TermCreateType.BANNED,
+        ),
     ],
-), 749999, 171629)
+), 54338, 338985)
 
 if res.create_terms_response is not None:
     # handle response
@@ -141,13 +253,13 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=339404,
+    organization_id=199996,
 )
 
 
-res = s.terminology.delete(521037, 'dignissimos', [
-    338985,
-], 199996)
+res = s.terminology.delete(179490, 'perferendis', [
+    793698,
+], 463451)
 
 if res.delete_response is not None:
     # handle response
@@ -182,24 +294,23 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=179490,
+    organization_id=223924,
 )
 
 req = operations.FindTermsRequest(
-    limit=18521,
-    offset=170986,
+    limit=874573,
+    offset=345352,
     part_of_speech=operations.FindTermsPartOfSpeech.ADJECTIVE,
-    sort_field=operations.FindTermsSortField.CREATION_TIME,
-    sort_order=operations.FindTermsSortOrder.ASC,
+    sort_field=operations.FindTermsSortField.TYPE,
+    sort_order=operations.FindTermsSortOrder.DESC,
     tags=[
-        'nostrum',
-        'hic',
-        'recusandae',
-        'omnis',
+        'perspiciatis',
+        'voluptatem',
+        'porro',
     ],
-    team_id=704415,
-    term='perspiciatis',
-    type=operations.FindTermsType.APPROVED,
+    team_id=164694,
+    term='blanditiis',
+    type=operations.FindTermsType.BANNED,
 )
 
 res = s.terminology.find(req)
@@ -234,12 +345,12 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=783645,
+    organization_id=50370,
 )
 
 
 res = s.terminology.update(shared.UpdateTermsRequest(
-    fail_handling=shared.UpdateTermsRequestFailHandling.ACCUMULATE,
+    fail_handling=shared.UpdateTermsRequestFailHandling.SKIP,
     models=[
         shared.TermUpdate(
             approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -248,131 +359,81 @@ res = s.terminology.update(shared.UpdateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='error',
+            description='adipisci',
             examples=[
                 shared.TermExampleCreate(
-                    example='occaecati',
+                    example='earum',
+                    type=shared.TermExampleCreateType.GOOD,
+                ),
+                shared.TermExampleCreate(
+                    example='iste',
+                    type=shared.TermExampleCreateType.BAD,
+                ),
+                shared.TermExampleCreate(
+                    example='deleniti',
+                    type=shared.TermExampleCreateType.BAD,
+                ),
+                shared.TermExampleCreate(
+                    example='provident',
                     type=shared.TermExampleCreateType.BAD,
                 ),
             ],
             highlight=False,
-            id=237893,
+            id=730122,
             linked_terms=[
                 shared.LinkedTermCreate(
-                    linked_term_id=934214,
-                    reference='modi',
-                ),
-                shared.LinkedTermCreate(
-                    linked_term_id=613966,
-                    reference='dolorum',
-                ),
-                shared.LinkedTermCreate(
-                    linked_term_id=535633,
-                    reference='pariatur',
-                ),
-                shared.LinkedTermCreate(
-                    linked_term_id=589910,
-                    reference='nobis',
-                ),
-            ],
-            mistakes=[
-                shared.TermMistakeCreate(
-                    case_sensitive=False,
-                    mistake='delectus',
-                    pos=shared.TermMistakeCreatePos.VERB,
+                    linked_term_id=311945,
                     reference='quos',
                 ),
-                shared.TermMistakeCreate(
-                    case_sensitive=False,
-                    mistake='aliquid',
-                    pos=shared.TermMistakeCreatePos.NOUN,
+                shared.LinkedTermCreate(
+                    linked_term_id=398221,
                     reference='dolorem',
                 ),
-                shared.TermMistakeCreate(
-                    case_sensitive=False,
-                    mistake='dolor',
-                    pos=shared.TermMistakeCreatePos.NOUN,
+                shared.LinkedTermCreate(
+                    linked_term_id=209843,
+                    reference='dolor',
+                ),
+                shared.LinkedTermCreate(
+                    linked_term_id=186193,
                     reference='ipsum',
                 ),
             ],
-            pos=shared.TermUpdatePos.ADJECTIVE,
-            tags=[
-                shared.TermTagCreate(
-                    tag='cum',
-                ),
-                shared.TermTagCreate(
-                    tag='voluptate',
-                ),
-                shared.TermTagCreate(
-                    tag='dignissimos',
-                ),
-            ],
-            term='reiciendis',
-            type=shared.TermUpdateType.APPROVED,
-        ),
-        shared.TermUpdate(
-            approved_term_extension=shared.ApprovedTermExtensionCreate(
-                capitalize=False,
-                fix_case=False,
-                fix_common_mistakes=False,
-            ),
-            case_sensitive=False,
-            description='dolorum',
-            examples=[
-                shared.TermExampleCreate(
-                    example='veritatis',
-                    type=shared.TermExampleCreateType.GOOD,
-                ),
-                shared.TermExampleCreate(
-                    example='ipsa',
-                    type=shared.TermExampleCreateType.GOOD,
-                ),
-            ],
-            highlight=False,
-            id=487838,
-            linked_terms=[
-                shared.LinkedTermCreate(
-                    linked_term_id=881005,
-                    reference='quidem',
-                ),
-                shared.LinkedTermCreate(
-                    linked_term_id=976405,
-                    reference='voluptas',
-                ),
-            ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='eos',
+                    mistake='excepturi',
                     pos=shared.TermMistakeCreatePos.ADVERB,
-                    reference='sit',
+                    reference='voluptate',
                 ),
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='fugiat',
-                    pos=shared.TermMistakeCreatePos.NOUN,
-                    reference='soluta',
+                    mistake='dignissimos',
+                    pos=shared.TermMistakeCreatePos.ADJECTIVE,
+                    reference='amet',
                 ),
                 shared.TermMistakeCreate(
                     case_sensitive=False,
                     mistake='dolorum',
                     pos=shared.TermMistakeCreatePos.VERB,
-                    reference='voluptate',
+                    reference='veritatis',
+                ),
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='ipsa',
+                    pos=shared.TermMistakeCreatePos.NOUN,
+                    reference='iure',
                 ),
             ],
-            pos=shared.TermUpdatePos.ADVERB,
+            pos=shared.TermUpdatePos.VERB,
             tags=[
                 shared.TermTagCreate(
-                    tag='omnis',
+                    tag='accusamus',
                 ),
                 shared.TermTagCreate(
-                    tag='necessitatibus',
-                ),
-                shared.TermTagCreate(
-                    tag='distinctio',
+                    tag='quidem',
                 ),
             ],
-            term='asperiores',
+            term='voluptatibus',
             type=shared.TermUpdateType.BANNED,
         ),
         shared.TermUpdate(
@@ -382,56 +443,115 @@ res = s.terminology.update(shared.UpdateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='ipsum',
+            description='natus',
             examples=[
                 shared.TermExampleCreate(
-                    example='id',
-                    type=shared.TermExampleCreateType.BAD,
-                ),
-                shared.TermExampleCreate(
-                    example='eius',
+                    example='atque',
                     type=shared.TermExampleCreateType.GOOD,
                 ),
             ],
             highlight=False,
-            id=20651,
+            id=854614,
             linked_terms=[
                 shared.LinkedTermCreate(
-                    linked_term_id=758379,
-                    reference='accusamus',
+                    linked_term_id=743835,
+                    reference='dolorum',
                 ),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='saepe',
-                    pos=shared.TermMistakeCreatePos.VERB,
-                    reference='deserunt',
+                    mistake='voluptate',
+                    pos=shared.TermMistakeCreatePos.ADVERB,
+                    reference='deleniti',
                 ),
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='provident',
-                    pos=shared.TermMistakeCreatePos.VERB,
-                    reference='repellendus',
+                    mistake='omnis',
+                    pos=shared.TermMistakeCreatePos.ADJECTIVE,
+                    reference='distinctio',
                 ),
             ],
-            pos=shared.TermUpdatePos.ADVERB,
+            pos=shared.TermUpdatePos.ADJECTIVE,
             tags=[
                 shared.TermTagCreate(
-                    tag='alias',
+                    tag='ipsum',
                 ),
                 shared.TermTagCreate(
-                    tag='at',
-                ),
-                shared.TermTagCreate(
-                    tag='quaerat',
+                    tag='voluptate',
                 ),
             ],
-            term='tempora',
-            type=shared.TermUpdateType.BANNED,
+            term='id',
+            type=shared.TermUpdateType.PENDING,
+        ),
+        shared.TermUpdate(
+            approved_term_extension=shared.ApprovedTermExtensionCreate(
+                capitalize=False,
+                fix_case=False,
+                fix_common_mistakes=False,
+            ),
+            case_sensitive=False,
+            description='eius',
+            examples=[
+                shared.TermExampleCreate(
+                    example='perferendis',
+                    type=shared.TermExampleCreateType.GOOD,
+                ),
+            ],
+            highlight=False,
+            id=758379,
+            linked_terms=[
+                shared.LinkedTermCreate(
+                    linked_term_id=320017,
+                    reference='saepe',
+                ),
+                shared.LinkedTermCreate(
+                    linked_term_id=383464,
+                    reference='deserunt',
+                ),
+                shared.LinkedTermCreate(
+                    linked_term_id=588317,
+                    reference='minima',
+                ),
+                shared.LinkedTermCreate(
+                    linked_term_id=831049,
+                    reference='totam',
+                ),
+            ],
+            mistakes=[
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='alias',
+                    pos=shared.TermMistakeCreatePos.ADJECTIVE,
+                    reference='quaerat',
+                ),
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='tempora',
+                    pos=shared.TermMistakeCreatePos.VERB,
+                    reference='quod',
+                ),
+                shared.TermMistakeCreate(
+                    case_sensitive=False,
+                    mistake='officiis',
+                    pos=shared.TermMistakeCreatePos.NOUN,
+                    reference='dolorum',
+                ),
+            ],
+            pos=shared.TermUpdatePos.ADJECTIVE,
+            tags=[
+                shared.TermTagCreate(
+                    tag='harum',
+                ),
+                shared.TermTagCreate(
+                    tag='iusto',
+                ),
+            ],
+            term='ipsum',
+            type=shared.TermUpdateType.PENDING,
         ),
     ],
-), 798047, 'officiis', 185636)
+), 947371, 'amet', 730856)
 
 if res.create_terms_response is not None:
     # handle response

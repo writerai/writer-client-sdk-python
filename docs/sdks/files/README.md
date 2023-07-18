@@ -25,11 +25,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=613064,
+    organization_id=617636,
 )
 
 
-res = s.files.delete('iure', 902349)
+res = s.files.delete('sed', 612096)
 
 if res.delete_file_200_application_json_object is not None:
     # handle response
@@ -62,11 +62,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=697631,
+    organization_id=222321,
 )
 
 
-res = s.files.get('architecto', 60225)
+res = s.files.get('natus', 386489)
 
 if res.model_file is not None:
     # handle response
@@ -99,11 +99,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=969810,
+    organization_id=943749,
 )
 
 
-res = s.files.list(666767)
+res = s.files.list(902599)
 
 if res.model_files_response is not None:
     # handle response
@@ -135,16 +135,16 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=653140,
+    organization_id=681820,
 )
 
 
 res = s.files.upload(shared.UploadModelFileRequest(
     file=shared.UploadModelFileRequestFile(
-        content='laborum'.encode(),
-        file='dolores',
+        content='in'.encode(),
+        file='corporis',
     ),
-), 210382)
+), 613064)
 
 if res.model_file is not None:
     # handle response

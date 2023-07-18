@@ -22,11 +22,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=902599,
+    organization_id=568434,
 )
 
 
-res = s.download_the_customized_model.fetch_file('fuga', 'in', 359508)
+res = s.download_the_customized_model.fetch_file('aspernatur', 'perferendis', 324141)
 
 if res.fetch_customized_model_file_200_application_octet_stream_binary_string is not None:
     # handle response

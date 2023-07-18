@@ -24,14 +24,14 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=110375,
+    organization_id=995300,
 )
 
 
-res = s.snippet.delete(674752, 'animi', [
-    'odit',
-    'quo',
-], 196582)
+res = s.snippet.delete(653108, 'occaecati', [
+    'commodi',
+    'quam',
+], 474697)
 
 if res.delete_response is not None:
     # handle response
@@ -66,24 +66,22 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=949572,
+    organization_id=244425,
 )
 
 req = operations.FindSnippetsRequest(
-    limit=368725,
-    offset=662527,
-    search='possimus',
+    limit=623510,
+    offset=158969,
+    search='quis',
     shortcuts=[
-        'quasi',
+        'laborum',
     ],
     sort_field=operations.FindSnippetsSortField.CREATION_TIME,
-    sort_order=operations.FindSnippetsSortOrder.DESC,
+    sort_order=operations.FindSnippetsSortOrder.ASC,
     tags=[
-        'quasi',
-        'reiciendis',
-        'voluptatibus',
+        'quo',
     ],
-    team_id=878194,
+    team_id=196582,
 )
 
 res = s.snippet.find(req)
@@ -118,68 +116,63 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=468651,
+    organization_id=949572,
 )
 
 
-res = s.snippet.update(509624, [
+res = s.snippet.update(368725, [
     shared.SnippetUpdate(
-        description='ipsa',
-        id='97b0074f-1547-41b5-a6e1-3b99d488e1e9',
-        shortcut='veritatis',
-        snippet='itaque',
+        description='possimus',
+        id='019da1ff-e78f-4097-b007-4f15471b5e6e',
+        shortcut='quae',
+        snippet='ipsum',
         tags=[
             shared.SnippetTagV2(
-                tag='enim',
+                tag='molestias',
             ),
             shared.SnippetTagV2(
-                tag='consequatur',
+                tag='excepturi',
+            ),
+            shared.SnippetTagV2(
+                tag='pariatur',
             ),
         ],
     ),
     shared.SnippetUpdate(
-        description='est',
-        id='d2abd442-6980-42d5-82a9-4bb4f63c969e',
-        shortcut='sint',
-        snippet='officia',
+        description='modi',
+        id='88e1e91e-450a-4d2a-bd44-269802d502a9',
+        shortcut='tempora',
+        snippet='facilis',
         tags=[
             shared.SnippetTagV2(
-                tag='debitis',
+                tag='labore',
+            ),
+            shared.SnippetTagV2(
+                tag='delectus',
+            ),
+            shared.SnippetTagV2(
+                tag='eum',
             ),
         ],
     ),
     shared.SnippetUpdate(
-        description='a',
-        id='a77dfb14-cd66-4ae3-95ef-b9ba88f3a669',
-        shortcut='omnis',
-        snippet='molestiae',
-        tags=[
-            shared.SnippetTagV2(
-                tag='nihil',
-            ),
-        ],
-    ),
-    shared.SnippetUpdate(
-        description='magnam',
-        id='ba4469b6-e214-4195-9890-afa563e2516f',
-        shortcut='debitis',
-        snippet='eius',
+        description='non',
+        id='c969e9a3-efa7-47df-b14c-d66ae395efb9',
+        shortcut='nam',
+        snippet='id',
         tags=[
             shared.SnippetTagV2(
                 tag='deleniti',
             ),
             shared.SnippetTagV2(
-                tag='facilis',
+                tag='sapiente',
             ),
             shared.SnippetTagV2(
-                tag='in',
-            ),
-            shared.SnippetTagV2(
-                tag='architecto',
+                tag='amet',
             ),
         ],
     ),
-], 'architecto', 919483)
+], 'deserunt', 394869)
 
 if res.snippet_with_users is not None:
     # handle response

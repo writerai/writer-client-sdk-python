@@ -28,21 +28,21 @@ s = writer.Writer(
 
 
 res = s.completions.create(shared.CompletionRequest(
-    best_of=778157,
-    frequency_penalty=1403.5,
-    logprobs=870013,
-    max_tokens=870088,
-    min_tokens=978619,
-    n=473608,
-    presence_penalty=7991.59,
-    prompt='quod',
+    best_of=1,
+    frequency_penalty=7781.57,
+    logprobs=140350,
+    max_tokens=2048,
+    min_tokens=1,
+    n=870013,
+    presence_penalty=8700.88,
+    prompt='maiores',
     stop=[
-        'totam',
-        'porro',
+        'quod',
+        'quod',
     ],
-    temperature=6788.8,
-    top_p=1182.74,
-), 'nam', 639921)
+    temperature=0.7,
+    top_p=1,
+), 'esse', 520478)
 
 if res.completion_response is not None:
     # handle response
@@ -76,26 +76,25 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=582020,
+    organization_id=780529,
 )
 
 
 res = s.completions.create_model_customization_completion(shared.CompletionRequest(
-    best_of=143353,
-    frequency_penalty=5373.73,
-    logprobs=944669,
-    max_tokens=758616,
-    min_tokens=521848,
-    n=105907,
-    presence_penalty=4146.62,
-    prompt='molestiae',
+    best_of=1,
+    frequency_penalty=6788.8,
+    logprobs=118274,
+    max_tokens=2048,
+    min_tokens=1,
+    n=720633,
+    presence_penalty=6399.21,
+    prompt='occaecati',
     stop=[
-        'qui',
-        'impedit',
+        'deleniti',
     ],
-    temperature=7369.18,
-    top_p=4561.5,
-), 'ipsum', 'excepturi', 135218)
+    temperature=0.7,
+    top_p=1,
+), 'hic', 'optio', 521848)
 
 if res.completion_response is not None:
     # handle response
