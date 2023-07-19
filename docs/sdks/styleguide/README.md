@@ -23,11 +23,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=352312,
+    organization_id=423855,
 )
 
 
-res = s.styleguide.get(714242)
+res = s.styleguide.get(618809)
 
 if res.page_with_section_response is not None:
     # handle response
@@ -59,11 +59,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=469249,
+    organization_id=606393,
 )
 
 
-res = s.styleguide.list_pages(998848, 841140, operations.ListPagesStatus.LIVE)
+res = s.styleguide.list_pages(474867, 19193, operations.ListPagesStatus.LIVE)
 
 if res.paginated_result_page_public_api_response is not None:
     # handle response

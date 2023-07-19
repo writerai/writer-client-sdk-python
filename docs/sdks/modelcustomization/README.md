@@ -25,23 +25,23 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=358152,
+    organization_id=437032,
 )
 
 
 res = s.model_customization.create(shared.CreateCustomizationRequest(
     additional_hyper_parameters=shared.HyperParameters(
-        num_virtual_tokens=128926,
+        num_virtual_tokens=902349,
     ),
-    batch_size=750686,
-    description='enim',
-    epochs=607831,
-    learning_rate=3637.11,
-    name='Velma Batz',
-    prompt_template='doloribus',
-    training_dataset_file_id='sapiente',
-    validation_dataset_file_id='architecto',
-), 'mollitia', 208876)
+    batch_size=697631,
+    description='architecto',
+    epochs=60225,
+    learning_rate=9698.1,
+    name='Shaun Osinski',
+    prompt_template='corporis',
+    training_dataset_file_id='explicabo',
+    validation_dataset_file_id='nobis',
+), 'enim', 607831)
 
 if res.model_customization is not None:
     # handle response
@@ -75,11 +75,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=635059,
+    organization_id=363711,
 )
 
 
-res = s.model_customization.delete('consequuntur', 'repellat', 653108)
+res = s.model_customization.delete('minima', 'excepturi', 38425)
 
 if res.delete_model_customization_200_application_json_object is not None:
     # handle response
@@ -113,11 +113,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=581850,
+    organization_id=438601,
 )
 
 
-res = s.model_customization.get('numquam', 'commodi', 466311)
+res = s.model_customization.get('culpa', 'doloribus', 958950)
 
 if res.model_customization is not None:
     # handle response
@@ -151,11 +151,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=474697,
+    organization_id=102044,
 )
 
 
-res = s.model_customization.list('velit', 623510)
+res = s.model_customization.list('mollitia', 208876)
 
 if res.customizations_response is not None:
     # handle response
