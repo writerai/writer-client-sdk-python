@@ -18,7 +18,7 @@ class SDKConfiguration:
     globals: dict[str, dict[str, dict[str, Any]]] = field(default_factory=dict)
     language: str = 'python'
     openapi_doc_version: str = '1.7'
-    sdk_version: str = '0.14.1'
+    sdk_version: str = '0.14.2'
     gen_version: str = '2.70.2'
 
     def get_server_details(self) -> tuple[str, dict[str, str]]:
