@@ -27,7 +27,7 @@ s = writer.Writer(
 )
 
 
-res = s.document.get(25662, 711584, 207470)
+res = s.document.get(document_id=25662, team_id=711584, organization_id=207470)
 
 if res.document is not None:
     # handle response

@@ -27,7 +27,7 @@ s = writer.Writer(
 )
 
 
-res = s.completions.create(shared.CompletionRequest(
+res = s.completions.create(completion_request=shared.CompletionRequest(
     best_of=1,
     frequency_penalty=7781.57,
     logprobs=140350,
@@ -42,7 +42,7 @@ res = s.completions.create(shared.CompletionRequest(
     ],
     temperature=0.7,
     top_p=1,
-), 'esse', 520478)
+), model_id='esse', organization_id=520478)
 
 if res.completion_response is not None:
     # handle response
@@ -80,7 +80,7 @@ s = writer.Writer(
 )
 
 
-res = s.completions.create_model_customization_completion(shared.CompletionRequest(
+res = s.completions.create_model_customization_completion(completion_request=shared.CompletionRequest(
     best_of=1,
     frequency_penalty=6788.8,
     logprobs=118274,
@@ -94,7 +94,7 @@ res = s.completions.create_model_customization_completion(shared.CompletionReque
     ],
     temperature=0.7,
     top_p=1,
-), 'hic', 'optio', 521848)
+), customization_id='hic', model_id='optio', organization_id=521848)
 
 if res.completion_response is not None:
     # handle response

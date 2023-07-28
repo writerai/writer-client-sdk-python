@@ -29,7 +29,7 @@ s = writer.Writer(
 )
 
 
-res = s.terminology.add(shared.CreateTermsRequest(
+res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
     fail_handling=shared.CreateTermsRequestFailHandling.SKIP,
     models=[
         shared.TermCreate(
@@ -219,7 +219,7 @@ res = s.terminology.add(shared.CreateTermsRequest(
             type=shared.TermCreateType.BANNED,
         ),
     ],
-), 54338, 338985)
+), team_id=54338, organization_id=338985)
 
 if res.create_terms_response is not None:
     # handle response
@@ -257,9 +257,9 @@ s = writer.Writer(
 )
 
 
-res = s.terminology.delete(179490, 'perferendis', [
+res = s.terminology.delete(team_id=179490, x_request_id='perferendis', ids=[
     793698,
-], 463451)
+], organization_id=463451)
 
 if res.delete_response is not None:
     # handle response
@@ -349,7 +349,7 @@ s = writer.Writer(
 )
 
 
-res = s.terminology.update(shared.UpdateTermsRequest(
+res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
     fail_handling=shared.UpdateTermsRequestFailHandling.SKIP,
     models=[
         shared.TermUpdate(
@@ -551,7 +551,7 @@ res = s.terminology.update(shared.UpdateTermsRequest(
             type=shared.TermUpdateType.PENDING,
         ),
     ],
-), 947371, 'amet', 730856)
+), team_id=947371, x_request_id='amet', organization_id=730856)
 
 if res.create_terms_response is not None:
     # handle response

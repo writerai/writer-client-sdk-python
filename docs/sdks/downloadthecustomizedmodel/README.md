@@ -26,7 +26,7 @@ s = writer.Writer(
 )
 
 
-res = s.download_the_customized_model.fetch_file('aspernatur', 'perferendis', 324141)
+res = s.download_the_customized_model.fetch_file(customization_id='aspernatur', model_id='perferendis', organization_id=324141)
 
 if res.fetch_customized_model_file_200_application_octet_stream_binary_string is not None:
     # handle response

@@ -26,9 +26,9 @@ s = writer.Writer(
 )
 
 
-res = s.ai_content_detector.detect(shared.ContentDetectorRequest(
+res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
     input='unde',
-), 857946)
+), organization_id=857946)
 
 if res.content_detector_responses is not None:
     # handle response

@@ -13,9 +13,9 @@ s = writer.Writer(
 )
 
 
-res = s.ai_content_detector.detect(shared.ContentDetectorRequest(
+res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
     input='provident',
-), 715190)
+), organization_id=715190)
 
 if res.content_detector_responses is not None:
     # handle response

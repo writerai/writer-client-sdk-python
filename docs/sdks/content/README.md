@@ -27,7 +27,7 @@ s = writer.Writer(
 )
 
 
-res = s.content.check(shared.ContentRequest(
+res = s.content.check(content_request=shared.ContentRequest(
     content='commodi',
     settings=shared.ContentSettings(
         age_and_family_status=False,
@@ -47,7 +47,7 @@ res = s.content.check(shared.ContentRequest(
         unclear_reference=False,
         wordiness=False,
     ),
-), 473600, 264555)
+), team_id=473600, organization_id=264555)
 
 if res.processed_content is not None:
     # handle response
@@ -85,7 +85,7 @@ s = writer.Writer(
 )
 
 
-res = s.content.correct(shared.ContentRequest(
+res = s.content.correct(content_request=shared.ContentRequest(
     content='impedit',
     settings=shared.ContentSettings(
         age_and_family_status=False,
@@ -105,7 +105,7 @@ res = s.content.correct(shared.ContentRequest(
         unclear_reference=False,
         wordiness=False,
     ),
-), 736918, 'esse', 216550)
+), team_id=736918, x_request_id='esse', organization_id=216550)
 
 if res.correction_response is not None:
     # handle response

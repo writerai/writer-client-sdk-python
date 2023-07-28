@@ -28,10 +28,10 @@ s = writer.Writer(
 )
 
 
-res = s.snippet.delete(653108, 'occaecati', [
+res = s.snippet.delete(team_id=653108, x_request_id='occaecati', ids=[
     'commodi',
     'quam',
-], 474697)
+], organization_id=474697)
 
 if res.delete_response is not None:
     # handle response
@@ -120,7 +120,7 @@ s = writer.Writer(
 )
 
 
-res = s.snippet.update(368725, [
+res = s.snippet.update(team_id=368725, request_body=[
     shared.SnippetUpdate(
         description='possimus',
         id='019da1ff-e78f-4097-b007-4f15471b5e6e',
@@ -172,7 +172,7 @@ res = s.snippet.update(368725, [
             ),
         ],
     ),
-], 'deserunt', 394869)
+], x_request_id='deserunt', organization_id=394869)
 
 if res.snippet_with_users is not None:
     # handle response

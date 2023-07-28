@@ -27,7 +27,7 @@ class Snippet:
         url = utils.generate_url(operations.DeleteSnippetsRequest, base_url, '/snippet/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
         headers = utils.get_headers(request)
         query_params = utils.get_query_params(operations.DeleteSnippetsRequest, request, self.sdk_configuration.globals)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client
@@ -64,7 +64,7 @@ class Snippet:
         url = utils.generate_url(operations.FindSnippetsRequest, base_url, '/snippet/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
         headers = {}
         query_params = utils.get_query_params(operations.FindSnippetsRequest, request, self.sdk_configuration.globals)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client
@@ -110,7 +110,7 @@ class Snippet:
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client

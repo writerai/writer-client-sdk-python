@@ -27,7 +27,7 @@ s = writer.Writer(
 )
 
 
-res = s.co_write.generate_content(shared.GenerateTemplateRequest(
+res = s.co_write.generate_content(generate_template_request=shared.GenerateTemplateRequest(
     inputs=[
         shared.MagicRequestInput(
             name='Doug Hoppe',
@@ -48,7 +48,7 @@ res = s.co_write.generate_content(shared.GenerateTemplateRequest(
         ),
     ],
     template_id='ab',
-), 337396, 87129)
+), team_id=337396, organization_id=87129)
 
 if res.draft is not None:
     # handle response
@@ -86,7 +86,7 @@ s = writer.Writer(
 )
 
 
-res = s.co_write.list_templates(20218, 'ipsam', 832620)
+res = s.co_write.list_templates(team_id=20218, template_id='ipsam', organization_id=832620)
 
 if res.template_details_response is not None:
     # handle response

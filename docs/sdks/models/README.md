@@ -26,7 +26,7 @@ s = writer.Writer(
 )
 
 
-res = s.models.list(161309)
+res = s.models.list(organization_id=161309)
 
 if res.generation_models_response is not None:
     # handle response

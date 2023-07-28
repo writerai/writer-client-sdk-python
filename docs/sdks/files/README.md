@@ -29,7 +29,7 @@ s = writer.Writer(
 )
 
 
-res = s.files.delete('sed', 612096)
+res = s.files.delete(file_id='sed', organization_id=612096)
 
 if res.delete_file_200_application_json_object is not None:
     # handle response
@@ -66,7 +66,7 @@ s = writer.Writer(
 )
 
 
-res = s.files.get('natus', 386489)
+res = s.files.get(file_id='natus', organization_id=386489)
 
 if res.model_file is not None:
     # handle response
@@ -103,7 +103,7 @@ s = writer.Writer(
 )
 
 
-res = s.files.list(902599)
+res = s.files.list(organization_id=902599)
 
 if res.model_files_response is not None:
     # handle response
@@ -139,12 +139,12 @@ s = writer.Writer(
 )
 
 
-res = s.files.upload(shared.UploadModelFileRequest(
+res = s.files.upload(upload_model_file_request=shared.UploadModelFileRequest(
     file=shared.UploadModelFileRequestFile(
         content='in'.encode(),
         file='corporis',
     ),
-), 613064)
+), organization_id=613064)
 
 if res.model_file is not None:
     # handle response

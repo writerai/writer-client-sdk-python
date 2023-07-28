@@ -27,7 +27,7 @@ s = writer.Writer(
 )
 
 
-res = s.styleguide.get(618809)
+res = s.styleguide.get(page_id=618809)
 
 if res.page_with_section_response is not None:
     # handle response
@@ -63,7 +63,7 @@ s = writer.Writer(
 )
 
 
-res = s.styleguide.list_pages(474867, 19193, operations.ListPagesStatus.LIVE)
+res = s.styleguide.list_pages(limit=474867, offset=19193, status=operations.ListPagesStatus.LIVE)
 
 if res.paginated_result_page_public_api_response is not None:
     # handle response

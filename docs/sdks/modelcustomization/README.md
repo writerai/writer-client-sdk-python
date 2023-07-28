@@ -29,7 +29,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.create(shared.CreateCustomizationRequest(
+res = s.model_customization.create(create_customization_request=shared.CreateCustomizationRequest(
     additional_hyper_parameters=shared.HyperParameters(
         num_virtual_tokens=902349,
     ),
@@ -41,7 +41,7 @@ res = s.model_customization.create(shared.CreateCustomizationRequest(
     prompt_template='corporis',
     training_dataset_file_id='explicabo',
     validation_dataset_file_id='nobis',
-), 'enim', 607831)
+), model_id='enim', organization_id=607831)
 
 if res.model_customization is not None:
     # handle response
@@ -79,7 +79,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.delete('minima', 'excepturi', 38425)
+res = s.model_customization.delete(customization_id='minima', model_id='excepturi', organization_id=38425)
 
 if res.delete_model_customization_200_application_json_object is not None:
     # handle response
@@ -117,7 +117,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.get('culpa', 'doloribus', 958950)
+res = s.model_customization.get(customization_id='culpa', model_id='doloribus', organization_id=958950)
 
 if res.model_customization is not None:
     # handle response
@@ -155,7 +155,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.list('mollitia', 208876)
+res = s.model_customization.list(model_id='mollitia', organization_id=208876)
 
 if res.customizations_response is not None:
     # handle response
