@@ -5,7 +5,6 @@ import dataclasses
 import requests as requests_http
 from ..shared import contentdetectorrequest as shared_contentdetectorrequest
 from ..shared import contentdetectorresponse as shared_contentdetectorresponse
-from ..shared import failresponse as shared_failresponse
 from typing import Optional
 
 
@@ -24,8 +23,6 @@ class DetectContentResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     content_detector_responses: Optional[list[shared_contentdetectorresponse.ContentDetectorResponse]] = dataclasses.field(default=None)
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

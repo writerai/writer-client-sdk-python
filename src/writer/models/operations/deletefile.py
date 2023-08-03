@@ -3,7 +3,6 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import failresponse as shared_failresponse
 from typing import Optional
 
 
@@ -28,8 +27,6 @@ class DeleteFileResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     delete_file_200_application_json_object: Optional[DeleteFile200ApplicationJSON] = dataclasses.field(default=None)
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

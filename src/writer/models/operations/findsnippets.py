@@ -3,7 +3,6 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import failresponse as shared_failresponse
 from ..shared import paginatedresult_snippetwithuser as shared_paginatedresult_snippetwithuser
 from enum import Enum
 from typing import Optional
@@ -39,8 +38,6 @@ class FindSnippetsRequest:
 class FindSnippetsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     paginated_result_snippet_with_user: Optional[shared_paginatedresult_snippetwithuser.PaginatedResultSnippetWithUser] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

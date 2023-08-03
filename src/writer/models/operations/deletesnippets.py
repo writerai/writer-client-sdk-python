@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import deleteresponse as shared_deleteresponse
-from ..shared import failresponse as shared_failresponse
 from typing import Optional
 
 
@@ -25,8 +24,6 @@ class DeleteSnippetsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     delete_response: Optional[shared_deleteresponse.DeleteResponse] = dataclasses.field(default=None)
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import createcustomizationrequest as shared_createcustomizationrequest
-from ..shared import failresponse as shared_failresponse
 from ..shared import modelcustomization as shared_modelcustomization
 from typing import Optional
 
@@ -24,8 +23,6 @@ class CreateModelCustomizationRequest:
 class CreateModelCustomizationResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     model_customization: Optional[shared_modelcustomization.ModelCustomization] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

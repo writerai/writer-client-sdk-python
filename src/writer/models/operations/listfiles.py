@@ -3,7 +3,6 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import failresponse as shared_failresponse
 from ..shared import modelfilesresponse as shared_modelfilesresponse
 from typing import Optional
 
@@ -21,8 +20,6 @@ class ListFilesRequest:
 class ListFilesResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     model_files_response: Optional[shared_modelfilesresponse.ModelFilesResponse] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

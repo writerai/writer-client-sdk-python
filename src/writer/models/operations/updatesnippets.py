@@ -3,7 +3,6 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import failresponse as shared_failresponse
 from ..shared import snippetupdate as shared_snippetupdate
 from ..shared import snippetwithuser as shared_snippetwithuser
 from typing import Optional
@@ -25,8 +24,6 @@ class UpdateSnippetsRequest:
 class UpdateSnippetsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     snippet_with_users: Optional[list[shared_snippetwithuser.SnippetWithUser]] = dataclasses.field(default=None)

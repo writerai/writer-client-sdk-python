@@ -53,9 +53,8 @@ src/writer/models/operations/listusers.py
 src/writer/models/operations/getdocumentdetails.py
 src/writer/models/operations/listteamdocuments.py
 src/writer/models/operations/__init__.py
-src/writer/models/shared/failresponse.py
-src/writer/models/shared/failmessage.py
 src/writer/models/shared/contentdetectorresponse.py
+src/writer/models/shared/failmessage.py
 src/writer/models/shared/contentdetectorrequest.py
 src/writer/models/shared/subscriptionpublicresponseapi.py
 src/writer/models/shared/usage.py
@@ -120,6 +119,7 @@ src/writer/models/shared/briefdocuments.py
 src/writer/models/shared/briefdocument.py
 src/writer/models/shared/security.py
 src/writer/models/shared/__init__.py
+src/writer/models/errors/failresponse.py
 src/writer/models/errors/__init__.py
 docs/sdks/writer/README.md
 docs/sdks/aicontentdetector/README.md
@@ -209,10 +209,9 @@ docs/models/operations/listteamdocumentssortfield.md
 docs/models/operations/listteamdocumentssortorder.md
 docs/models/operations/listteamdocumentsrequest.md
 docs/models/operations/listteamdocumentsresponse.md
-docs/models/shared/failresponse.md
-docs/models/shared/failmessage.md
 docs/models/shared/contentdetectorresponselabel.md
 docs/models/shared/contentdetectorresponse.md
+docs/models/shared/failmessage.md
 docs/models/shared/contentdetectorrequest.md
 docs/models/shared/subscriptionpublicresponseapiproductname.md
 docs/models/shared/subscriptionpublicresponseapistatus.md
@@ -301,3 +300,4 @@ docs/models/shared/briefdocuments.md
 docs/models/shared/briefdocumentaccess.md
 docs/models/shared/briefdocument.md
 docs/models/shared/security.md
+docs/models/errors/failresponse.md

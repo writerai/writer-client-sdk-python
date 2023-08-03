@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import briefdocuments as shared_briefdocuments
-from ..shared import failresponse as shared_failresponse
 from enum import Enum
 from typing import Optional
 
@@ -40,8 +39,6 @@ class ListTeamDocumentsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     brief_documents: Optional[shared_briefdocuments.BriefDocuments] = dataclasses.field(default=None)
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

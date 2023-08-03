@@ -5,7 +5,6 @@ import dataclasses
 import requests as requests_http
 from ..shared import createtermsrequest as shared_createtermsrequest
 from ..shared import createtermsresponse as shared_createtermsresponse
-from ..shared import failresponse as shared_failresponse
 from typing import Optional
 
 
@@ -25,8 +24,6 @@ class AddTermsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_terms_response: Optional[shared_createtermsresponse.CreateTermsResponse] = dataclasses.field(default=None)
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

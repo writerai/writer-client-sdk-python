@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import contentrequest as shared_contentrequest
-from ..shared import failresponse as shared_failresponse
 from ..shared import processedcontent as shared_processedcontent
 from typing import Optional
 
@@ -24,8 +23,6 @@ class ContentCheckRequest:
 class ContentCheckResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    fail_response: Optional[shared_failresponse.FailResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     processed_content: Optional[shared_processedcontent.ProcessedContent] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
