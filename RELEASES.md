@@ -199,3 +199,11 @@ Based on:
 - Speakeasy CLI 1.68.3 (2.81.1) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [PyPI v0.19.0] https://pypi.org/project/writerai/0.19.0 - .
+
+## 2023-08-08 00:19:23
+### Changes
+Based on:
+- OpenAPI Doc 1.7 https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
+- Speakeasy CLI 1.69.1 (2.82.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v0.20.0] https://pypi.org/project/writerai/0.20.0 - .
