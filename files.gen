@@ -54,7 +54,6 @@ src/writer/models/operations/getdocumentdetails.py
 src/writer/models/operations/listteamdocuments.py
 src/writer/models/operations/__init__.py
 src/writer/models/shared/contentdetectorresponse.py
-src/writer/models/shared/failmessage.py
 src/writer/models/shared/contentdetectorrequest.py
 src/writer/models/shared/subscriptionpublicresponseapi.py
 src/writer/models/shared/usage.py
@@ -102,6 +101,7 @@ src/writer/models/shared/termmistake.py
 src/writer/models/shared/fulllinkedterm.py
 src/writer/models/shared/approvedtermextension.py
 src/writer/models/shared/termexample.py
+src/writer/models/shared/failmessage.py
 src/writer/models/shared/createtermsrequest.py
 src/writer/models/shared/termcreate.py
 src/writer/models/shared/termtagcreate.py
@@ -120,6 +120,7 @@ src/writer/models/shared/briefdocument.py
 src/writer/models/shared/security.py
 src/writer/models/shared/__init__.py
 src/writer/models/errors/failresponse.py
+src/writer/models/errors/failmessage.py
 src/writer/models/errors/__init__.py
 docs/sdks/writer/README.md
 docs/sdks/aicontentdetector/README.md
@@ -211,7 +212,6 @@ docs/models/operations/listteamdocumentsrequest.md
 docs/models/operations/listteamdocumentsresponse.md
 docs/models/shared/contentdetectorresponselabel.md
 docs/models/shared/contentdetectorresponse.md
-docs/models/shared/failmessage.md
 docs/models/shared/contentdetectorrequest.md
 docs/models/shared/subscriptionpublicresponseapiproductname.md
 docs/models/shared/subscriptionpublicresponseapistatus.md
@@ -273,6 +273,7 @@ docs/models/shared/fulllinkedterm.md
 docs/models/shared/approvedtermextension.md
 docs/models/shared/termexampletype.md
 docs/models/shared/termexample.md
+docs/models/shared/failmessage.md
 docs/models/shared/createtermsrequestfailhandling.md
 docs/models/shared/createtermsrequest.md
 docs/models/shared/termcreatepos.md
@@ -301,3 +302,4 @@ docs/models/shared/briefdocumentaccess.md
 docs/models/shared/briefdocument.md
 docs/models/shared/security.md
 docs/models/errors/failresponse.md
+docs/models/errors/failmessage.md
