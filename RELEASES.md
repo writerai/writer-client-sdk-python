@@ -277,3 +277,13 @@ Based on:
 - [python v0.22.2] .
 ### Releases
 - [PyPI v0.22.2] https://pypi.org/project/writerai/0.22.2 - .
+
+## 2023-08-31 00:16:54
+### Changes
+Based on:
+- OpenAPI Doc 1.7 https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
+- Speakeasy CLI 1.75.0 (2.89.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.23.0] .
+### Releases
+- [PyPI v0.23.0] https://pypi.org/project/writerai/0.23.0 - .
