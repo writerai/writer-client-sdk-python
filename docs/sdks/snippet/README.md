@@ -24,14 +24,13 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=995300,
+    organization_id=128926,
 )
 
 
-res = s.snippet.delete(team_id=653108, x_request_id='occaecati', ids=[
-    'commodi',
-    'quam',
-], organization_id=474697)
+res = s.snippet.delete(team_id=750686, x_request_id='enim', ids=[
+    'omnis',
+], organization_id=363711)
 
 if res.delete_response is not None:
     # handle response
@@ -66,22 +65,22 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=244425,
+    organization_id=325047,
 )
 
 req = operations.FindSnippetsRequest(
-    limit=623510,
-    offset=158969,
-    search='quis',
+    limit=570197,
+    offset=38425,
+    search='iure',
     shortcuts=[
-        'laborum',
+        'culpa',
     ],
-    sort_field=operations.FindSnippetsSortField.CREATION_TIME,
-    sort_order=operations.FindSnippetsSortOrder.ASC,
+    sort_field=operations.FindSnippetsSortField.MODIFICATION_TIME,
+    sort_order=operations.FindSnippetsSortOrder.DESC,
     tags=[
-        'quo',
+        'architecto',
     ],
-    team_id=196582,
+    team_id=652790,
 )
 
 res = s.snippet.find(req)
@@ -116,63 +115,23 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=949572,
+    organization_id=208876,
 )
 
 
-res = s.snippet.update(team_id=368725, request_body=[
+res = s.snippet.update(team_id=635059, request_body=[
     shared.SnippetUpdate(
-        description='possimus',
-        id='019da1ff-e78f-4097-b007-4f15471b5e6e',
-        shortcut='quae',
-        snippet='ipsum',
+        description='consequuntur',
+        id='fa946773-9251-4aa5-ac3f-5ad019da1ffe',
+        shortcut='nihil',
+        snippet='praesentium',
         tags=[
             shared.SnippetTagV2(
-                tag='molestias',
-            ),
-            shared.SnippetTagV2(
-                tag='excepturi',
-            ),
-            shared.SnippetTagV2(
-                tag='pariatur',
+                tag='voluptatibus',
             ),
         ],
     ),
-    shared.SnippetUpdate(
-        description='modi',
-        id='88e1e91e-450a-4d2a-bd44-269802d502a9',
-        shortcut='tempora',
-        snippet='facilis',
-        tags=[
-            shared.SnippetTagV2(
-                tag='labore',
-            ),
-            shared.SnippetTagV2(
-                tag='delectus',
-            ),
-            shared.SnippetTagV2(
-                tag='eum',
-            ),
-        ],
-    ),
-    shared.SnippetUpdate(
-        description='non',
-        id='c969e9a3-efa7-47df-b14c-d66ae395efb9',
-        shortcut='nam',
-        snippet='id',
-        tags=[
-            shared.SnippetTagV2(
-                tag='deleniti',
-            ),
-            shared.SnippetTagV2(
-                tag='sapiente',
-            ),
-            shared.SnippetTagV2(
-                tag='amet',
-            ),
-        ],
-    ),
-], x_request_id='deserunt', organization_id=394869)
+], x_request_id='ipsa', organization_id=604846)
 
 if res.snippet_with_users is not None:
     # handle response

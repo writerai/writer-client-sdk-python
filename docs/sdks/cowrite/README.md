@@ -30,25 +30,14 @@ s = writer.Writer(
 res = s.co_write.generate_content(generate_template_request=shared.GenerateTemplateRequest(
     inputs=[
         shared.MagicRequestInput(
-            name='Doug Hoppe',
+            name='Sabrina Oberbrunner',
             value=[
-                'ipsa',
-                'delectus',
-                'tempora',
-                'suscipit',
-            ],
-        ),
-        shared.MagicRequestInput(
-            name='Alexandra Schulist',
-            value=[
-                'nisi',
-                'recusandae',
-                'temporibus',
+                'magnam',
             ],
         ),
     ],
-    template_id='ab',
-), team_id=337396, organization_id=87129)
+    template_id='debitis',
+), team_id=56713, organization_id=963663)
 
 if res.draft is not None:
     # handle response
@@ -82,11 +71,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=648172,
+    organization_id=272656,
 )
 
 
-res = s.co_write.list_templates(team_id=20218, template_id='ipsam', organization_id=832620)
+res = s.co_write.list_templates(team_id=383441, template_id='molestiae', organization_id=791725)
 
 if res.template_details_response is not None:
     # handle response

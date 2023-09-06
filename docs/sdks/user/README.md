@@ -22,15 +22,15 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=880298,
+    organization_id=703737,
 )
 
 req = operations.ListUsersRequest(
-    limit=253941,
-    offset=313692,
-    search='dolorem',
-    sort_field=operations.ListUsersSortField.LAST_SEEN,
-    sort_order=operations.ListUsersSortOrder.DESC,
+    limit=735194,
+    offset=288476,
+    search='delectus',
+    sort_field=operations.ListUsersSortField.DELETED,
+    sort_order=operations.ListUsersSortOrder.ASC,
 )
 
 res = s.user.list(req)

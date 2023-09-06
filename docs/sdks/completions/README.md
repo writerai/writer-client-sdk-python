@@ -23,26 +23,25 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=957156,
+    organization_id=812169,
 )
 
 
 res = s.completions.create(completion_request=shared.CompletionRequest(
     best_of=1,
-    frequency_penalty=7781.57,
-    logprobs=140350,
+    frequency_penalty=5288.95,
+    logprobs=479977,
     max_tokens=1024,
     min_tokens=1,
-    n=870013,
-    presence_penalty=8700.88,
-    prompt='maiores',
+    n=568045,
+    presence_penalty=3927.85,
+    prompt='recusandae',
     stop=[
-        'quod',
-        'quod',
+        'temporibus',
     ],
     temperature=0.7,
     top_p=1,
-), model_id='esse', organization_id=520478)
+), model_id='ab', organization_id=337396)
 
 if res.completion_response is not None:
     # handle response
@@ -76,25 +75,25 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=780529,
+    organization_id=87129,
 )
 
 
 res = s.completions.create_model_customization_completion(completion_request=shared.CompletionRequest(
     best_of=1,
-    frequency_penalty=6788.8,
-    logprobs=118274,
+    frequency_penalty=6481.72,
+    logprobs=20218,
     max_tokens=1024,
     min_tokens=1,
-    n=720633,
-    presence_penalty=6399.21,
-    prompt='occaecati',
+    n=368241,
+    presence_penalty=8326.2,
+    prompt='sapiente',
     stop=[
-        'deleniti',
+        'quo',
     ],
     temperature=0.7,
     top_p=1,
-), customization_id='hic', model_id='optio', organization_id=521848)
+), customization_id='odit', model_id='at', organization_id=870088)
 
 if res.completion_response is not None:
     # handle response
