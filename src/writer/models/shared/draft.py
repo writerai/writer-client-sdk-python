@@ -5,7 +5,6 @@ import dataclasses
 import dateutil.parser
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
-from marshmallow import fields
 from typing import Any, Optional
 from writer import utils
 
@@ -16,7 +15,7 @@ from writer import utils
 class Draft:
     body: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body') }})
     created_user_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdUserId') }})
-    creation_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creationTime'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
+    creation_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creationTime'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     deleted: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted') }})
     document_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('documentId') }})
     inputs: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('inputs') }})

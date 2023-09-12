@@ -8,7 +8,6 @@ from ..shared import usage as shared_usage
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
-from marshmallow import fields
 from writer import utils
 
 class SubscriptionPublicResponseAPIProductName(str, Enum):
@@ -32,7 +31,7 @@ class SubscriptionPublicResponseAPIStatus(str, Enum):
 
 @dataclasses.dataclass
 class SubscriptionPublicResponseAPI:
-    created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
+    created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     meta: shared_metadata.MetaData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta') }})
     product_name: SubscriptionPublicResponseAPIProductName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('productName') }})
     seats: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seats') }})

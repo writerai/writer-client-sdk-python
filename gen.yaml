@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 044ba6ea348a6fb8206cacad6926373d
   docVersion: "1.7"
-  speakeasyVersion: 1.79.0
-  generationVersion: 2.101.0
+  speakeasyVersion: 1.82.5
+  generationVersion: 2.108.3
 generation:
   sdkClassName: writer
   sdkFlattening: true
@@ -11,8 +11,7 @@ generation:
   telemetryEnabled: false
 features:
   python:
-    core: 2.85.3
-    docs: 0.1.0
+    core: 2.85.4
     errors: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.81.1
@@ -20,7 +19,7 @@ features:
     globals: 2.81.1
     nameOverrides: 2.81.1
 python:
-  version: 0.25.0
+  version: 0.25.1
   author: writerai
   description: Python SDK for Writer API
   maxMethodParams: 4
