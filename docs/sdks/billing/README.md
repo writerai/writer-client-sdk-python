@@ -1,4 +1,4 @@
-# billing
+# Billing
 
 ## Overview
 

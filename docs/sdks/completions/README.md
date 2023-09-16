@@ -1,4 +1,4 @@
-# completions
+# Completions
 
 ## Overview
 
