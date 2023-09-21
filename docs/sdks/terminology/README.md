@@ -1,4 +1,4 @@
-# terminology
+# Terminology
 
 ## Overview
 

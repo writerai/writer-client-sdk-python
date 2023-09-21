@@ -1,7 +1,5 @@
 # FailResponse
 
-Bad Request
-
 
 ## Fields
 
