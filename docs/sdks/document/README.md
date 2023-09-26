@@ -23,11 +23,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=756107,
+    organization_id=896039,
 )
 
 
-res = s.document.get(document_id=576157, team_id=396098, organization_id=592042)
+res = s.document.get(document_id=572252, team_id=638921, organization_id=223081)
 
 if res.document is not None:
     # handle response
@@ -61,16 +61,16 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=896039,
+    organization_id=891555,
 )
 
 req = operations.ListTeamDocumentsRequest(
-    limit=572252,
-    offset=638921,
-    search='dolor',
-    sort_field=operations.ListTeamDocumentsSortField.OPENED_BY_ME_TIME,
+    limit=952749,
+    offset=680056,
+    search='in',
+    sort_field=operations.ListTeamDocumentsSortField.MODIFICATION_TIME,
     sort_order=operations.ListTeamDocumentsSortOrder.DESC,
-    team_id=680056,
+    team_id=978571,
 )
 
 res = s.document.list(req)

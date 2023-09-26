@@ -24,13 +24,13 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=128926,
+    organization_id=363711,
 )
 
 
-res = s.snippet.delete(team_id=750686, x_request_id='enim', ids=[
-    'omnis',
-], organization_id=363711)
+res = s.snippet.delete(team_id=325047, x_request_id='excepturi', ids=[
+    'accusantium',
+], organization_id=438601)
 
 if res.delete_response is not None:
     # handle response
@@ -65,22 +65,22 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=325047,
+    organization_id=634274,
 )
 
 req = operations.FindSnippetsRequest(
-    limit=570197,
-    offset=38425,
-    search='iure',
+    limit=988374,
+    offset=958950,
+    search='architecto',
     shortcuts=[
-        'culpa',
+        'mollitia',
     ],
-    sort_field=operations.FindSnippetsSortField.MODIFICATION_TIME,
+    sort_field=operations.FindSnippetsSortField.SHORTCUT,
     sort_order=operations.FindSnippetsSortOrder.DESC,
     tags=[
-        'architecto',
+        'consequuntur',
     ],
-    team_id=652790,
+    team_id=995300,
 )
 
 res = s.snippet.find(req)
@@ -115,23 +115,23 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=208876,
+    organization_id=653108,
 )
 
 
-res = s.snippet.update(team_id=635059, request_body=[
+res = s.snippet.update(team_id=581850, request_body=[
     shared.SnippetUpdate(
-        description='consequuntur',
-        id='fa946773-9251-4aa5-ac3f-5ad019da1ffe',
-        shortcut='nihil',
-        snippet='praesentium',
+        description='numquam',
+        id='67739251-aa52-4c3f-9ad0-19da1ffe78f0',
+        shortcut='omnis',
+        snippet='voluptate',
         tags=[
             shared.SnippetTagV2(
-                tag='voluptatibus',
+                tag='cum',
             ),
         ],
     ),
-], x_request_id='ipsa', organization_id=604846)
+], x_request_id='perferendis', organization_id=39187)
 
 if res.snippet_with_users is not None:
     # handle response

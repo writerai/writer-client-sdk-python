@@ -22,11 +22,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=210382,
+    organization_id=315428,
 )
 
 
-res = s.models.list(organization_id=358152)
+res = s.models.list(organization_id=607831)
 
 if res.generation_models_response is not None:
     # handle response

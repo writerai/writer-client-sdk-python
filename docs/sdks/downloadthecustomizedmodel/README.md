@@ -22,11 +22,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=720633,
+    organization_id=537373,
 )
 
 
-res = s.download_the_customized_model.fetch_file(customization_id='officia', model_id='occaecati', organization_id=143353)
+res = s.download_the_customized_model.fetch_file(customization_id='hic', model_id='optio', organization_id=521848)
 
 if res.fetch_customized_model_file_200_application_octet_stream_binary_string is not None:
     # handle response

@@ -25,11 +25,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=537373,
+    organization_id=105907,
 )
 
 
-res = s.files.delete(file_id='hic', organization_id=758616)
+res = s.files.delete(file_id='commodi', organization_id=473600)
 
 if res.delete_file_200_application_json_object is not None:
     # handle response
@@ -62,11 +62,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=521848,
+    organization_id=264555,
 )
 
 
-res = s.files.get(file_id='beatae', organization_id=414662)
+res = s.files.get(file_id='qui', organization_id=774234)
 
 if res.model_file is not None:
     # handle response
@@ -99,11 +99,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=473600,
+    organization_id=736918,
 )
 
 
-res = s.files.list(organization_id=264555)
+res = s.files.list(organization_id=456150)
 
 if res.model_files_response is not None:
     # handle response
@@ -135,16 +135,16 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=186332,
+    organization_id=216550,
 )
 
 
 res = s.files.upload(upload_model_file_request=shared.UploadModelFileRequest(
     file=shared.UploadModelFileRequestFile(
-        content='impedit'.encode(),
-        file='cum',
+        content='excepturi'.encode(),
+        file='aspernatur',
     ),
-), organization_id=456150)
+), organization_id=18789)
 
 if res.model_file is not None:
     # handle response

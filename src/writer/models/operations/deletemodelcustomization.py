@@ -26,9 +26,12 @@ class DeleteModelCustomization200ApplicationJSON:
 @dataclasses.dataclass
 class DeleteModelCustomizationResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_model_customization_200_application_json_object: Optional[DeleteModelCustomization200ApplicationJSON] = dataclasses.field(default=None)
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -21,9 +21,12 @@ class GetDocumentDetailsRequest:
 @dataclasses.dataclass
 class GetDocumentDetailsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     document: Optional[shared_document.Document] = dataclasses.field(default=None)
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

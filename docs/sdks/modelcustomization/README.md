@@ -25,23 +25,23 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=216550,
+    organization_id=324141,
 )
 
 
 res = s.model_customization.create(create_customization_request=shared.CreateCustomizationRequest(
     additional_hyper_parameters=shared.HyperParameters(
-        num_virtual_tokens=568434,
+        num_virtual_tokens=617636,
     ),
-    batch_size=135218,
-    description='perferendis',
-    epochs=324141,
-    learning_rate=6176.36,
-    name='Sheryl Fadel',
-    prompt_template='hic',
-    training_dataset_file_id='saepe',
-    validation_dataset_file_id='fuga',
-), model_id='in', organization_id=359508)
+    batch_size=149675,
+    description='iste',
+    epochs=222321,
+    learning_rate=6169.34,
+    name='May Turcotte',
+    prompt_template='corporis',
+    training_dataset_file_id='iste',
+    validation_dataset_file_id='iure',
+), model_id='saepe', organization_id=697631)
 
 if res.model_customization is not None:
     # handle response
@@ -75,11 +75,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=613064,
+    organization_id=99280,
 )
 
 
-res = s.model_customization.delete(customization_id='iure', model_id='saepe', organization_id=697631)
+res = s.model_customization.delete(customization_id='ipsa', model_id='reiciendis', organization_id=666767)
 
 if res.delete_model_customization_200_application_json_object is not None:
     # handle response
@@ -113,11 +113,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=99280,
+    organization_id=653140,
 )
 
 
-res = s.model_customization.get(customization_id='ipsa', model_id='reiciendis', organization_id=666767)
+res = s.model_customization.get(customization_id='laborum', model_id='dolores', organization_id=210382)
 
 if res.model_customization is not None:
     # handle response
@@ -151,11 +151,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=653140,
+    organization_id=358152,
 )
 
 
-res = s.model_customization.list(model_id='laborum', organization_id=170909)
+res = s.model_customization.list(model_id='explicabo', organization_id=750686)
 
 if res.customizations_response is not None:
     # handle response

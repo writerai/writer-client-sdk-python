@@ -23,25 +23,25 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=812169,
+    organization_id=392785,
 )
 
 
 res = s.completions.create(completion_request=shared.CompletionRequest(
     best_of=1,
-    frequency_penalty=5288.95,
-    logprobs=479977,
+    frequency_penalty=9255.97,
+    logprobs=836079,
     max_tokens=1024,
     min_tokens=1,
-    n=568045,
-    presence_penalty=3927.85,
-    prompt='recusandae',
+    n=71036,
+    presence_penalty=3373.96,
+    prompt='veritatis',
     stop=[
-        'temporibus',
+        'deserunt',
     ],
     temperature=0.7,
     top_p=1,
-), model_id='ab', organization_id=337396)
+), model_id='perferendis', organization_id=368241)
 
 if res.completion_response is not None:
     # handle response
@@ -75,25 +75,25 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=87129,
+    organization_id=832620,
 )
 
 
 res = s.completions.create_model_customization_completion(completion_request=shared.CompletionRequest(
     best_of=1,
-    frequency_penalty=6481.72,
-    logprobs=20218,
+    frequency_penalty=9571.56,
+    logprobs=778157,
     max_tokens=1024,
     min_tokens=1,
-    n=368241,
-    presence_penalty=8326.2,
-    prompt='sapiente',
+    n=140350,
+    presence_penalty=8700.13,
+    prompt='at',
     stop=[
-        'quo',
+        'maiores',
     ],
     temperature=0.7,
     top_p=1,
-), customization_id='odit', model_id='at', organization_id=870088)
+), customization_id='molestiae', model_id='quod', organization_id=800911)
 
 if res.completion_response is not None:
     # handle response

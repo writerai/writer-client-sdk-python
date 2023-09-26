@@ -25,7 +25,7 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=979587,
+    organization_id=480894,
 )
 
 
@@ -39,40 +39,40 @@ res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='corporis',
+            description='harum',
             examples=[
                 shared.TermExampleCreate(
-                    example='dolore',
-                    type=shared.TermExampleCreateType.GOOD,
+                    example='enim',
+                    type=shared.TermExampleCreateType.BAD,
                 ),
             ],
             highlight=False,
             linked_terms=[
                 shared.LinkedTermCreate(
-                    linked_term_id=118727,
-                    reference='harum',
+                    linked_term_id=414263,
+                    reference='repudiandae',
                 ),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='enim',
-                    pos=shared.TermMistakeCreatePos.ADJECTIVE,
-                    reference='commodi',
+                    mistake='quae',
+                    pos=shared.TermMistakeCreatePos.NOUN,
+                    reference='quidem',
                 ),
             ],
-            pos=shared.TermCreatePos.ADJECTIVE,
-            reference='quae',
+            pos=shared.TermCreatePos.ADVERB,
+            reference='excepturi',
             tags=[
                 shared.TermTagCreate(
-                    tag='ipsum',
+                    tag='pariatur',
                 ),
             ],
-            term='quidem',
+            term='modi',
             type=shared.TermCreateType.BANNED,
         ),
     ],
-), team_id=566602, organization_id=865103)
+), team_id=523248, organization_id=916723)
 
 if res.create_terms_response is not None:
     # handle response
@@ -106,13 +106,13 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=265389,
+    organization_id=93940,
 )
 
 
-res = s.terminology.delete(team_id=508969, x_request_id='rem', ids=[
-    916723,
-], organization_id=93940)
+res = s.terminology.delete(team_id=921158, x_request_id='sint', ids=[
+    83112,
+], organization_id=929297)
 
 if res.delete_response is not None:
     # handle response
@@ -147,19 +147,19 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=921158,
+    organization_id=277718,
 )
 
 req = operations.FindTermsRequest(
-    limit=575947,
-    offset=83112,
-    part_of_speech=operations.FindTermsPartOfSpeech.ADJECTIVE,
-    sort_field=operations.FindTermsSortField.CREATION_TIME,
+    limit=318569,
+    offset=9356,
+    part_of_speech=operations.FindTermsPartOfSpeech.ADVERB,
+    sort_field=operations.FindTermsSortField.TYPE,
     sort_order=operations.FindTermsSortOrder.ASC,
     tags=[
-        'consequatur',
+        'deserunt',
     ],
-    team_id=667411,
+    team_id=716327,
     term='quibusdam',
     type=operations.FindTermsType.APPROVED,
 )
@@ -196,12 +196,12 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=647174,
+    organization_id=264730,
 )
 
 
 res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
-    fail_handling=shared.UpdateTermsRequestFailHandling.SKIP,
+    fail_handling=shared.UpdateTermsRequestFailHandling.ACCUMULATE,
     models=[
         shared.TermUpdate(
             approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -210,40 +210,40 @@ res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='quibusdam',
+            description='aliquid',
             examples=[
                 shared.TermExampleCreate(
-                    example='labore',
-                    type=shared.TermExampleCreateType.GOOD,
+                    example='cupiditate',
+                    type=shared.TermExampleCreateType.BAD,
                 ),
             ],
             highlight=False,
-            id=183191,
+            id=20107,
             linked_terms=[
                 shared.LinkedTermCreate(
-                    linked_term_id=397821,
-                    reference='cupiditate',
+                    linked_term_id=164940,
+                    reference='assumenda',
                 ),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='quos',
+                    mistake='ipsam',
                     pos=shared.TermMistakeCreatePos.NOUN,
-                    reference='magni',
+                    reference='fugit',
                 ),
             ],
-            pos=shared.TermUpdatePos.ADJECTIVE,
+            pos=shared.TermUpdatePos.ADVERB,
             tags=[
                 shared.TermTagCreate(
-                    tag='ipsam',
+                    tag='excepturi',
                 ),
             ],
-            term='alias',
-            type=shared.TermUpdateType.APPROVED,
+            term='tempora',
+            type=shared.TermUpdateType.PENDING,
         ),
     ],
-), team_id=677817, x_request_id='excepturi', organization_id=270008)
+), team_id=735194, x_request_id='labore', organization_id=962189)
 
 if res.create_terms_response is not None:
     # handle response
