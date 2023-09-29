@@ -24,25 +24,25 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=392785,
+    organization_id=486589,
 )
 
 
 res = s.completions.create(completion_request=shared.CompletionRequest(
     best_of=1,
-    frequency_penalty=9255.97,
-    logprobs=836079,
+    frequency_penalty=4893.82,
+    logprobs=638424,
     max_tokens=1024,
     min_tokens=1,
-    n=71036,
-    presence_penalty=3373.96,
-    prompt='veritatis',
+    n=859213,
+    presence_penalty=4174.58,
+    prompt='South',
     stop=[
-        'deserunt',
+        'shred',
     ],
     temperature=0.7,
     top_p=1,
-), model_id='perferendis', organization_id=368241)
+), model_id='abnormally', organization_id=455222)
 
 if res.completion_response is not None:
     # handle response
@@ -76,25 +76,25 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=832620,
+    organization_id=919503,
 )
 
 
 res = s.completions.create_model_customization_completion(completion_request=shared.CompletionRequest(
     best_of=1,
-    frequency_penalty=9571.56,
-    logprobs=778157,
+    frequency_penalty=412.97,
+    logprobs=951257,
     max_tokens=1024,
     min_tokens=1,
-    n=140350,
-    presence_penalty=8700.13,
-    prompt='at',
+    n=314952,
+    presence_penalty=657.2,
+    prompt='platforms convergence Bicycle',
     stop=[
-        'maiores',
+        'heavily',
     ],
     temperature=0.7,
     top_p=1,
-), customization_id='molestiae', model_id='quod', organization_id=800911)
+), customization_id='green', model_id='cum', organization_id=110459)
 
 if res.completion_response is not None:
     # handle response

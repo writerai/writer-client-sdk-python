@@ -26,12 +26,12 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=480894,
+    organization_id=551477,
 )
 
 
 res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
-    fail_handling=shared.CreateTermsRequestFailHandling.ACCUMULATE,
+    fail_handling=shared.CreateTermsRequestFailHandling.VALIDATE_ONLY,
     models=[
         shared.TermCreate(
             approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -40,40 +40,40 @@ res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='harum',
+            description='Optional mobile secured line',
             examples=[
                 shared.TermExampleCreate(
-                    example='enim',
-                    type=shared.TermExampleCreateType.BAD,
+                    example='noon bypass Chief',
+                    type=shared.TermExampleCreateType.GOOD,
                 ),
             ],
             highlight=False,
             linked_terms=[
                 shared.LinkedTermCreate(
-                    linked_term_id=414263,
-                    reference='repudiandae',
+                    linked_term_id=753323,
+                    reference='Southeast',
                 ),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='quae',
-                    pos=shared.TermMistakeCreatePos.NOUN,
-                    reference='quidem',
+                    mistake='generating payment quantify',
+                    pos=shared.TermMistakeCreatePos.VERB,
+                    reference='Urbandale Gasoline',
                 ),
             ],
             pos=shared.TermCreatePos.ADVERB,
-            reference='excepturi',
+            reference='methodologies',
             tags=[
                 shared.TermTagCreate(
-                    tag='pariatur',
+                    tag='Northeast',
                 ),
             ],
-            term='modi',
+            term='Pomona auxiliary',
             type=shared.TermCreateType.BANNED,
         ),
     ],
-), team_id=523248, organization_id=916723)
+), team_id=739517, organization_id=358325)
 
 if res.create_terms_response is not None:
     # handle response
@@ -107,13 +107,13 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=93940,
+    organization_id=545907,
 )
 
 
-res = s.terminology.delete(team_id=921158, x_request_id='sint', ids=[
-    83112,
-], organization_id=929297)
+res = s.terminology.delete(team_id=841399, x_request_id='Designer', ids=[
+    386564,
+], organization_id=201447)
 
 if res.delete_response is not None:
     # handle response
@@ -148,20 +148,20 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=277718,
+    organization_id=40141,
 )
 
 req = operations.FindTermsRequest(
-    limit=318569,
-    offset=9356,
-    part_of_speech=operations.FindTermsPartOfSpeech.ADVERB,
+    limit=326883,
+    offset=488098,
+    part_of_speech=operations.FindTermsPartOfSpeech.ADJECTIVE,
     sort_field=operations.FindTermsSortField.TYPE,
     sort_order=operations.FindTermsSortOrder.ASC,
     tags=[
-        'deserunt',
+        'West',
     ],
-    team_id=716327,
-    term='quibusdam',
+    team_id=413686,
+    term='Bike generating',
     type=operations.FindTermsType.APPROVED,
 )
 
@@ -197,7 +197,7 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=264730,
+    organization_id=857478,
 )
 
 
@@ -211,40 +211,40 @@ res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='aliquid',
+            description='Persistent 24/7 focus group',
             examples=[
                 shared.TermExampleCreate(
-                    example='cupiditate',
+                    example='dock Quality redundant',
                     type=shared.TermExampleCreateType.BAD,
                 ),
             ],
             highlight=False,
-            id=20107,
+            id=134151,
             linked_terms=[
                 shared.LinkedTermCreate(
-                    linked_term_id=164940,
-                    reference='assumenda',
+                    linked_term_id=54062,
+                    reference='mostly',
                 ),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='ipsam',
-                    pos=shared.TermMistakeCreatePos.NOUN,
-                    reference='fugit',
+                    mistake='dynamic white',
+                    pos=shared.TermMistakeCreatePos.VERB,
+                    reference='Forward',
                 ),
             ],
-            pos=shared.TermUpdatePos.ADVERB,
+            pos=shared.TermUpdatePos.ADJECTIVE,
             tags=[
                 shared.TermTagCreate(
-                    tag='excepturi',
+                    tag='East Baht Quality',
                 ),
             ],
-            term='tempora',
-            type=shared.TermUpdateType.PENDING,
+            term='Home users Sharable',
+            type=shared.TermUpdateType.BANNED,
         ),
     ],
-), team_id=735194, x_request_id='labore', organization_id=962189)
+), team_id=439152, x_request_id='Northeast', organization_id=481319)
 
 if res.create_terms_response is not None:
     # handle response

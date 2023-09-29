@@ -12,7 +12,7 @@
 | `min_tokens`        | *Optional[int]*     | :heavy_minus_sign:  | N/A                 | 1                   |
 | `n`                 | *Optional[int]*     | :heavy_minus_sign:  | N/A                 |                     |
 | `presence_penalty`  | *Optional[float]*   | :heavy_minus_sign:  | N/A                 |                     |
-| `prompt`            | *str*               | :heavy_check_mark:  | N/A                 |                     |
+| `prompt`            | *Optional[str]*     | :heavy_check_mark:  | N/A                 |                     |
 | `stop`              | list[*str*]         | :heavy_minus_sign:  | N/A                 |                     |
 | `temperature`       | *Optional[float]*   | :heavy_minus_sign:  | N/A                 | 0.7                 |
 | `top_p`             | *Optional[float]*   | :heavy_minus_sign:  | N/A                 | 1                   |

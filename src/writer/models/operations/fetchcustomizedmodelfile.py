@@ -23,7 +23,7 @@ class FetchCustomizedModelFileResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    fetch_customized_model_file_200_application_octet_stream_binary_string: Optional[bytes] = dataclasses.field(default=None)
+    fetch_customized_model_file_200_application_octet_stream_binary_string: Optional[requests_http.Response] = dataclasses.field(default=None)
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

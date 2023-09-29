@@ -34,7 +34,7 @@ class DownloadTheCustomizedModel:
             headers['Accept'] = accept_header_override.value
         else:
             headers['Accept'] = 'application/json;q=1, application/octet-stream;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -47,7 +47,7 @@ class DownloadTheCustomizedModel:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/octet-stream'):
-                res.fetch_customized_model_file_200_application_octet_stream_binary_string = http_res.content
+                res.fetch_customized_model_file_200_application_octet_stream_binary_string = http_res
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:

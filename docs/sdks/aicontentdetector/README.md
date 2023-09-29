@@ -23,13 +23,13 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=544883,
+    organization_id=496531,
 )
 
 
 res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='illum',
-), organization_id=423655)
+    input='Bronze Indian',
+), organization_id=558689)
 
 if res.content_detector_responses is not None:
     # handle response

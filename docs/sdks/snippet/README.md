@@ -25,13 +25,13 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=363711,
+    organization_id=545907,
 )
 
 
-res = s.snippet.delete(team_id=325047, x_request_id='excepturi', ids=[
-    'accusantium',
-], organization_id=438601)
+res = s.snippet.delete(team_id=841399, x_request_id='Designer', ids=[
+    'complexity',
+], organization_id=952479)
 
 if res.delete_response is not None:
     # handle response
@@ -66,22 +66,22 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=634274,
+    organization_id=40141,
 )
 
 req = operations.FindSnippetsRequest(
-    limit=988374,
-    offset=958950,
-    search='architecto',
+    limit=326883,
+    offset=488098,
+    search='whoa West Credit',
     shortcuts=[
-        'mollitia',
+        'Granite',
     ],
-    sort_field=operations.FindSnippetsSortField.SHORTCUT,
-    sort_order=operations.FindSnippetsSortOrder.DESC,
+    sort_field=operations.FindSnippetsSortField.CREATION_TIME,
+    sort_order=operations.FindSnippetsSortOrder.ASC,
     tags=[
-        'consequuntur',
+        'Iowa',
     ],
-    team_id=995300,
+    team_id=785366,
 )
 
 res = s.snippet.find(req)
@@ -116,23 +116,23 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=653108,
+    organization_id=857478,
 )
 
 
-res = s.snippet.update(team_id=581850, request_body=[
+res = s.snippet.update(team_id=24555, request_body=[
     shared.SnippetUpdate(
-        description='numquam',
-        id='67739251-aa52-4c3f-9ad0-19da1ffe78f0',
-        shortcut='omnis',
-        snippet='voluptate',
+        description='Persistent 24/7 focus group',
+        id='<ID>',
+        shortcut='dock Quality redundant',
+        snippet='Arizona Cotton extend',
         tags=[
             shared.SnippetTagV2(
-                tag='cum',
+                tag='bifurcated',
             ),
         ],
     ),
-], x_request_id='perferendis', organization_id=39187)
+], x_request_id='Forward', organization_id=993680)
 
 if res.snippet_with_users is not None:
     # handle response

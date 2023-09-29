@@ -26,23 +26,23 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=324141,
+    organization_id=486589,
 )
 
 
 res = s.model_customization.create(create_customization_request=shared.CreateCustomizationRequest(
     additional_hyper_parameters=shared.HyperParameters(
-        num_virtual_tokens=617636,
+        num_virtual_tokens=489382,
     ),
-    batch_size=149675,
-    description='iste',
-    epochs=222321,
-    learning_rate=6169.34,
-    name='May Turcotte',
-    prompt_template='corporis',
-    training_dataset_file_id='iste',
-    validation_dataset_file_id='iure',
-), model_id='saepe', organization_id=697631)
+    batch_size=638424,
+    description='Synchronised full-range emulation',
+    epochs=134365,
+    learning_rate=7865.46,
+    name='shred',
+    prompt_template='technology East',
+    training_dataset_file_id='evolve',
+    validation_dataset_file_id='fuchsia Gasoline Screen',
+), model_id='mobile', organization_id=656256)
 
 if res.model_customization is not None:
     # handle response
@@ -76,11 +76,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=99280,
+    organization_id=545907,
 )
 
 
-res = s.model_customization.delete(customization_id='ipsa', model_id='reiciendis', organization_id=666767)
+res = s.model_customization.delete(customization_id='Van', model_id='complexity', organization_id=952479)
 
 if res.delete_model_customization_200_application_json_object is not None:
     # handle response
@@ -114,11 +114,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=653140,
+    organization_id=700347,
 )
 
 
-res = s.model_customization.get(customization_id='laborum', model_id='dolores', organization_id=210382)
+res = s.model_customization.get(customization_id='Northeast', model_id='Hatchback', organization_id=830636)
 
 if res.model_customization is not None:
     # handle response
@@ -152,11 +152,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=358152,
+    organization_id=768578,
 )
 
 
-res = s.model_customization.list(model_id='explicabo', organization_id=750686)
+res = s.model_customization.list(model_id='Northeast', organization_id=257649)
 
 if res.customizations_response is not None:
     # handle response
