@@ -20,9 +20,9 @@ class SDKConfiguration:
     globals: dict[str, dict[str, dict[str, Any]]] = field(default_factory=dict)
     language: str = 'python'
     openapi_doc_version: str = '1.7'
-    sdk_version: str = '0.28.0'
-    gen_version: str = '2.142.2'
-    user_agent: str = 'speakeasy-sdk/python 0.28.0 2.142.2 1.7 writerai'
+    sdk_version: str = '0.28.1'
+    gen_version: str = '2.143.2'
+    user_agent: str = 'speakeasy-sdk/python 0.28.1 2.143.2 1.7 writerai'
     retry_config: RetryConfig = None
 
     def get_server_details(self) -> tuple[str, dict[str, str]]:
