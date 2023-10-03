@@ -1,4 +1,5 @@
 # Terminology
+(*terminology*)
 
 ## Overview
 
@@ -25,12 +26,12 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=979587,
+    organization_id=551477,
 )
 
 
 res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
-    fail_handling=shared.CreateTermsRequestFailHandling.ACCUMULATE,
+    fail_handling=shared.CreateTermsRequestFailHandling.VALIDATE_ONLY,
     models=[
         shared.TermCreate(
             approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -39,40 +40,40 @@ res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='corporis',
+            description='Optional mobile secured line',
             examples=[
                 shared.TermExampleCreate(
-                    example='dolore',
+                    example='noon bypass Chief',
                     type=shared.TermExampleCreateType.GOOD,
                 ),
             ],
             highlight=False,
             linked_terms=[
                 shared.LinkedTermCreate(
-                    linked_term_id=118727,
-                    reference='harum',
+                    linked_term_id=753323,
+                    reference='Southeast',
                 ),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='enim',
-                    pos=shared.TermMistakeCreatePos.ADJECTIVE,
-                    reference='commodi',
+                    mistake='generating payment quantify',
+                    pos=shared.TermMistakeCreatePos.VERB,
+                    reference='Urbandale Gasoline',
                 ),
             ],
-            pos=shared.TermCreatePos.ADJECTIVE,
-            reference='quae',
+            pos=shared.TermCreatePos.ADVERB,
+            reference='methodologies',
             tags=[
                 shared.TermTagCreate(
-                    tag='ipsum',
+                    tag='Northeast',
                 ),
             ],
-            term='quidem',
+            term='Pomona auxiliary',
             type=shared.TermCreateType.BANNED,
         ),
     ],
-), team_id=566602, organization_id=865103)
+), team_id=739517, organization_id=358325)
 
 if res.create_terms_response is not None:
     # handle response
@@ -106,13 +107,13 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=265389,
+    organization_id=545907,
 )
 
 
-res = s.terminology.delete(team_id=508969, x_request_id='rem', ids=[
-    916723,
-], organization_id=93940)
+res = s.terminology.delete(team_id=841399, x_request_id='Designer', ids=[
+    386564,
+], organization_id=201447)
 
 if res.delete_response is not None:
     # handle response
@@ -147,20 +148,20 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=921158,
+    organization_id=40141,
 )
 
 req = operations.FindTermsRequest(
-    limit=575947,
-    offset=83112,
+    limit=326883,
+    offset=488098,
     part_of_speech=operations.FindTermsPartOfSpeech.ADJECTIVE,
-    sort_field=operations.FindTermsSortField.CREATION_TIME,
+    sort_field=operations.FindTermsSortField.TYPE,
     sort_order=operations.FindTermsSortOrder.ASC,
     tags=[
-        'consequatur',
+        'West',
     ],
-    team_id=667411,
-    term='quibusdam',
+    team_id=413686,
+    term='Bike generating',
     type=operations.FindTermsType.APPROVED,
 )
 
@@ -196,12 +197,12 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=647174,
+    organization_id=857478,
 )
 
 
 res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
-    fail_handling=shared.UpdateTermsRequestFailHandling.SKIP,
+    fail_handling=shared.UpdateTermsRequestFailHandling.ACCUMULATE,
     models=[
         shared.TermUpdate(
             approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -210,40 +211,40 @@ res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='quibusdam',
+            description='Persistent 24/7 focus group',
             examples=[
                 shared.TermExampleCreate(
-                    example='labore',
-                    type=shared.TermExampleCreateType.GOOD,
+                    example='dock Quality redundant',
+                    type=shared.TermExampleCreateType.BAD,
                 ),
             ],
             highlight=False,
-            id=183191,
+            id=134151,
             linked_terms=[
                 shared.LinkedTermCreate(
-                    linked_term_id=397821,
-                    reference='cupiditate',
+                    linked_term_id=54062,
+                    reference='mostly',
                 ),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='quos',
-                    pos=shared.TermMistakeCreatePos.NOUN,
-                    reference='magni',
+                    mistake='dynamic white',
+                    pos=shared.TermMistakeCreatePos.VERB,
+                    reference='Forward',
                 ),
             ],
             pos=shared.TermUpdatePos.ADJECTIVE,
             tags=[
                 shared.TermTagCreate(
-                    tag='ipsam',
+                    tag='East Baht Quality',
                 ),
             ],
-            term='alias',
-            type=shared.TermUpdateType.APPROVED,
+            term='Home users Sharable',
+            type=shared.TermUpdateType.BANNED,
         ),
     ],
-), team_id=677817, x_request_id='excepturi', organization_id=270008)
+), team_id=439152, x_request_id='Northeast', organization_id=481319)
 
 if res.create_terms_response is not None:
     # handle response

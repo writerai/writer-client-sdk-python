@@ -1,4 +1,5 @@
 # User
+(*user*)
 
 ## Overview
 
@@ -22,14 +23,14 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=703737,
+    organization_id=768578,
 )
 
 req = operations.ListUsersRequest(
-    limit=735194,
-    offset=288476,
-    search='delectus',
-    sort_field=operations.ListUsersSortField.DELETED,
+    limit=99895,
+    offset=547272,
+    search='Product',
+    sort_field=operations.ListUsersSortField.ID,
     sort_order=operations.ListUsersSortOrder.ASC,
 )
 

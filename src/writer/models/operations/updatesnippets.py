@@ -23,9 +23,12 @@ class UpdateSnippetsRequest:
 @dataclasses.dataclass
 class UpdateSnippetsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     snippet_with_users: Optional[list[shared_snippetwithuser.SnippetWithUser]] = dataclasses.field(default=None)
     
 

@@ -1,4 +1,5 @@
 # DownloadTheCustomizedModel
+(*download_the_customized_model*)
 
 ## Overview
 
@@ -22,11 +23,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=720633,
+    organization_id=501762,
 )
 
 
-res = s.download_the_customized_model.fetch_file(customization_id='officia', model_id='occaecati', organization_id=143353)
+res = s.download_the_customized_model.fetch_file(customization_id='apology', model_id='Silver', organization_id=432823)
 
 if res.fetch_customized_model_file_200_application_octet_stream_binary_string is not None:
     # handle response

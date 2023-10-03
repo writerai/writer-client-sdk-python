@@ -1,4 +1,5 @@
 # Snippet
+(*snippet*)
 
 ## Overview
 
@@ -24,13 +25,13 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=128926,
+    organization_id=545907,
 )
 
 
-res = s.snippet.delete(team_id=750686, x_request_id='enim', ids=[
-    'omnis',
-], organization_id=363711)
+res = s.snippet.delete(team_id=841399, x_request_id='Designer', ids=[
+    'complexity',
+], organization_id=952479)
 
 if res.delete_response is not None:
     # handle response
@@ -65,22 +66,22 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=325047,
+    organization_id=40141,
 )
 
 req = operations.FindSnippetsRequest(
-    limit=570197,
-    offset=38425,
-    search='iure',
+    limit=326883,
+    offset=488098,
+    search='whoa West Credit',
     shortcuts=[
-        'culpa',
+        'Granite',
     ],
-    sort_field=operations.FindSnippetsSortField.MODIFICATION_TIME,
-    sort_order=operations.FindSnippetsSortOrder.DESC,
+    sort_field=operations.FindSnippetsSortField.CREATION_TIME,
+    sort_order=operations.FindSnippetsSortOrder.ASC,
     tags=[
-        'architecto',
+        'Iowa',
     ],
-    team_id=652790,
+    team_id=785366,
 )
 
 res = s.snippet.find(req)
@@ -115,23 +116,23 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=208876,
+    organization_id=857478,
 )
 
 
-res = s.snippet.update(team_id=635059, request_body=[
+res = s.snippet.update(team_id=24555, request_body=[
     shared.SnippetUpdate(
-        description='consequuntur',
-        id='fa946773-9251-4aa5-ac3f-5ad019da1ffe',
-        shortcut='nihil',
-        snippet='praesentium',
+        description='Persistent 24/7 focus group',
+        id='<ID>',
+        shortcut='dock Quality redundant',
+        snippet='Arizona Cotton extend',
         tags=[
             shared.SnippetTagV2(
-                tag='voluptatibus',
+                tag='bifurcated',
             ),
         ],
     ),
-], x_request_id='ipsa', organization_id=604846)
+], x_request_id='Forward', organization_id=993680)
 
 if res.snippet_with_users is not None:
     # handle response

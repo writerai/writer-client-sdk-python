@@ -357,3 +357,63 @@ Based on:
 - [python v0.25.3] .
 ### Releases
 - [PyPI v0.25.3] https://pypi.org/project/writerai/0.25.3 - .
+
+## 2023-09-26 00:17:21
+### Changes
+Based on:
+- OpenAPI Doc 1.7 https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
+- Speakeasy CLI 1.91.0 (2.129.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.26.0] .
+### Releases
+- [PyPI v0.26.0] https://pypi.org/project/writerai/0.26.0 - .
+
+## 2023-09-27 00:17:16
+### Changes
+Based on:
+- OpenAPI Doc 1.7 https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
+- Speakeasy CLI 1.91.2 (2.131.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.26.1] .
+### Releases
+- [PyPI v0.26.1] https://pypi.org/project/writerai/0.26.1 - .
+
+## 2023-09-29 00:17:15
+### Changes
+Based on:
+- OpenAPI Doc 1.7 https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
+- Speakeasy CLI 1.91.3 (2.139.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.27.0] .
+### Releases
+- [PyPI v0.27.0] https://pypi.org/project/writerai/0.27.0 - .
+
+## 2023-10-01 00:20:05
+### Changes
+Based on:
+- OpenAPI Doc 1.7 https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
+- Speakeasy CLI 1.92.2 (2.142.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.28.0] .
+### Releases
+- [PyPI v0.28.0] https://pypi.org/project/writerai/0.28.0 - .
+
+## 2023-10-02 00:17:55
+### Changes
+Based on:
+- OpenAPI Doc 1.7 https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
+- Speakeasy CLI 1.92.3 (2.143.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.28.1] .
+### Releases
+- [PyPI v0.28.1] https://pypi.org/project/writerai/0.28.1 - .
+
+## 2023-10-03 14:25:06
+### Changes
+Based on:
+- OpenAPI Doc 1.7 https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
+- Speakeasy CLI 1.93.1 (2.144.7) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.29.0] .
+### Releases
+- [PyPI v0.29.0] https://pypi.org/project/writerai/0.29.0 - .

@@ -5,4 +5,4 @@
 
 | Field                | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
-| `num_virtual_tokens` | *int*                | :heavy_check_mark:   | N/A                  |
+| `num_virtual_tokens` | *Optional[int]*      | :heavy_check_mark:   | N/A                  |

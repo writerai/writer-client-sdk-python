@@ -11,9 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class GetSubscriptionDetailsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     subscription_public_response_api: Optional[shared_subscriptionpublicresponseapi.SubscriptionPublicResponseAPI] = dataclasses.field(default=None)
     
 

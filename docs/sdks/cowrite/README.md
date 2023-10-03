@@ -1,4 +1,5 @@
 # CoWrite
+(*co_write*)
 
 ## Overview
 
@@ -23,21 +24,21 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=847252,
+    organization_id=569932,
 )
 
 
 res = s.co_write.generate_content(generate_template_request=shared.GenerateTemplateRequest(
     inputs=[
         shared.MagicRequestInput(
-            name='Sabrina Oberbrunner',
+            name='er man approach',
             value=[
-                'magnam',
+                'builder',
             ],
         ),
     ],
-    template_id='debitis',
-), team_id=56713, organization_id=963663)
+    template_id='Planner',
+), team_id=612911, organization_id=191623)
 
 if res.draft is not None:
     # handle response
@@ -71,11 +72,11 @@ s = writer.Writer(
     security=shared.Security(
         api_key="",
     ),
-    organization_id=272656,
+    organization_id=380445,
 )
 
 
-res = s.co_write.list_templates(team_id=383441, template_id='molestiae', organization_id=791725)
+res = s.co_write.list_templates(team_id=882866, template_id='Morocco', organization_id=543280)
 
 if res.template_details_response is not None:
     # handle response

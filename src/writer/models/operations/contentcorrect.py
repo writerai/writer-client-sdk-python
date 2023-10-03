@@ -23,9 +23,12 @@ class ContentCorrectRequest:
 @dataclasses.dataclass
 class ContentCorrectResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     correction_response: Optional[shared_correctionresponse.CorrectionResponse] = dataclasses.field(default=None)
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
