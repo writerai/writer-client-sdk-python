@@ -41,7 +41,7 @@ s = writer.Writer(
 
 
 res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='Bronze Indian',
+    input='Pets',
 ), organization_id=558689)
 
 if res.content_detector_responses is not None:
