@@ -34,15 +34,9 @@ res = s.model_customization.create(create_customization_request=shared.CreateCus
     additional_hyper_parameters=shared.HyperParameters(
         num_virtual_tokens=489382,
     ),
-    batch_size=638424,
-    description='Synchronised full-range emulation',
-    epochs=134365,
-    learning_rate=7865.46,
-    name='shred',
-    prompt_template='technology East',
-    training_dataset_file_id='evolve',
-    validation_dataset_file_id='fuchsia Gasoline Screen',
-), model_id='mobile', organization_id=656256)
+    name='Extended South',
+    training_dataset_file_id='grey technology East',
+), model_id='orange', organization_id=89964)
 
 if res.model_customization is not None:
     # handle response
