@@ -30,19 +30,17 @@ s = writer.Writer(
 
 res = s.completions.create(completion_request=shared.CompletionRequest(
     best_of=1,
-    frequency_penalty=4893.82,
-    logprobs=638424,
     max_tokens=1024,
     min_tokens=1,
-    n=859213,
-    presence_penalty=4174.58,
-    prompt='South',
+    prompt='Configuration Money',
     stop=[
-        'shred',
+        'the',
+        'is',
+        'and',
     ],
     temperature=0.7,
     top_p=1,
-), model_id='abnormally', organization_id=455222)
+), model_id='blue', organization_id=996706)
 
 if res.completion_response is not None:
     # handle response
@@ -82,19 +80,17 @@ s = writer.Writer(
 
 res = s.completions.create_model_customization_completion(completion_request=shared.CompletionRequest(
     best_of=1,
-    frequency_penalty=412.97,
-    logprobs=951257,
     max_tokens=1024,
     min_tokens=1,
-    n=314952,
-    presence_penalty=657.2,
-    prompt='platforms convergence Bicycle',
+    prompt='error',
     stop=[
-        'heavily',
+        'the',
+        'is',
+        'and',
     ],
     temperature=0.7,
     top_p=1,
-), customization_id='green', model_id='cum', organization_id=110459)
+), customization_id='Buckinghamshire', model_id='platforms', organization_id=328071)
 
 if res.completion_response is not None:
     # handle response

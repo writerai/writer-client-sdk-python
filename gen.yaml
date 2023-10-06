@@ -2,30 +2,31 @@ configVersion: 1.0.0
 management:
   docChecksum: 044ba6ea348a6fb8206cacad6926373d
   docVersion: "1.7"
-  speakeasyVersion: 1.93.1
-  generationVersion: 2.144.7
+  speakeasyVersion: 1.96.1
+  generationVersion: 2.150.0
 generation:
+  devContainers:
+    enabled: true
+    schemaPath: https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
   sdkClassName: writer
   sdkFlattening: true
   singleTagPerOp: false
   telemetryEnabled: false
-  devContainers:
-    enabled: true
-    schemaPath: https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
 features:
   python:
-    core: 2.88.1
+    core: 2.88.4
+    devContainers: 2.85.4
     downloadStreams: 0.0.1
     errors: 2.81.4
     flattening: 2.81.1
-    globalSecurity: 2.81.1
+    globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     globals: 2.81.1
     nameOverrides: 2.81.1
 python:
-  version: 0.29.0
+  version: 0.30.0
   author: writerai
   description: Python SDK for Writer API
+  flattenGlobalSecurity: false
   maxMethodParams: 4
   packageName: writerai
-
