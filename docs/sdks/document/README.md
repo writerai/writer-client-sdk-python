@@ -66,12 +66,7 @@ s = writer.Writer(
 )
 
 req = operations.ListTeamDocumentsRequest(
-    limit=99895,
-    offset=547272,
-    search='Product',
-    sort_field=operations.ListTeamDocumentsSortField.TITLE,
-    sort_order=operations.ListTeamDocumentsSortOrder.ASC,
-    team_id=917416,
+    team_id=99895,
 )
 
 res = s.document.list(req)
