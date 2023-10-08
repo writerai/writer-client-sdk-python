@@ -304,3 +304,6 @@ docs/sdks/terminology/README.md
 docs/sdks/user/README.md
 docs/sdks/document/README.md
 .gitattributes
+.devcontainer/README.md
+.devcontainer/devcontainer.json
+.devcontainer/setup.sh
