@@ -27,6 +27,5 @@ python:
   author: writerai
   description: Python SDK for Writer API
   maxMethodParams: 4
-  flattenGlobalSecurity: true
   packageName: writerai
 
