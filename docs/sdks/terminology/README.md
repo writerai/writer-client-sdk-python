@@ -31,7 +31,6 @@ s = writer.Writer(
 
 
 res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
-    fail_handling=shared.CreateTermsRequestFailHandling.VALIDATE_ONLY,
     models=[
         shared.TermCreate(
             approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -40,40 +39,31 @@ res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='Optional mobile secured line',
             examples=[
                 shared.TermExampleCreate(
-                    example='noon bypass Chief',
-                    type=shared.TermExampleCreateType.GOOD,
+                    example='calculate Toyota noon',
+                    type=shared.TermExampleCreateType.BAD,
                 ),
             ],
-            highlight=False,
             linked_terms=[
-                shared.LinkedTermCreate(
-                    linked_term_id=753323,
-                    reference='Southeast',
-                ),
+                shared.LinkedTermCreate(),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='generating payment quantify',
-                    pos=shared.TermMistakeCreatePos.VERB,
-                    reference='Urbandale Gasoline',
+                    mistake='Chief',
                 ),
             ],
-            pos=shared.TermCreatePos.ADVERB,
-            reference='methodologies',
             tags=[
                 shared.TermTagCreate(
-                    tag='Northeast',
+                    tag='kelvin',
                 ),
             ],
-            term='Pomona auxiliary',
+            term='lime',
             type=shared.TermCreateType.BANNED,
         ),
     ],
-), team_id=739517, organization_id=358325)
+), team_id=623862, organization_id=445859)
 
 if res.create_terms_response is not None:
     # handle response
@@ -152,17 +142,10 @@ s = writer.Writer(
 )
 
 req = operations.FindTermsRequest(
-    limit=326883,
-    offset=488098,
-    part_of_speech=operations.FindTermsPartOfSpeech.ADJECTIVE,
-    sort_field=operations.FindTermsSortField.TYPE,
-    sort_order=operations.FindTermsSortOrder.ASC,
     tags=[
-        'West',
+        'underestimate',
     ],
-    team_id=413686,
-    term='Bike generating',
-    type=operations.FindTermsType.APPROVED,
+    team_id=111247,
 )
 
 res = s.terminology.find(req)
@@ -202,7 +185,6 @@ s = writer.Writer(
 
 
 res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
-    fail_handling=shared.UpdateTermsRequestFailHandling.ACCUMULATE,
     models=[
         shared.TermUpdate(
             approved_term_extension=shared.ApprovedTermExtensionCreate(
@@ -211,40 +193,32 @@ res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
                 fix_common_mistakes=False,
             ),
             case_sensitive=False,
-            description='Persistent 24/7 focus group',
             examples=[
                 shared.TermExampleCreate(
-                    example='dock Quality redundant',
-                    type=shared.TermExampleCreateType.BAD,
+                    example='Rock',
+                    type=shared.TermExampleCreateType.GOOD,
                 ),
             ],
-            highlight=False,
-            id=134151,
+            id=708455,
             linked_terms=[
-                shared.LinkedTermCreate(
-                    linked_term_id=54062,
-                    reference='mostly',
-                ),
+                shared.LinkedTermCreate(),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='dynamic white',
-                    pos=shared.TermMistakeCreatePos.VERB,
-                    reference='Forward',
+                    mistake='Metal cheater Islands',
                 ),
             ],
-            pos=shared.TermUpdatePos.ADJECTIVE,
             tags=[
                 shared.TermTagCreate(
-                    tag='East Baht Quality',
+                    tag='withdrawal extend',
                 ),
             ],
-            term='Home users Sharable',
+            term='bifurcated',
             type=shared.TermUpdateType.BANNED,
         ),
     ],
-), team_id=439152, x_request_id='Northeast', organization_id=481319)
+), team_id=789275, x_request_id='syndicate', organization_id=345187)
 
 if res.create_terms_response is not None:
     # handle response
