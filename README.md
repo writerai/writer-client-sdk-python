@@ -6,6 +6,7 @@
    <a href="https://dev.writer.com/docs"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000000&style=for-the-badge" /></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
   <a href="https://github.com/writerai/writer-client-sdk-python/releases"><img src="https://img.shields.io/github/v/release/writerai/writer-client-sdk-python?sort=semver&style=for-the-badge" /></a>
+  <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
 </div>
 
 <!-- Start SDK Installation -->
@@ -32,13 +33,9 @@ If you cannot see your secret API keys in the Dashboard, this means you do not h
 import writer
 from writer.models import operations, shared
 
-s = writer.Writer(
-    security=shared.Security(
-        api_key="",
-    ),
+s = writer.Writer(api_key="my-key"),
     organization_id=496531,
 )
-
 
 res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
     input='Bronze Indian',
@@ -127,10 +124,9 @@ if res.content_detector_responses is not None:
 <!-- End SDK Available Operations -->
 
 
-
 <!-- Start Dev Containers -->
 
-# Dev Containers
+# Sandbox Environment
 <div align="left">
     <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
     
@@ -139,8 +135,6 @@ if res.content_detector_responses is not None:
 Experience our SDK in an enhanced sandbox environment. Try it now in **GitHub Codespaces**!
 
 * [Explore Dev Containers](.devcontainer/README.md)
-
-
 
 <!-- End Dev Containers -->
 
