@@ -26,13 +26,7 @@ s = writer.Writer(
     organization_id=768578,
 )
 
-req = operations.ListUsersRequest(
-    limit=99895,
-    offset=547272,
-    search='Product',
-    sort_field=operations.ListUsersSortField.ID,
-    sort_order=operations.ListUsersSortOrder.ASC,
-)
+req = operations.ListUsersRequest()
 
 res = s.user.list(req)
 
