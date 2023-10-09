@@ -8,11 +8,13 @@ generation:
   devContainers:
     enabled: true
     schemaPath: https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
-  flattenGlobalSecurity: true
   sdkClassName: writer
   sdkFlattening: true
   singleTagPerOp: false
   telemetryEnabled: false
+  devContainers:
+    enabled: true
+    schemaPath: https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
 features:
   python:
     core: 2.88.4
@@ -28,6 +30,6 @@ python:
   version: 0.32.0
   author: writerai
   description: Python SDK for Writer API
-  flattenGlobalSecurity: false
+  flattenGlobalSecurity: true
   maxMethodParams: 4
   packageName: writerai
