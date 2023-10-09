@@ -80,7 +80,9 @@ class Writer:
         if client is None:
             client = requests_http.Session()
         
+        
         security_client = utils.configure_security_client(client, security)
+        
         
         if server_url is not None:
             if url_params is not None:
