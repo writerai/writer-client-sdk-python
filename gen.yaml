@@ -25,7 +25,7 @@ features:
     globals: 2.81.1
     nameOverrides: 2.81.1
 python:
-  version: 0.30.0
+  version: 0.31.0
   author: writerai
   description: Python SDK for Writer API
   flattenGlobalSecurity: false

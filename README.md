@@ -129,7 +129,6 @@ if res.content_detector_responses is not None:
 
 
 <!-- Start Dev Containers -->
-
 # Dev Containers
 <div align="left">
     <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
@@ -139,9 +138,6 @@ if res.content_detector_responses is not None:
 Experience our SDK in an enhanced sandbox environment. Try it now in **GitHub Codespaces**!
 
 * [Explore Dev Containers](.devcontainer/README.md)
-
-
-
 <!-- End Dev Containers -->
 
 
@@ -154,8 +150,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
