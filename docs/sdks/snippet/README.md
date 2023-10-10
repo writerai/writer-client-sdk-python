@@ -70,18 +70,13 @@ s = writer.Writer(
 )
 
 req = operations.FindSnippetsRequest(
-    limit=326883,
-    offset=488098,
-    search='whoa West Credit',
     shortcuts=[
-        'Granite',
+        'underestimate',
     ],
-    sort_field=operations.FindSnippetsSortField.CREATION_TIME,
-    sort_order=operations.FindSnippetsSortOrder.ASC,
     tags=[
-        'Iowa',
+        'Northeast',
     ],
-    team_id=785366,
+    team_id=803382,
 )
 
 res = s.snippet.find(req)
@@ -122,17 +117,15 @@ s = writer.Writer(
 
 res = s.snippet.update(team_id=24555, request_body=[
     shared.SnippetUpdate(
-        description='Persistent 24/7 focus group',
         id='<ID>',
-        shortcut='dock Quality redundant',
-        snippet='Arizona Cotton extend',
+        snippet='East male',
         tags=[
             shared.SnippetTagV2(
-                tag='bifurcated',
+                tag='Quality',
             ),
         ],
     ),
-], x_request_id='Forward', organization_id=993680)
+], x_request_id='redundant', organization_id=984008)
 
 if res.snippet_with_users is not None:
     # handle response

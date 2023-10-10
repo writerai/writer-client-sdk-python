@@ -6,6 +6,7 @@
    <a href="https://dev.writer.com/docs"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000000&style=for-the-badge" /></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
   <a href="https://github.com/writerai/writer-client-sdk-python/releases"><img src="https://img.shields.io/github/v/release/writerai/writer-client-sdk-python?sort=semver&style=for-the-badge" /></a>
+  <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
 </div>
 
 <!-- Start SDK Installation -->
@@ -32,16 +33,12 @@ If you cannot see your secret API keys in the Dashboard, this means you do not h
 import writer
 from writer.models import operations, shared
 
-s = writer.Writer(
-    security=shared.Security(
-        api_key="",
-    ),
+s = writer.Writer(api_key="my-key"),
     organization_id=496531,
 )
 
-
 res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='Pets',
+    input='Bronze Indian',
 ), organization_id=558689)
 
 if res.content_detector_responses is not None:
@@ -125,6 +122,35 @@ if res.content_detector_responses is not None:
 * [get](docs/sdks/document/README.md#get) - Get document details
 * [list](docs/sdks/document/README.md#list) - List team documents
 <!-- End SDK Available Operations -->
+
+
+<!-- Start Dev Containers -->
+
+# Sandbox Environment
+<div align="left">
+    <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
+    
+</div>
+
+Experience our SDK in an enhanced sandbox environment. Try it now in **GitHub Codespaces**!
+
+* [Explore Dev Containers](.devcontainer/README.md)
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `None`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
