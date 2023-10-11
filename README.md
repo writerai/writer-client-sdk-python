@@ -42,6 +42,7 @@ res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetect
 ), organization_id=558689)
 
 if res.content_detector_responses is not None:
+    pass
     # handle response
 ```
 <!-- End SDK Example Usage -->
