@@ -33,9 +33,11 @@ If you cannot see your secret API keys in the Dashboard, this means you do not h
 import writer
 from writer.models import operations, shared
 
-s = writer.Writer(api_key="my-key"),
+s = writer.Writer(
+    api_key="",
     organization_id=496531,
 )
+
 
 res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
     input='Bronze Indian',
@@ -125,8 +127,7 @@ if res.content_detector_responses is not None:
 
 
 <!-- Start Dev Containers -->
-
-# Sandbox Environment
+# Dev Containers
 <div align="left">
     <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
     
@@ -135,7 +136,6 @@ if res.content_detector_responses is not None:
 Experience our SDK in an enhanced sandbox environment. Try it now in **GitHub Codespaces**!
 
 * [Explore Dev Containers](.devcontainer/README.md)
-
 <!-- End Dev Containers -->
 
 
@@ -151,6 +151,48 @@ Here's an example of one such pagination call:
 
 
 <!-- End Pagination -->
+
+
+
+<!-- Start Global Parameters -->
+# Global Parameters
+
+A parameter is configured globally. This parameter must be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, This global value will be used as the default on the operations that use it. When such operations are called, there is a place in each to override the global value, if needed.
+
+For example, you can set `organizationId` to `547272` at SDK initialization and then you do not have to pass the same value on calls to operations like `detect`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
+
+
+## Available Globals
+
+The following global parameter is available. The required parameter must be set when you initialize the SDK client.
+
+| Name | Type | Required | Description |
+| ---- | ---- |:--------:| ----------- |
+| organizationId | int | ✔️ | The organizationId parameter. |
+
+
+
+## Example
+
+```python
+import writer
+from writer.models import operations, shared
+
+s = writer.Writer(
+    api_key="",
+    organization_id=496531,
+)
+
+
+res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
+    input='Bronze Indian',
+), organization_id=558689)
+
+if res.content_detector_responses is not None:
+    # handle response
+```
+
+<!-- End Global Parameters -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

@@ -20,9 +20,7 @@ import writer
 from writer.models import shared
 
 s = writer.Writer(
-    security=shared.Security(
-        api_key="",
-    ),
+    api_key="",
     organization_id=850421,
 )
 
