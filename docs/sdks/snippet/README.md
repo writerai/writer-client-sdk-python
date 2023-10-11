@@ -22,9 +22,7 @@ import writer
 from writer.models import operations, shared
 
 s = writer.Writer(
-    security=shared.Security(
-        api_key="",
-    ),
+    api_key="",
     organization_id=545907,
 )
 
@@ -63,9 +61,7 @@ import writer
 from writer.models import operations, shared
 
 s = writer.Writer(
-    security=shared.Security(
-        api_key="",
-    ),
+    api_key="",
     organization_id=40141,
 )
 
@@ -108,9 +104,7 @@ import writer
 from writer.models import operations, shared
 
 s = writer.Writer(
-    security=shared.Security(
-        api_key="",
-    ),
+    api_key="",
     organization_id=857478,
 )
 
