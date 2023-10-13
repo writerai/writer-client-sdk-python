@@ -29,6 +29,7 @@ res = s.download_the_customized_model.fetch_file(customization_id='apology', mod
 
 if res.fetch_customized_model_file_200_application_octet_stream_binary_string is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -17,5 +17,6 @@ res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetect
 
 if res.content_detector_responses is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->

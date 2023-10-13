@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `correct`          | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `correct`          | *str*              | :heavy_check_mark: | N/A                |

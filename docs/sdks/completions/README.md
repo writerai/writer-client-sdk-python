@@ -42,6 +42,7 @@ res = s.completions.create(completion_request=shared.CompletionRequest(
 
 if res.completion_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -90,6 +91,7 @@ res = s.completions.create_model_customization_completion(completion_request=sha
 
 if res.completion_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

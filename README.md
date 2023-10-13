@@ -40,12 +40,12 @@ s = writer.Writer(
 
 
 res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='petstore',
-)
+    input='Bronze Indian',
+), organization_id=558689)
 
 if res.content_detector_responses is not None:
-    pass
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 
@@ -128,7 +128,7 @@ if res.content_detector_responses is not None:
 
 
 <!-- Start Dev Containers -->
-# Sandboxes
+# Dev Containers
 <div align="left">
     <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
     
@@ -156,16 +156,27 @@ The following global parameter is available. The required parameter must be set 
 | organizationId | int | ✔️ | The organizationId parameter. |
 
 
+
 ## Example
 
 ```python
 import writer
+from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
     organization_id=496531,
 )
 
+
+res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
+    input='Bronze Indian',
+), organization_id=558689)
+
+if res.content_detector_responses is not None:
+    # handle response
+    pass
+```
 <!-- End Global Parameters -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
