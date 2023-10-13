@@ -29,6 +29,7 @@ res = s.billing.get_subscription_details()
 
 if res.subscription_public_response_api is not None:
     # handle response
+    pass
 ```
 
 

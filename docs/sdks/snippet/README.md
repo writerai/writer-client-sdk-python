@@ -33,6 +33,7 @@ res = s.snippet.delete(team_id=841399, x_request_id='Designer', ids=[
 
 if res.delete_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -79,6 +80,7 @@ res = s.snippet.find(req)
 
 if res.paginated_result_snippet_with_user is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -123,6 +125,7 @@ res = s.snippet.update(team_id=24555, request_body=[
 
 if res.snippet_with_users is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

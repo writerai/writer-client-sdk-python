@@ -40,6 +40,7 @@ res = s.co_write.generate_content(generate_template_request=shared.GenerateTempl
 
 if res.draft is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -76,6 +77,7 @@ res = s.co_write.list_templates(team_id=882866, template_id='Morocco', organizat
 
 if res.template_details_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

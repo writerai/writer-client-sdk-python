@@ -30,6 +30,7 @@ res = s.user.list(req)
 
 if res.paginated_result_user_public_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

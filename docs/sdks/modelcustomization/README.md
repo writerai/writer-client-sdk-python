@@ -38,6 +38,7 @@ res = s.model_customization.create(create_customization_request=shared.CreateCus
 
 if res.model_customization is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -74,6 +75,7 @@ res = s.model_customization.delete(customization_id='Van', model_id='complexity'
 
 if res.delete_model_customization_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -110,6 +112,7 @@ res = s.model_customization.get(customization_id='Northeast', model_id='Hatchbac
 
 if res.model_customization is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -146,6 +149,7 @@ res = s.model_customization.list(model_id='Northeast', organization_id=257649)
 
 if res.customizations_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

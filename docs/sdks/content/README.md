@@ -50,6 +50,7 @@ res = s.content.check(content_request=shared.ContentRequest(
 
 if res.processed_content is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -106,6 +107,7 @@ res = s.content.correct(content_request=shared.ContentRequest(
 
 if res.correction_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

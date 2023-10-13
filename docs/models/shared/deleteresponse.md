@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `deleted`          | *Optional[int]*    | :heavy_check_mark: | N/A                |
+| `deleted`          | *int*              | :heavy_check_mark: | N/A                |

@@ -32,6 +32,7 @@ res = s.files.delete(file_id='Van', organization_id=386564)
 
 if res.delete_file_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -67,6 +68,7 @@ res = s.files.get(file_id='Northeast', organization_id=844199)
 
 if res.model_file is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -102,6 +104,7 @@ res = s.files.list(organization_id=99895)
 
 if res.model_files_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -141,6 +144,7 @@ res = s.files.upload(upload_model_file_request=shared.UploadModelFileRequest(
 
 if res.model_file is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -65,6 +65,7 @@ res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
 
 if res.create_terms_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -103,6 +104,7 @@ res = s.terminology.delete(team_id=841399, x_request_id='Designer', ids=[
 
 if res.delete_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -146,6 +148,7 @@ res = s.terminology.find(req)
 
 if res.paginated_result_full_term_with_user is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -214,6 +217,7 @@ res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
 
 if res.create_terms_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
