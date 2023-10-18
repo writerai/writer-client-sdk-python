@@ -32,9 +32,9 @@ res = s.model_customization.create(create_customization_request=shared.CreateCus
     additional_hyper_parameters=shared.HyperParameters(
         num_virtual_tokens=489382,
     ),
-    name='Extended South',
-    training_dataset_file_id='grey technology East',
-), model_id='orange', organization_id=89964)
+    name='Configuration',
+    training_dataset_file_id='Money',
+), model_id='blue', organization_id=996706)
 
 if res.model_customization is not None:
     # handle response

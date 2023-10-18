@@ -29,14 +29,14 @@ s = writer.Writer(
 res = s.co_write.generate_content(generate_template_request=shared.GenerateTemplateRequest(
     inputs=[
         shared.MagicRequestInput(
-            name='er man approach',
+            name='very',
             value=[
-                'builder',
+                'eek',
             ],
         ),
     ],
-    template_id='Planner',
-), team_id=612911, organization_id=191623)
+    template_id='Mini',
+), team_id=396397, organization_id=76381)
 
 if res.draft is not None:
     # handle response

@@ -16,6 +16,7 @@ from .snippet import Snippet
 from .styleguide import Styleguide
 from .terminology import Terminology
 from .user import User
+from typing import Dict
 from writer import utils
 from writer.models import shared
 
@@ -56,7 +57,7 @@ class Writer:
                  organization_id: int = None,
                  server_idx: int = None,
                  server_url: str = None,
-                 url_params: dict[str, str] = None,
+                 url_params: Dict[str, str] = None,
                  client: requests_http.Session = None,
                  retry_config: utils.RetryConfig = None
                  ) -> None:
@@ -71,7 +72,7 @@ class Writer:
         :param server_url: The server URL to use for all operations
         :type server_url: str
         :param url_params: Parameters to optionally template the server URL with
-        :type url_params: dict[str, str]
+        :type url_params: Dict[str, str]
         :param client: The requests.Session HTTP client to use for all operations
         :type client: requests_http.Session
         :param retry_config: The utils.RetryConfig to use globally

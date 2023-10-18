@@ -5,12 +5,11 @@ import dataclasses
 import requests as requests_http
 from ..shared import paginatedresult_pagepublicapiresponse as shared_paginatedresult_pagepublicapiresponse
 from enum import Enum
-from typing import Optional
+from typing import Dict, List, Optional
 
 class ListPagesStatus(str, Enum):
     LIVE = 'live'
     OFFLINE = 'offline'
-
 
 
 @dataclasses.dataclass
@@ -22,14 +21,13 @@ class ListPagesRequest:
 
 
 
-
 @dataclasses.dataclass
 class ListPagesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     paginated_result_page_public_api_response: Optional[shared_paginatedresult_pagepublicapiresponse.PaginatedResultPagePublicAPIResponse] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

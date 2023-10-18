@@ -138,9 +138,9 @@ s = writer.Writer(
 res = s.files.upload(upload_model_file_request=shared.UploadModelFileRequest(
     file=shared.UploadModelFileRequestFile(
         content='?SRSKG@^n='.encode(),
-        file='Plastic CLI',
+        file='ullam',
     ),
-), organization_id=600322)
+), organization_id=236236)
 
 if res.model_file is not None:
     # handle response

@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import document as shared_document
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -17,7 +16,6 @@ class GetDocumentDetailsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetDocumentDetailsResponse:
     content_type: str = dataclasses.field()
@@ -25,7 +23,7 @@ class GetDocumentDetailsResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     document: Optional[shared_document.Document] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

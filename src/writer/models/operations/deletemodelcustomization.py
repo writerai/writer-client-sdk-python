@@ -3,8 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -16,11 +15,9 @@ class DeleteModelCustomizationRequest:
 
 
 
-
 @dataclasses.dataclass
 class DeleteModelCustomization200ApplicationJSON:
     pass
-
 
 
 @dataclasses.dataclass
@@ -30,7 +27,7 @@ class DeleteModelCustomizationResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     delete_model_customization_200_application_json_object: Optional[DeleteModelCustomization200ApplicationJSON] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

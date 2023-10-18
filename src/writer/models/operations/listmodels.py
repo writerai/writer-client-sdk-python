@@ -4,15 +4,13 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import generationmodelsresponse as shared_generationmodelsresponse
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
 class ListModelsRequest:
     organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     
-
 
 
 
@@ -23,7 +21,7 @@ class ListModelsResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     generation_models_response: Optional[shared_generationmodelsresponse.GenerationModelsResponse] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import contentrequest as shared_contentrequest
 from ..shared import correctionresponse as shared_correctionresponse
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -19,7 +18,6 @@ class ContentCorrectRequest:
 
 
 
-
 @dataclasses.dataclass
 class ContentCorrectResponse:
     content_type: str = dataclasses.field()
@@ -27,7 +25,7 @@ class ContentCorrectResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     correction_response: Optional[shared_correctionresponse.CorrectionResponse] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

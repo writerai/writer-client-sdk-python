@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import modelfile as shared_modelfile
 from ..shared import uploadmodelfilerequest as shared_uploadmodelfilerequest
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -17,14 +16,13 @@ class UploadFileRequest:
 
 
 
-
 @dataclasses.dataclass
 class UploadFileResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     model_file: Optional[shared_modelfile.ModelFile] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

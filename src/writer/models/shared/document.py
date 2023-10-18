@@ -17,7 +17,6 @@ class DocumentAccess(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Document:
     access: DocumentAccess = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access') }})

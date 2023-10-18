@@ -10,7 +10,7 @@
 | `max_fields`                                  | *Optional[int]*                               | :heavy_minus_sign:                            | N/A                                           |
 | `min_fields`                                  | *Optional[int]*                               | :heavy_minus_sign:                            | N/A                                           |
 | `name`                                        | *str*                                         | :heavy_check_mark:                            | N/A                                           |
-| `options`                                     | list[*str*]                                   | :heavy_minus_sign:                            | N/A                                           |
+| `options`                                     | List[*str*]                                   | :heavy_minus_sign:                            | N/A                                           |
 | `required`                                    | *bool*                                        | :heavy_check_mark:                            | N/A                                           |
 | `subtitle`                                    | *Optional[str]*                               | :heavy_minus_sign:                            | N/A                                           |
 | `type`                                        | [InputType](../../models/shared/inputtype.md) | :heavy_check_mark:                            | N/A                                           |

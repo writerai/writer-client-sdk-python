@@ -42,7 +42,7 @@ if res.delete_response is not None:
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `team_id`          | *int*              | :heavy_check_mark: | N/A                |
 | `x_request_id`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-| `ids`              | list[*str*]        | :heavy_minus_sign: | N/A                |
+| `ids`              | List[*str*]        | :heavy_minus_sign: | N/A                |
 | `organization_id`  | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
 
@@ -114,14 +114,14 @@ s = writer.Writer(
 res = s.snippet.update(team_id=24555, request_body=[
     shared.SnippetUpdate(
         id='<ID>',
-        snippet='East male',
+        snippet='Rock',
         tags=[
             shared.SnippetTagV2(
-                tag='Quality',
+                tag='Reactive',
             ),
         ],
     ),
-], x_request_id='redundant', organization_id=984008)
+], x_request_id='dock', organization_id=627690)
 
 if res.snippet_with_users is not None:
     # handle response
@@ -133,7 +133,7 @@ if res.snippet_with_users is not None:
 | Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
 | `team_id`                                                          | *int*                                                              | :heavy_check_mark:                                                 | N/A                                                                |
-| `request_body`                                                     | list[[shared.SnippetUpdate](../../models/shared/snippetupdate.md)] | :heavy_minus_sign:                                                 | N/A                                                                |
+| `request_body`                                                     | List[[shared.SnippetUpdate](../../models/shared/snippetupdate.md)] | :heavy_minus_sign:                                                 | N/A                                                                |
 | `x_request_id`                                                     | *Optional[str]*                                                    | :heavy_minus_sign:                                                 | N/A                                                                |
 | `organization_id`                                                  | *Optional[int]*                                                    | :heavy_minus_sign:                                                 | N/A                                                                |
 

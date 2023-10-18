@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import createtermsrequest as shared_createtermsrequest
 from ..shared import createtermsresponse as shared_createtermsresponse
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -18,7 +17,6 @@ class AddTermsRequest:
 
 
 
-
 @dataclasses.dataclass
 class AddTermsResponse:
     content_type: str = dataclasses.field()
@@ -26,7 +24,7 @@ class AddTermsResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     create_terms_response: Optional[shared_createtermsresponse.CreateTermsResponse] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

@@ -5,7 +5,7 @@ import dataclasses
 from ..shared import termcreate as shared_termcreate
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Optional
+from typing import List, Optional
 from writer import utils
 
 class CreateTermsRequestFailHandling(str, Enum):
@@ -16,10 +16,9 @@ class CreateTermsRequestFailHandling(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateTermsRequest:
     fail_handling: Optional[CreateTermsRequestFailHandling] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failHandling'), 'exclude': lambda f: f is None }})
-    models: Optional[list[shared_termcreate.TermCreate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})
+    models: Optional[List[shared_termcreate.TermCreate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})
     
 

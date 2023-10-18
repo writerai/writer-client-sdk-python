@@ -5,7 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import paginatedresult_userpublicresponse as shared_paginatedresult_userpublicresponse
 from enum import Enum
-from typing import Optional
+from typing import Dict, List, Optional
 
 class ListUsersSortField(str, Enum):
     ID = 'id'
@@ -21,7 +21,6 @@ class ListUsersSortOrder(str, Enum):
     DESC = 'desc'
 
 
-
 @dataclasses.dataclass
 class ListUsersRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
@@ -33,14 +32,13 @@ class ListUsersRequest:
 
 
 
-
 @dataclasses.dataclass
 class ListUsersResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     paginated_result_user_public_response: Optional[shared_paginatedresult_userpublicresponse.PaginatedResultUserPublicResponse] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

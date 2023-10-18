@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, List, Optional
 from writer import utils
 
 class ContentIssueService(str, Enum):
@@ -48,7 +48,6 @@ class ContentIssueService(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ContentIssue:
     from_: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from') }})
@@ -56,6 +55,6 @@ class ContentIssue:
     until: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('until') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     meta: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
-    suggestions: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('suggestions'), 'exclude': lambda f: f is None }})
+    suggestions: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('suggestions'), 'exclude': lambda f: f is None }})
     
 

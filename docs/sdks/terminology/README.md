@@ -39,7 +39,7 @@ res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
             case_sensitive=False,
             examples=[
                 shared.TermExampleCreate(
-                    example='calculate Toyota noon',
+                    example='Lamborghini',
                     type=shared.TermExampleCreateType.BAD,
                 ),
             ],
@@ -49,19 +49,19 @@ res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='Chief',
+                    mistake='Toyota',
                 ),
             ],
             tags=[
                 shared.TermTagCreate(
-                    tag='kelvin',
+                    tag='noon',
                 ),
             ],
-            term='lime',
+            term='bypass',
             type=shared.TermCreateType.BANNED,
         ),
     ],
-), team_id=623862, organization_id=445859)
+), team_id=945233, organization_id=172496)
 
 if res.create_terms_response is not None:
     # handle response
@@ -113,7 +113,7 @@ if res.delete_response is not None:
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `team_id`          | *int*              | :heavy_check_mark: | N/A                |
 | `x_request_id`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-| `ids`              | list[*int*]        | :heavy_minus_sign: | N/A                |
+| `ids`              | List[*int*]        | :heavy_minus_sign: | N/A                |
 | `organization_id`  | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
 
@@ -190,7 +190,7 @@ res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
             case_sensitive=False,
             examples=[
                 shared.TermExampleCreate(
-                    example='Rock',
+                    example='New',
                     type=shared.TermExampleCreateType.GOOD,
                 ),
             ],
@@ -201,19 +201,19 @@ res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='Metal cheater Islands',
+                    mistake='dock',
                 ),
             ],
             tags=[
                 shared.TermTagCreate(
-                    tag='withdrawal extend',
+                    tag='Quality',
                 ),
             ],
-            term='bifurcated',
-            type=shared.TermUpdateType.BANNED,
+            term='redundant',
+            type=shared.TermUpdateType.PENDING,
         ),
     ],
-), team_id=789275, x_request_id='syndicate', organization_id=345187)
+), team_id=134151, x_request_id='Islands', organization_id=499557)
 
 if res.create_terms_response is not None:
     # handle response

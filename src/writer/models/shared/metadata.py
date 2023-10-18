@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Optional
+from typing import Dict, Optional
 from writer import utils
 
 class MetaDataTier(str, Enum):
@@ -15,14 +15,13 @@ class MetaDataTier(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MetaData:
-    portal: dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('portal') }})
-    reporting: dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reporting') }})
+    portal: Dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('portal') }})
+    reporting: Dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reporting') }})
     snippets_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('snippetsCount') }})
     sso_access: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ssoAccess') }})
-    styleguide: dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('styleguide') }})
+    styleguide: Dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('styleguide') }})
     team_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('teamCount') }})
     terms_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termsCount') }})
     tier: Optional[MetaDataTier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tier'), 'exclude': lambda f: f is None }})

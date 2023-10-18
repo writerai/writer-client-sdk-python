@@ -5,7 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import paginatedresult_fulltermwithuser as shared_paginatedresult_fulltermwithuser
 from enum import Enum
-from typing import Optional
+from typing import Dict, List, Optional
 
 class FindTermsPartOfSpeech(str, Enum):
     NOUN = 'noun'
@@ -29,7 +29,6 @@ class FindTermsType(str, Enum):
     PENDING = 'pending'
 
 
-
 @dataclasses.dataclass
 class FindTermsRequest:
     team_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'teamId', 'style': 'simple', 'explode': False }})
@@ -39,11 +38,10 @@ class FindTermsRequest:
     part_of_speech: Optional[FindTermsPartOfSpeech] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'partOfSpeech', 'style': 'form', 'explode': True }})
     sort_field: Optional[FindTermsSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
     sort_order: Optional[FindTermsSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
-    tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'tags', 'style': 'form', 'explode': True }})
+    tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'tags', 'style': 'form', 'explode': True }})
     term: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'term', 'style': 'form', 'explode': True }})
     type: Optional[FindTermsType] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
     
-
 
 
 
@@ -53,7 +51,7 @@ class FindTermsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     paginated_result_full_term_with_user: Optional[shared_paginatedresult_fulltermwithuser.PaginatedResultFullTermWithUser] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

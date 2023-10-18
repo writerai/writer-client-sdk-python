@@ -5,4 +5,4 @@
 
 | Field                                                     | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `issues`                                                  | list[[ContentIssue](../../models/shared/contentissue.md)] | :heavy_minus_sign:                                        | N/A                                                       |
+| `issues`                                                  | List[[ContentIssue](../../models/shared/contentissue.md)] | :heavy_minus_sign:                                        | N/A                                                       |
