@@ -27,7 +27,7 @@ s = writer.Writer(
 
 
 res = s.content.check(content_request=shared.ContentRequest(
-    content='now',
+    content='Tustin',
     settings=shared.ContentSettings(
         age_and_family_status=False,
         confidence=False,
@@ -46,7 +46,7 @@ res = s.content.check(content_request=shared.ContentRequest(
         unclear_reference=False,
         wordiness=False,
     ),
-), team_id=740907, organization_id=53397)
+), team_id=488169, organization_id=740907)
 
 if res.processed_content is not None:
     # handle response
@@ -84,7 +84,7 @@ s = writer.Writer(
 
 
 res = s.content.correct(content_request=shared.ContentRequest(
-    content='structure',
+    content='Hattiesburg',
     settings=shared.ContentSettings(
         age_and_family_status=False,
         confidence=False,
@@ -103,7 +103,7 @@ res = s.content.correct(content_request=shared.ContentRequest(
         unclear_reference=False,
         wordiness=False,
     ),
-), team_id=267677, x_request_id='failing', organization_id=125766)
+), team_id=754764, x_request_id='Folk', organization_id=874845)
 
 if res.correction_response is not None:
     # handle response

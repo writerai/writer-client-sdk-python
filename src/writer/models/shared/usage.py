@@ -8,7 +8,6 @@ from writer import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Usage:
     co_write_words: shared_usageitem.UsageItem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coWriteWords') }})

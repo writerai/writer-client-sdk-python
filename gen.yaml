@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 044ba6ea348a6fb8206cacad6926373d
   docVersion: "1.7"
-  speakeasyVersion: 1.99.0
-  generationVersion: 2.154.1
+  speakeasyVersion: 1.101.0
+  generationVersion: 2.161.0
 generation:
   devContainers:
     enabled: true
@@ -14,17 +14,17 @@ generation:
   telemetryEnabled: false
 features:
   python:
-    core: 2.88.6
+    core: 3.0.2
     devContainers: 2.86.0
     downloadStreams: 0.0.1
-    errors: 2.81.5
+    errors: 2.81.6
     flattening: 2.81.1
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     globals: 2.81.1
     nameOverrides: 2.81.1
 python:
-  version: 0.31.0
+  version: 0.32.0
   author: writerai
   description: Python SDK for Writer API
   flattenGlobalSecurity: true

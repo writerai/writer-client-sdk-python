@@ -8,7 +8,6 @@ from writer import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class LinkedTermCreate:
     linked_term_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('linkedTermId'), 'exclude': lambda f: f is None }})

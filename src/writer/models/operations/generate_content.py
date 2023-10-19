@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import draft as shared_draft
 from ..shared import generatetemplaterequest as shared_generatetemplaterequest
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -18,7 +17,6 @@ class GenerateContentRequest:
 
 
 
-
 @dataclasses.dataclass
 class GenerateContentResponse:
     content_type: str = dataclasses.field()
@@ -26,7 +24,7 @@ class GenerateContentResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     draft: Optional[shared_draft.Draft] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

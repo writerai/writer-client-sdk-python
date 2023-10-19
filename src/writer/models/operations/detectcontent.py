@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import contentdetectorrequest as shared_contentdetectorrequest
 from ..shared import contentdetectorresponse as shared_contentdetectorresponse
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -17,15 +16,14 @@ class DetectContentRequest:
 
 
 
-
 @dataclasses.dataclass
 class DetectContentResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    content_detector_responses: Optional[list[shared_contentdetectorresponse.ContentDetectorResponse]] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    content_detector_responses: Optional[List[shared_contentdetectorresponse.ContentDetectorResponse]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

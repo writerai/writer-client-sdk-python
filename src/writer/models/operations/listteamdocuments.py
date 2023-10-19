@@ -5,7 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import briefdocuments as shared_briefdocuments
 from enum import Enum
-from typing import Optional
+from typing import Dict, List, Optional
 
 class ListTeamDocumentsSortField(str, Enum):
     TITLE = 'title'
@@ -17,7 +17,6 @@ class ListTeamDocumentsSortField(str, Enum):
 class ListTeamDocumentsSortOrder(str, Enum):
     ASC = 'asc'
     DESC = 'desc'
-
 
 
 @dataclasses.dataclass
@@ -33,7 +32,6 @@ class ListTeamDocumentsRequest:
 
 
 
-
 @dataclasses.dataclass
 class ListTeamDocumentsResponse:
     content_type: str = dataclasses.field()
@@ -41,7 +39,7 @@ class ListTeamDocumentsResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     brief_documents: Optional[shared_briefdocuments.BriefDocuments] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

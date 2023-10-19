@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import completionrequest as shared_completionrequest
 from ..shared import completionresponse as shared_completionresponse
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -19,7 +18,6 @@ class CreateModelCustomizationCompletionRequest:
 
 
 
-
 @dataclasses.dataclass
 class CreateModelCustomizationCompletionResponse:
     content_type: str = dataclasses.field()
@@ -27,7 +25,7 @@ class CreateModelCustomizationCompletionResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     completion_response: Optional[shared_completionresponse.CompletionResponse] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

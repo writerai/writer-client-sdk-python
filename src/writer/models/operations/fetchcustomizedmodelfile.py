@@ -3,8 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -16,7 +15,6 @@ class FetchCustomizedModelFileRequest:
 
 
 
-
 @dataclasses.dataclass
 class FetchCustomizedModelFileResponse:
     content_type: str = dataclasses.field()
@@ -24,7 +22,7 @@ class FetchCustomizedModelFileResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     fetch_customized_model_file_200_application_octet_stream_binary_string: Optional[requests_http.Response] = dataclasses.field(default=None)
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import templatedetailsresponse as shared_templatedetailsresponse
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -17,14 +16,13 @@ class ListTemplatesRequest:
 
 
 
-
 @dataclasses.dataclass
 class ListTemplatesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     template_details_response: Optional[shared_templatedetailsresponse.TemplateDetailsResponse] = dataclasses.field(default=None)
