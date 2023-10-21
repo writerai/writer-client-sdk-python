@@ -29,14 +29,14 @@ s = writer.Writer(
 res = s.co_write.generate_content(generate_template_request=shared.GenerateTemplateRequest(
     inputs=[
         shared.MagicRequestInput(
-            name='very',
+            name='string',
             value=[
-                'eek',
+                'string',
             ],
         ),
     ],
-    template_id='Mini',
-), team_id=396397, organization_id=76381)
+    template_id='string',
+), team_id=888452, organization_id=926220)
 
 if res.draft is not None:
     # handle response
@@ -73,7 +73,7 @@ s = writer.Writer(
 )
 
 
-res = s.co_write.list_templates(team_id=882866, template_id='Morocco', organization_id=543280)
+res = s.co_write.list_templates(team_id=882866, template_id='string', organization_id=55511)
 
 if res.template_details_response is not None:
     # handle response

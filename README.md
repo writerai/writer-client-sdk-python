@@ -40,8 +40,8 @@ s = writer.Writer(
 
 
 res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='Folk',
-))
+    input='string',
+), organization_id=592237)
 
 if res.content_detector_responses is not None:
     # handle response
@@ -170,8 +170,8 @@ s = writer.Writer(
 
 
 res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='Folk',
-), organization_id=149376)
+    input='string',
+), organization_id=592237)
 
 if res.content_detector_responses is not None:
     # handle response

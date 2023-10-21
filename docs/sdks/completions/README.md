@@ -30,7 +30,7 @@ res = s.completions.create(completion_request=shared.CompletionRequest(
     best_of=1,
     max_tokens=1024,
     min_tokens=1,
-    prompt='bluetooth',
+    prompt='string',
     stop=[
         'the',
         'is',
@@ -38,7 +38,7 @@ res = s.completions.create(completion_request=shared.CompletionRequest(
     ],
     temperature=0.7,
     top_p=1,
-), model_id='Extended', organization_id=134365)
+), model_id='string', organization_id=489382)
 
 if res.completion_response is not None:
     # handle response
@@ -79,7 +79,7 @@ res = s.completions.create_model_customization_completion(completion_request=sha
     best_of=1,
     max_tokens=1024,
     min_tokens=1,
-    prompt='Uruguay',
+    prompt='string',
     stop=[
         'the',
         'is',
@@ -87,7 +87,7 @@ res = s.completions.create_model_customization_completion(completion_request=sha
     ],
     temperature=0.7,
     top_p=1,
-), customization_id='streamline', model_id='newton', organization_id=151932)
+), customization_id='string', model_id='string', organization_id=41297)
 
 if res.completion_response is not None:
     # handle response
