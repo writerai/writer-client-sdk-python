@@ -25,7 +25,7 @@ s = writer.Writer(
 )
 
 
-res = s.download_the_customized_model.fetch_file(customization_id='apology', model_id='Silver', organization_id=432823)
+res = s.download_the_customized_model.fetch_file(customization_id='string', model_id='string', organization_id=948692)
 
 if res.fetch_customized_model_file_200_application_octet_stream_binary_string is not None:
     # handle response

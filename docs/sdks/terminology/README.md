@@ -39,7 +39,7 @@ res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
             case_sensitive=False,
             examples=[
                 shared.TermExampleCreate(
-                    example='Lamborghini',
+                    example='string',
                     type=shared.TermExampleCreateType.BAD,
                 ),
             ],
@@ -49,19 +49,19 @@ res = s.terminology.add(create_terms_request=shared.CreateTermsRequest(
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='Toyota',
+                    mistake='string',
                 ),
             ],
             tags=[
                 shared.TermTagCreate(
-                    tag='noon',
+                    tag='string',
                 ),
             ],
-            term='bypass',
+            term='string',
             type=shared.TermCreateType.BANNED,
         ),
     ],
-), team_id=945233, organization_id=172496)
+), team_id=623445, organization_id=822001)
 
 if res.create_terms_response is not None:
     # handle response
@@ -98,9 +98,9 @@ s = writer.Writer(
 )
 
 
-res = s.terminology.delete(team_id=841399, x_request_id='Designer', ids=[
-    386564,
-], organization_id=201447)
+res = s.terminology.delete(team_id=841399, x_request_id='string', ids=[
+    698486,
+], organization_id=557937)
 
 if res.delete_response is not None:
     # handle response
@@ -139,9 +139,9 @@ s = writer.Writer(
 
 req = operations.FindTermsRequest(
     tags=[
-        'underestimate',
+        'string',
     ],
-    team_id=111247,
+    team_id=326883,
 )
 
 res = s.terminology.find(req)
@@ -190,30 +190,30 @@ res = s.terminology.update(update_terms_request=shared.UpdateTermsRequest(
             case_sensitive=False,
             examples=[
                 shared.TermExampleCreate(
-                    example='New',
+                    example='string',
                     type=shared.TermExampleCreateType.GOOD,
                 ),
             ],
-            id=708455,
+            id=597129,
             linked_terms=[
                 shared.LinkedTermCreate(),
             ],
             mistakes=[
                 shared.TermMistakeCreate(
                     case_sensitive=False,
-                    mistake='dock',
+                    mistake='string',
                 ),
             ],
             tags=[
                 shared.TermTagCreate(
-                    tag='Quality',
+                    tag='string',
                 ),
             ],
-            term='redundant',
-            type=shared.TermUpdateType.PENDING,
+            term='string',
+            type=shared.TermUpdateType.APPROVED,
         ),
     ],
-), team_id=134151, x_request_id='Islands', organization_id=499557)
+), team_id=344620, x_request_id='string', organization_id=708455)
 
 if res.create_terms_response is not None:
     # handle response

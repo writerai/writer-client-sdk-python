@@ -28,7 +28,7 @@ s = writer.Writer(
 )
 
 
-res = s.files.delete(file_id='Van', organization_id=386564)
+res = s.files.delete(file_id='string', organization_id=841399)
 
 if res.delete_file_200_application_json_object is not None:
     # handle response
@@ -64,7 +64,7 @@ s = writer.Writer(
 )
 
 
-res = s.files.get(file_id='Northeast', organization_id=844199)
+res = s.files.get(file_id='string', organization_id=90065)
 
 if res.model_file is not None:
     # handle response
@@ -138,9 +138,9 @@ s = writer.Writer(
 res = s.files.upload(upload_model_file_request=shared.UploadModelFileRequest(
     file=shared.UploadModelFileRequestFile(
         content='?SRSKG@^n='.encode(),
-        file='ullam',
+        file='string',
     ),
-), organization_id=236236)
+), organization_id=572988)
 
 if res.model_file is not None:
     # handle response

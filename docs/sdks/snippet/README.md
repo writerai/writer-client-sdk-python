@@ -27,9 +27,9 @@ s = writer.Writer(
 )
 
 
-res = s.snippet.delete(team_id=841399, x_request_id='Designer', ids=[
-    'complexity',
-], organization_id=952479)
+res = s.snippet.delete(team_id=841399, x_request_id='string', ids=[
+    'string',
+], organization_id=698486)
 
 if res.delete_response is not None:
     # handle response
@@ -68,12 +68,12 @@ s = writer.Writer(
 
 req = operations.FindSnippetsRequest(
     shortcuts=[
-        'underestimate',
+        'string',
     ],
     tags=[
-        'Northeast',
+        'string',
     ],
-    team_id=803382,
+    team_id=326883,
 )
 
 res = s.snippet.find(req)
@@ -114,14 +114,14 @@ s = writer.Writer(
 res = s.snippet.update(team_id=24555, request_body=[
     shared.SnippetUpdate(
         id='<ID>',
-        snippet='Rock',
+        snippet='string',
         tags=[
             shared.SnippetTagV2(
-                tag='Reactive',
+                tag='string',
             ),
         ],
     ),
-], x_request_id='dock', organization_id=627690)
+], x_request_id='string', organization_id=597129)
 
 if res.snippet_with_users is not None:
     # handle response

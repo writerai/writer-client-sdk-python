@@ -32,9 +32,9 @@ res = s.model_customization.create(create_customization_request=shared.CreateCus
     additional_hyper_parameters=shared.HyperParameters(
         num_virtual_tokens=489382,
     ),
-    name='Configuration',
-    training_dataset_file_id='Money',
-), model_id='blue', organization_id=996706)
+    name='string',
+    training_dataset_file_id='string',
+), model_id='string', organization_id=638424)
 
 if res.model_customization is not None:
     # handle response
@@ -71,7 +71,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.delete(customization_id='Van', model_id='complexity', organization_id=952479)
+res = s.model_customization.delete(customization_id='string', model_id='string', organization_id=841399)
 
 if res.delete_model_customization_200_application_json_object is not None:
     # handle response
@@ -108,7 +108,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.get(customization_id='Northeast', model_id='Hatchback', organization_id=830636)
+res = s.model_customization.get(customization_id='string', model_id='string', organization_id=90065)
 
 if res.model_customization is not None:
     # handle response
@@ -145,7 +145,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.list(model_id='Northeast', organization_id=257649)
+res = s.model_customization.list(model_id='string', organization_id=99895)
 
 if res.customizations_response is not None:
     # handle response
