@@ -1,4 +1,4 @@
-# FullLinkedTermPos
+# PartOfSpeech
 
 
 ## Values

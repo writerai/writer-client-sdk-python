@@ -56,7 +56,7 @@ class Styleguide:
         return res
 
     
-    def list_pages(self, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[operations.ListPagesStatus] = None) -> operations.ListPagesResponse:
+    def list_pages(self, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[operations.Status] = None) -> operations.ListPagesResponse:
         r"""List your styleguide pages"""
         request = operations.ListPagesRequest(
             limit=limit,

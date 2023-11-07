@@ -6,7 +6,7 @@ from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from writer import utils
 
-class ContentDetectorResponseLabel(str, Enum):
+class Label(str, Enum):
     FAKE = 'fake'
     REAL = 'real'
 
@@ -14,7 +14,7 @@ class ContentDetectorResponseLabel(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ContentDetectorResponse:
-    label: ContentDetectorResponseLabel = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
+    label: Label = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     score: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('score') }})
     
 

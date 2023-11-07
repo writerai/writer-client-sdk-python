@@ -1,5 +1,5 @@
 # Snippet
-(*snippet*)
+(*.snippet*)
 
 ## Overview
 
@@ -19,7 +19,7 @@ Delete snippets
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -59,7 +59,7 @@ Find snippets
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -123,7 +123,7 @@ res = s.snippet.update(team_id=24555, request_body=[
     ),
 ], x_request_id='string', organization_id=597129)
 
-if res.snippet_with_users is not None:
+if res.classes is not None:
     # handle response
     pass
 ```

@@ -1,5 +1,5 @@
 # User
-(*user*)
+(*.user*)
 
 ## Overview
 
@@ -17,7 +17,7 @@ List users
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",

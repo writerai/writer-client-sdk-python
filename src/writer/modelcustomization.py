@@ -89,8 +89,8 @@ class ModelCustomization:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteModelCustomization200ApplicationJSON])
-                res.delete_model_customization_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteModelCustomizationResponseBody])
+                res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:

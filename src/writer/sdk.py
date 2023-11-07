@@ -21,24 +21,26 @@ from writer import utils
 from writer.models import shared
 
 class Writer:
-    ai_content_detector: AIContentDetector
-    r"""Methods related to AI Content Detector"""
     billing: Billing
     r"""Methods related to Billing"""
-    co_write: CoWrite
-    r"""Methods related to CoWrite"""
-    completions: Completions
-    r"""Methods related to Completions"""
+    ai_content_detector: AIContentDetector
+    r"""Methods related to AI Content Detector"""
     content: Content
     r"""Methods related to Content"""
-    download_the_customized_model: DownloadTheCustomizedModel
-    r"""Methods related to Download the customized model"""
+    co_write: CoWrite
+    r"""Methods related to CoWrite"""
     files: Files
     r"""Methods related to Files"""
-    model_customization: ModelCustomization
-    r"""Methods related to Model Customization"""
     models: Models
     r"""Methods related to Model"""
+    completions: Completions
+    r"""Methods related to Completions"""
+    model_customization: ModelCustomization
+    r"""Methods related to Model Customization"""
+    download_the_customized_model: DownloadTheCustomizedModel
+    r"""Methods related to Download the customized model"""
+    document: Document
+    r"""Methods related to document"""
     snippet: Snippet
     r"""Methods related to Snippets"""
     styleguide: Styleguide
@@ -47,8 +49,6 @@ class Writer:
     r"""Methods related to Terminology"""
     user: User
     r"""Methods related to User"""
-    document: Document
-    r"""Methods related to document"""
 
     sdk_configuration: SDKConfiguration
 
@@ -102,18 +102,18 @@ class Writer:
         self._init_sdks()
     
     def _init_sdks(self):
-        self.ai_content_detector = AIContentDetector(self.sdk_configuration)
         self.billing = Billing(self.sdk_configuration)
-        self.co_write = CoWrite(self.sdk_configuration)
-        self.completions = Completions(self.sdk_configuration)
+        self.ai_content_detector = AIContentDetector(self.sdk_configuration)
         self.content = Content(self.sdk_configuration)
-        self.download_the_customized_model = DownloadTheCustomizedModel(self.sdk_configuration)
+        self.co_write = CoWrite(self.sdk_configuration)
         self.files = Files(self.sdk_configuration)
-        self.model_customization = ModelCustomization(self.sdk_configuration)
         self.models = Models(self.sdk_configuration)
+        self.completions = Completions(self.sdk_configuration)
+        self.model_customization = ModelCustomization(self.sdk_configuration)
+        self.download_the_customized_model = DownloadTheCustomizedModel(self.sdk_configuration)
+        self.document = Document(self.sdk_configuration)
         self.snippet = Snippet(self.sdk_configuration)
         self.styleguide = Styleguide(self.sdk_configuration)
         self.terminology = Terminology(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
-        self.document = Document(self.sdk_configuration)
     

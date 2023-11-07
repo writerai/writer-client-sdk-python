@@ -1,4 +1,4 @@
-# ContentDetectorResponseLabel
+# Label
 
 
 ## Values

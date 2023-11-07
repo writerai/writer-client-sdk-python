@@ -1,5 +1,5 @@
 # Content
-(*content*)
+(*.content*)
 
 ## Overview
 

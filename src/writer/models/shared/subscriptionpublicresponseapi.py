@@ -3,14 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import metadata as shared_metadata
-from ..shared import usage as shared_usage
+from .metadata import MetaData
+from .usage import Usage
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from writer import utils
 
-class SubscriptionPublicResponseAPIProductName(str, Enum):
+class ProductName(str, Enum):
     FREE = 'free'
     PRO = 'pro'
     TEAM = 'team'
@@ -31,11 +31,11 @@ class SubscriptionPublicResponseAPIStatus(str, Enum):
 @dataclasses.dataclass
 class SubscriptionPublicResponseAPI:
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
-    meta: shared_metadata.MetaData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta') }})
-    product_name: SubscriptionPublicResponseAPIProductName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('productName') }})
+    meta: MetaData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta') }})
+    product_name: ProductName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('productName') }})
     seats: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seats') }})
     status: SubscriptionPublicResponseAPIStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     subscription_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionId') }})
-    usage: shared_usage.Usage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('usage') }})
+    usage: Usage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('usage') }})
     
 

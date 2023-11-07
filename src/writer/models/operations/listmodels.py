@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import generationmodelsresponse as shared_generationmodelsresponse
+from ...models.shared import generationmodelsresponse as shared_generationmodelsresponse
 from typing import Dict, List, Optional
 
 

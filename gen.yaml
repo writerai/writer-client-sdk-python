@@ -2,20 +2,18 @@ configVersion: 1.0.0
 management:
   docChecksum: 044ba6ea348a6fb8206cacad6926373d
   docVersion: "1.7"
-  speakeasyVersion: 1.109.0
-  generationVersion: 2.173.0
+  speakeasyVersion: 1.114.1
+  generationVersion: 2.181.1
 generation:
+  comments: {}
   devContainers:
     enabled: true
     schemaPath: https://raw.githubusercontent.com/speakeasy-sdks/w-ai-openapi/main/openapi.yaml
-  repoURL: https://github.com/writerai/writer-client-sdk-python.git
   sdkClassName: writer
-  sdkFlattening: true
-  singleTagPerOp: false
-  telemetryEnabled: false
+  repoURL: https://github.com/writerai/writer-client-sdk-python.git
 features:
   python:
-    core: 3.3.1
+    core: 4.1.0
     devContainers: 2.86.0
     downloadStreams: 0.0.2
     errors: 2.81.7
@@ -25,10 +23,19 @@ features:
     globals: 2.81.1
     nameOverrides: 2.81.1
 python:
-  version: 0.34.0
+  version: 0.35.0
   author: writerai
+  clientServerStatusCodesAsErrors: true
   description: Python SDK for Writer API
   flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/shared
+      webhooks: models/webhooks
   installationURL: https://github.com/writerai/writer-client-sdk-python.git
   maxMethodParams: 4
   packageName: writerai

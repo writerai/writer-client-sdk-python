@@ -1,4 +1,4 @@
-# FindSnippetsSortField
+# SortField
 
 
 ## Values

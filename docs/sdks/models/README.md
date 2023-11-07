@@ -1,5 +1,5 @@
 # Models
-(*models*)
+(*.models*)
 
 ## Overview
 
@@ -17,7 +17,7 @@ List available LLM models
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",

@@ -1,5 +1,5 @@
 # Terminology
-(*terminology*)
+(*.terminology*)
 
 ## Overview
 
@@ -90,7 +90,7 @@ Delete terms
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -130,7 +130,7 @@ Find terms
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",

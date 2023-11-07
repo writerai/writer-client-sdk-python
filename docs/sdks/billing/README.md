@@ -1,5 +1,5 @@
 # Billing
-(*billing*)
+(*.billing*)
 
 ## Overview
 
@@ -17,7 +17,6 @@ Get your organization subscription details
 
 ```python
 import writer
-from writer.models import shared
 
 s = writer.Writer(
     api_key="",

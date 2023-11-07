@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import snippetupdate as shared_snippetupdate
-from ..shared import snippetwithuser as shared_snippetwithuser
+from ...models.shared import snippetupdate as shared_snippetupdate
+from ...models.shared import snippetwithuser as shared_snippetwithuser
 from typing import Dict, List, Optional
 
 
@@ -24,9 +24,9 @@ class UpdateSnippetsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    classes: Optional[List[shared_snippetwithuser.SnippetWithUser]] = dataclasses.field(default=None)
     headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    snippet_with_users: Optional[List[shared_snippetwithuser.SnippetWithUser]] = dataclasses.field(default=None)
     
 

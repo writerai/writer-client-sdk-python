@@ -1,5 +1,5 @@
 # AIContentDetector
-(*ai_content_detector*)
+(*.ai_content_detector*)
 
 ## Overview
 
@@ -29,7 +29,7 @@ res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetect
     input='string',
 ), organization_id=592237)
 
-if res.content_detector_responses is not None:
+if res.classes is not None:
     # handle response
     pass
 ```

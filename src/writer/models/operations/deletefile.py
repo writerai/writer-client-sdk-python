@@ -15,7 +15,7 @@ class DeleteFileRequest:
 
 
 @dataclasses.dataclass
-class DeleteFile200ApplicationJSON:
+class DeleteFileResponseBody:
     pass
 
 
@@ -25,8 +25,8 @@ class DeleteFileResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_file_200_application_json_object: Optional[DeleteFile200ApplicationJSON] = dataclasses.field(default=None)
     headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
+    object: Optional[DeleteFileResponseBody] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

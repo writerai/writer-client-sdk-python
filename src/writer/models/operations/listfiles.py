@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import modelfilesresponse as shared_modelfilesresponse
+from ...models.shared import modelfilesresponse as shared_modelfilesresponse
 from typing import Dict, List, Optional
 
 

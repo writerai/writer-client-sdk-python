@@ -1,5 +1,5 @@
 # CoWrite
-(*co_write*)
+(*.co_write*)
 
 ## Overview
 
@@ -65,7 +65,7 @@ Get a list of your existing CoWrite templates
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",

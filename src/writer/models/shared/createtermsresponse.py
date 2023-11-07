@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import failmessage as shared_failmessage
-from ..shared import fulltermwithuser as shared_fulltermwithuser
+from .failmessage import FailMessage
+from .fulltermwithuser import FullTermWithUser
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
 from writer import utils
@@ -12,7 +12,7 @@ from writer import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateTermsResponse:
-    fails: Optional[List[shared_failmessage.FailMessage]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fails'), 'exclude': lambda f: f is None }})
-    models: Optional[List[shared_fulltermwithuser.FullTermWithUser]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})
+    fails: Optional[List[FailMessage]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fails'), 'exclude': lambda f: f is None }})
+    models: Optional[List[FullTermWithUser]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})
     
 

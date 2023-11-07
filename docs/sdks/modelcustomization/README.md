@@ -1,5 +1,5 @@
 # ModelCustomization
-(*model_customization*)
+(*.model_customization*)
 
 ## Overview
 
@@ -63,7 +63,7 @@ Delete Model customization
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -73,7 +73,7 @@ s = writer.Writer(
 
 res = s.model_customization.delete(customization_id='string', model_id='string', organization_id=841399)
 
-if res.delete_model_customization_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -100,7 +100,7 @@ Get model customization
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -137,7 +137,7 @@ List model customizations
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",

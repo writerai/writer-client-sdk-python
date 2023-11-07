@@ -1,5 +1,5 @@
 # Document
-(*document*)
+(*.document*)
 
 ## Overview
 
@@ -18,7 +18,7 @@ Get document details
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -55,7 +55,7 @@ List team documents
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",

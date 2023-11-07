@@ -1,5 +1,5 @@
 # DownloadTheCustomizedModel
-(*download_the_customized_model*)
+(*.download_the_customized_model*)
 
 ## Overview
 
@@ -17,7 +17,7 @@ Download your fine-tuned model (available only for Palmyra Base and Palmyra Larg
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -27,7 +27,7 @@ s = writer.Writer(
 
 res = s.download_the_customized_model.fetch_file(customization_id='string', model_id='string', organization_id=948692)
 
-if res.fetch_customized_model_file_200_application_octet_stream_binary_string is not None:
+if res.stream is not None:
     # handle response
     pass
 ```

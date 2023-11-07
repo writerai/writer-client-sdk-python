@@ -3,27 +3,27 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import paginatedresult_fulltermwithuser as shared_paginatedresult_fulltermwithuser
+from ...models.shared import paginatedresult_fulltermwithuser as shared_paginatedresult_fulltermwithuser
 from enum import Enum
 from typing import Dict, List, Optional
 
-class FindTermsPartOfSpeech(str, Enum):
+class PartOfSpeech(str, Enum):
     NOUN = 'noun'
     VERB = 'verb'
     ADVERB = 'adverb'
     ADJECTIVE = 'adjective'
 
-class FindTermsSortField(str, Enum):
+class QueryParamSortField(str, Enum):
     TERM = 'term'
     CREATION_TIME = 'creationTime'
     MODIFICATION_TIME = 'modificationTime'
     TYPE = 'type'
 
-class FindTermsSortOrder(str, Enum):
+class QueryParamSortOrder(str, Enum):
     ASC = 'asc'
     DESC = 'desc'
 
-class FindTermsType(str, Enum):
+class Type(str, Enum):
     APPROVED = 'approved'
     BANNED = 'banned'
     PENDING = 'pending'
@@ -35,12 +35,12 @@ class FindTermsRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
-    part_of_speech: Optional[FindTermsPartOfSpeech] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'partOfSpeech', 'style': 'form', 'explode': True }})
-    sort_field: Optional[FindTermsSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
-    sort_order: Optional[FindTermsSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
+    part_of_speech: Optional[PartOfSpeech] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'partOfSpeech', 'style': 'form', 'explode': True }})
+    sort_field: Optional[QueryParamSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
+    sort_order: Optional[QueryParamSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'tags', 'style': 'form', 'explode': True }})
     term: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'term', 'style': 'form', 'explode': True }})
-    type: Optional[FindTermsType] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
+    type: Optional[Type] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
     
 
 

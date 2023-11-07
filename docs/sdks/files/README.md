@@ -1,5 +1,5 @@
 # Files
-(*files*)
+(*.files*)
 
 ## Overview
 
@@ -20,7 +20,7 @@ Delete file
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -30,7 +30,7 @@ s = writer.Writer(
 
 res = s.files.delete(file_id='string', organization_id=841399)
 
-if res.delete_file_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -56,7 +56,7 @@ Get file
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -92,7 +92,7 @@ List files
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -136,11 +136,11 @@ s = writer.Writer(
 
 
 res = s.files.upload(upload_model_file_request=shared.UploadModelFileRequest(
-    file=shared.UploadModelFileRequestFile(
-        content='?SRSKG@^n='.encode(),
-        file='string',
+    file=shared.File(
+        content='0x7cbca97eC6'.encode(),
+        file_name='plastic_cli.gif',
     ),
-), organization_id=572988)
+), organization_id=360896)
 
 if res.model_file is not None:
     # handle response

@@ -3,14 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import simpleuser as shared_simpleuser
+from .simpleuser import SimpleUser
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from typing import Optional
 from writer import utils
 
-class BriefDocumentAccess(str, Enum):
+class Access(str, Enum):
     PRIVATE = 'private'
     PUBLIC = 'public'
     SHARED = 'shared'
@@ -19,7 +19,7 @@ class BriefDocumentAccess(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class BriefDocument:
-    access: BriefDocumentAccess = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access') }})
+    access: Access = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access') }})
     creation_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creationTime'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     modification_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modificationTime'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
@@ -27,7 +27,7 @@ class BriefDocument:
     score: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('score') }})
     team_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('teamId') }})
     title: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
-    created_user: Optional[shared_simpleuser.SimpleUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdUser'), 'exclude': lambda f: f is None }})
-    modified_user: Optional[shared_simpleuser.SimpleUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modifiedUser'), 'exclude': lambda f: f is None }})
+    created_user: Optional[SimpleUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdUser'), 'exclude': lambda f: f is None }})
+    modified_user: Optional[SimpleUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modifiedUser'), 'exclude': lambda f: f is None }})
     
 
