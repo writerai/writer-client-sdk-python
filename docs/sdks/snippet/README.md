@@ -1,5 +1,5 @@
 # Snippet
-(*.snippet*)
+(*snippet*)
 
 ## Overview
 
@@ -49,7 +49,12 @@ if res.delete_response is not None:
 ### Response
 
 **[operations.DeleteSnippetsResponse](../../models/operations/deletesnippetsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## find
 
@@ -93,7 +98,12 @@ if res.paginated_result_snippet_with_user is not None:
 ### Response
 
 **[operations.FindSnippetsResponse](../../models/operations/findsnippetsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## update
 
@@ -141,4 +151,9 @@ if res.classes is not None:
 ### Response
 
 **[operations.UpdateSnippetsResponse](../../models/operations/updatesnippetsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

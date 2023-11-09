@@ -13,6 +13,7 @@ class Styleguide:
         self.sdk_configuration = sdk_config
         
     
+    
     def get(self, page_id: int) -> operations.PageDetailsResponse:
         r"""Page details"""
         request = operations.PageDetailsRequest(
@@ -26,7 +27,10 @@ class Styleguide:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -56,6 +60,7 @@ class Styleguide:
         return res
 
     
+    
     def list_pages(self, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[operations.Status] = None) -> operations.ListPagesResponse:
         r"""List your styleguide pages"""
         request = operations.ListPagesRequest(
@@ -72,7 +77,10 @@ class Styleguide:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

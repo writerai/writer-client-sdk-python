@@ -1,5 +1,5 @@
 # Files
-(*.files*)
+(*files*)
 
 ## Overview
 
@@ -46,7 +46,12 @@ if res.object is not None:
 ### Response
 
 **[operations.DeleteFileResponse](../../models/operations/deletefileresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## get
 
@@ -82,7 +87,12 @@ if res.model_file is not None:
 ### Response
 
 **[operations.GetFileResponse](../../models/operations/getfileresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## list
 
@@ -117,7 +127,12 @@ if res.model_files_response is not None:
 ### Response
 
 **[operations.ListFilesResponse](../../models/operations/listfilesresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## upload
 
@@ -158,4 +173,9 @@ if res.model_file is not None:
 ### Response
 
 **[operations.UploadFileResponse](../../models/operations/uploadfileresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

@@ -1,5 +1,5 @@
 # Document
-(*.document*)
+(*document*)
 
 ## Overview
 
@@ -45,7 +45,12 @@ if res.document is not None:
 ### Response
 
 **[operations.GetDocumentDetailsResponse](../../models/operations/getdocumentdetailsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## list
 
@@ -83,4 +88,9 @@ if res.brief_documents is not None:
 ### Response
 
 **[operations.ListTeamDocumentsResponse](../../models/operations/listteamdocumentsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

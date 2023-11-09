@@ -13,6 +13,7 @@ class Snippet:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete(self, team_id: int, x_request_id: Optional[str] = None, ids: Optional[List[str]] = None, organization_id: Optional[int] = None) -> operations.DeleteSnippetsResponse:
         r"""Delete snippets"""
         request = operations.DeleteSnippetsRequest(
@@ -30,7 +31,10 @@ class Snippet:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -60,6 +64,7 @@ class Snippet:
         return res
 
     
+    
     def find(self, request: operations.FindSnippetsRequest) -> operations.FindSnippetsResponse:
         r"""Find snippets"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -70,7 +75,10 @@ class Snippet:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -100,6 +108,7 @@ class Snippet:
         return res
 
     
+    
     def update(self, team_id: int, request_body: Optional[List[shared.SnippetUpdate]] = None, x_request_id: Optional[str] = None, organization_id: Optional[int] = None) -> operations.UpdateSnippetsResponse:
         r"""Update snippets"""
         request = operations.UpdateSnippetsRequest(
@@ -119,7 +128,10 @@ class Snippet:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

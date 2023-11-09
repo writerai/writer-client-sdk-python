@@ -13,6 +13,7 @@ class Document:
         self.sdk_configuration = sdk_config
         
     
+    
     def get(self, document_id: int, team_id: int, organization_id: Optional[int] = None) -> operations.GetDocumentDetailsResponse:
         r"""Get document details"""
         request = operations.GetDocumentDetailsRequest(
@@ -28,7 +29,10 @@ class Document:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -58,6 +62,7 @@ class Document:
         return res
 
     
+    
     def list(self, request: operations.ListTeamDocumentsRequest) -> operations.ListTeamDocumentsResponse:
         r"""List team documents"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -68,7 +73,10 @@ class Document:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

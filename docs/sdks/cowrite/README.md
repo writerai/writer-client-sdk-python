@@ -1,5 +1,5 @@
 # CoWrite
-(*.co_write*)
+(*co_write*)
 
 ## Overview
 
@@ -55,7 +55,12 @@ if res.draft is not None:
 ### Response
 
 **[operations.GenerateContentResponse](../../models/operations/generatecontentresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## list_templates
 
@@ -92,4 +97,9 @@ if res.template_details_response is not None:
 ### Response
 
 **[operations.ListTemplatesResponse](../../models/operations/listtemplatesresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

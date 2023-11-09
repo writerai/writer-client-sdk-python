@@ -1,5 +1,5 @@
 # Terminology
-(*.terminology*)
+(*terminology*)
 
 ## Overview
 
@@ -80,7 +80,12 @@ if res.create_terms_response is not None:
 ### Response
 
 **[operations.AddTermsResponse](../../models/operations/addtermsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## delete
 
@@ -120,7 +125,12 @@ if res.delete_response is not None:
 ### Response
 
 **[operations.DeleteTermsResponse](../../models/operations/deletetermsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## find
 
@@ -161,7 +171,12 @@ if res.paginated_result_full_term_with_user is not None:
 ### Response
 
 **[operations.FindTermsResponse](../../models/operations/findtermsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## update
 
@@ -233,4 +248,9 @@ if res.create_terms_response is not None:
 ### Response
 
 **[operations.UpdateTermsResponse](../../models/operations/updatetermsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

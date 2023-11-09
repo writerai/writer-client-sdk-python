@@ -1,5 +1,5 @@
 # User
-(*.user*)
+(*user*)
 
 ## Overview
 
@@ -43,4 +43,9 @@ if res.paginated_result_user_public_response is not None:
 ### Response
 
 **[operations.ListUsersResponse](../../models/operations/listusersresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

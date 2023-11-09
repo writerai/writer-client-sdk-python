@@ -1,5 +1,5 @@
 # Styleguide
-(*.styleguide*)
+(*styleguide*)
 
 ## Overview
 
@@ -43,7 +43,12 @@ if res.page_with_section_response is not None:
 ### Response
 
 **[operations.PageDetailsResponse](../../models/operations/pagedetailsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## list_pages
 
@@ -80,4 +85,9 @@ if res.paginated_result_page_public_api_response is not None:
 ### Response
 
 **[operations.ListPagesResponse](../../models/operations/listpagesresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

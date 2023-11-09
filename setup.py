@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="writerai",
-    version="0.35.0",
+    version="0.36.0",
     author="writerai",
     description="Python SDK for Writer API",
     long_description=long_description,

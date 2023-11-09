@@ -1,5 +1,5 @@
 # DownloadTheCustomizedModel
-(*.download_the_customized_model*)
+(*download_the_customized_model*)
 
 ## Overview
 
@@ -44,4 +44,9 @@ if res.stream is not None:
 ### Response
 
 **[operations.FetchCustomizedModelFileResponse](../../models/operations/fetchcustomizedmodelfileresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

@@ -1,5 +1,5 @@
 # Completions
-(*.completions*)
+(*completions*)
 
 ## Overview
 
@@ -57,7 +57,12 @@ if res.completion_response is not None:
 ### Response
 
 **[operations.CreateCompletionResponse](../../models/operations/createcompletionresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## create_model_customization_completion
 
@@ -107,4 +112,9 @@ if res.completion_response is not None:
 ### Response
 
 **[operations.CreateModelCustomizationCompletionResponse](../../models/operations/createmodelcustomizationcompletionresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

@@ -1,5 +1,5 @@
 # AIContentDetector
-(*.ai_content_detector*)
+(*ai_content_detector*)
 
 ## Overview
 
@@ -45,4 +45,9 @@ if res.classes is not None:
 ### Response
 
 **[operations.DetectContentResponse](../../models/operations/detectcontentresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

@@ -13,6 +13,7 @@ class Files:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete(self, file_id: str, organization_id: Optional[int] = None) -> operations.DeleteFileResponse:
         r"""Delete file"""
         request = operations.DeleteFileRequest(
@@ -27,7 +28,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -57,6 +61,7 @@ class Files:
         return res
 
     
+    
     def get(self, file_id: str, organization_id: Optional[int] = None) -> operations.GetFileResponse:
         r"""Get file"""
         request = operations.GetFileRequest(
@@ -71,7 +76,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -101,6 +109,7 @@ class Files:
         return res
 
     
+    
     def list(self, organization_id: Optional[int] = None) -> operations.ListFilesResponse:
         r"""List files"""
         request = operations.ListFilesRequest(
@@ -114,7 +123,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -144,6 +156,7 @@ class Files:
         return res
 
     
+    
     def upload(self, upload_model_file_request: shared.UploadModelFileRequest, organization_id: Optional[int] = None) -> operations.UploadFileResponse:
         r"""Upload file"""
         request = operations.UploadFileRequest(
@@ -163,7 +176,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

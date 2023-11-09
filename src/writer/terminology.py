@@ -13,6 +13,7 @@ class Terminology:
         self.sdk_configuration = sdk_config
         
     
+    
     def add(self, create_terms_request: shared.CreateTermsRequest, team_id: int, organization_id: Optional[int] = None) -> operations.AddTermsResponse:
         r"""Add terms"""
         request = operations.AddTermsRequest(
@@ -33,7 +34,10 @@ class Terminology:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -63,6 +67,7 @@ class Terminology:
         return res
 
     
+    
     def delete(self, team_id: int, x_request_id: Optional[str] = None, ids: Optional[List[int]] = None, organization_id: Optional[int] = None) -> operations.DeleteTermsResponse:
         r"""Delete terms"""
         request = operations.DeleteTermsRequest(
@@ -80,7 +85,10 @@ class Terminology:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -110,6 +118,7 @@ class Terminology:
         return res
 
     
+    
     def find(self, request: operations.FindTermsRequest) -> operations.FindTermsResponse:
         r"""Find terms"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -120,7 +129,10 @@ class Terminology:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -150,6 +162,7 @@ class Terminology:
         return res
 
     
+    
     def update(self, update_terms_request: shared.UpdateTermsRequest, team_id: int, x_request_id: Optional[str] = None, organization_id: Optional[int] = None) -> operations.UpdateTermsResponse:
         r"""Update terms"""
         request = operations.UpdateTermsRequest(
@@ -171,7 +184,10 @@ class Terminology:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

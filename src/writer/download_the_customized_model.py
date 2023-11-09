@@ -2,7 +2,6 @@
 
 from .sdkconfiguration import SDKConfiguration
 from enum import Enum
-from typing import Optional
 from writer import utils
 from writer.models import errors, operations
 
@@ -17,6 +16,7 @@ class DownloadTheCustomizedModel:
     def __init__(self, sdk_config: SDKConfiguration) -> None:
         self.sdk_configuration = sdk_config
         
+    
     
     def fetch_file(self, customization_id: str, model_id: str, organization_id: Optional[int] = None, accept_header_override: Optional[FetchFileAcceptEnum] = None) -> operations.FetchCustomizedModelFileResponse:
         r"""Download your fine-tuned model (available only for Palmyra Base and Palmyra Large)"""
@@ -36,7 +36,10 @@ class DownloadTheCustomizedModel:
             headers['Accept'] = 'application/json;q=1, application/octet-stream;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
