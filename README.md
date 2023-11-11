@@ -29,21 +29,20 @@ If you cannot see your secret API keys in the Dashboard, this means you do not h
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+### Example
+
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
-    organization_id=496531,
+    organization_id=850421,
 )
 
 
-res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='string',
-), organization_id=592237)
+res = s.billing.get_subscription_details()
 
-if res.content_detector_responses is not None:
+if res.subscription_public_response_api is not None:
     # handle response
     pass
 ```
@@ -53,32 +52,23 @@ if res.content_detector_responses is not None:
 ## Available Resources and Operations
 
 
-### [ai_content_detector](docs/sdks/aicontentdetector/README.md)
-
-* [detect](docs/sdks/aicontentdetector/README.md#detect) - Content detector api
-
 ### [billing](docs/sdks/billing/README.md)
 
 * [get_subscription_details](docs/sdks/billing/README.md#get_subscription_details) - Get your organization subscription details
 
-### [co_write](docs/sdks/cowrite/README.md)
+### [ai_content_detector](docs/sdks/aicontentdetector/README.md)
 
-* [generate_content](docs/sdks/cowrite/README.md#generate_content) - Generate content using predefined templates
-* [list_templates](docs/sdks/cowrite/README.md#list_templates) - Get a list of your existing CoWrite templates
-
-### [completions](docs/sdks/completions/README.md)
-
-* [create](docs/sdks/completions/README.md#create) - Create completion for LLM model
-* [create_model_customization_completion](docs/sdks/completions/README.md#create_model_customization_completion) - Create completion for LLM customization model
+* [detect](docs/sdks/aicontentdetector/README.md#detect) - Content detector api
 
 ### [content](docs/sdks/content/README.md)
 
 * [check](docs/sdks/content/README.md#check) - Check your content against your preset styleguide.
 * [correct](docs/sdks/content/README.md#correct) - Apply the style guide suggestions directly to your content.
 
-### [download_the_customized_model](docs/sdks/downloadthecustomizedmodel/README.md)
+### [co_write](docs/sdks/cowrite/README.md)
 
-* [fetch_file](docs/sdks/downloadthecustomizedmodel/README.md#fetch_file) - Download your fine-tuned model (available only for Palmyra Base and Palmyra Large)
+* [generate_content](docs/sdks/cowrite/README.md#generate_content) - Generate content using predefined templates
+* [list_templates](docs/sdks/cowrite/README.md#list_templates) - Get a list of your existing CoWrite templates
 
 ### [files](docs/sdks/files/README.md)
 
@@ -87,16 +77,30 @@ if res.content_detector_responses is not None:
 * [list](docs/sdks/files/README.md#list) - List files
 * [upload](docs/sdks/files/README.md#upload) - Upload file
 
-### [model_customization](docs/sdks/modelcustomization/README.md)
-
-* [create](docs/sdks/modelcustomization/README.md#create) - Create model customization
-* [delete](docs/sdks/modelcustomization/README.md#delete) - Delete Model customization
-* [get](docs/sdks/modelcustomization/README.md#get) - Get model customization
-* [list](docs/sdks/modelcustomization/README.md#list) - List model customizations
-
 ### [models](docs/sdks/models/README.md)
 
 * [list](docs/sdks/models/README.md#list) - List available LLM models
+
+### [completions](docs/sdks/completions/README.md)
+
+* [create](docs/sdks/completions/README.md#create) - Create completion for LLM model
+* [create_model_customization_completion](docs/sdks/completions/README.md#create_model_customization_completion) - Create completion for LLM customization model
+
+### [model_customization](docs/sdks/modelcustomizationsdk/README.md)
+
+* [create](docs/sdks/modelcustomizationsdk/README.md#create) - Create model customization
+* [delete](docs/sdks/modelcustomizationsdk/README.md#delete) - Delete Model customization
+* [get](docs/sdks/modelcustomizationsdk/README.md#get) - Get model customization
+* [list](docs/sdks/modelcustomizationsdk/README.md#list) - List model customizations
+
+### [download_the_customized_model](docs/sdks/downloadthecustomizedmodel/README.md)
+
+* [fetch_file](docs/sdks/downloadthecustomizedmodel/README.md#fetch_file) - Download your fine-tuned model (available only for Palmyra Base and Palmyra Large)
+
+### [document](docs/sdks/documentsdk/README.md)
+
+* [get](docs/sdks/documentsdk/README.md#get) - Get document details
+* [list](docs/sdks/documentsdk/README.md#list) - List team documents
 
 ### [snippet](docs/sdks/snippet/README.md)
 
@@ -119,11 +123,6 @@ if res.content_detector_responses is not None:
 ### [user](docs/sdks/user/README.md)
 
 * [list](docs/sdks/user/README.md#list) - List users
-
-### [document](docs/sdks/document/README.md)
-
-* [get](docs/sdks/document/README.md#get) - Get document details
-* [list](docs/sdks/document/README.md#list) - List team documents
 <!-- End SDK Available Operations -->
 
 
@@ -140,14 +139,14 @@ Experience our SDK in an enhanced sandbox environment. Try it now in **GitHub Co
 <!-- End Dev Containers -->
 
 <!-- Start Global Parameters -->
-# Global Parameters
+## Global Parameters
 
 A parameter is configured globally. This parameter must be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, This global value will be used as the default on the operations that use it. When such operations are called, there is a place in each to override the global value, if needed.
 
-For example, you can set `organizationId` to `547272` at SDK initialization and then you do not have to pass the same value on calls to operations like `detect`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
+For example, you can set `organizationId` to `99895` at SDK initialization and then you do not have to pass the same value on calls to operations like `detect`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
 
 
-## Available Globals
+### Available Globals
 
 The following global parameter is available. The required parameter must be set when you initialize the SDK client.
 
@@ -156,12 +155,10 @@ The following global parameter is available. The required parameter must be set 
 | organizationId | int | ✔️ | The organizationId parameter. |
 
 
-
-## Example
+### Example
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -169,11 +166,11 @@ s = writer.Writer(
 )
 
 
-res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
+res = s.ai_content_detector.detect(content_detector_request=writer.ContentDetectorRequest(
     input='string',
 ), organization_id=592237)
 
-if res.content_detector_responses is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
@@ -182,34 +179,37 @@ if res.content_detector_responses is not None:
 
 
 <!-- Start Error Handling -->
-# Error Handling
+## Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
 
-## Example
+### Example
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
-    organization_id=496531,
+    organization_id=850421,
 )
 
 
 res = None
 try:
-    res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='string',
-), organization_id=592237)
+    res = s.billing.get_subscription_details()
+except (models.FailResponseError) as e:
+    print(e) # handle exception
 
-except (FailResponse) as e:
+except (models.SDKError) as e:
     print(e) # handle exception
 
 
-if res.content_detector_responses is not None:
+if res.subscription_public_response_api is not None:
     # handle response
     pass
 ```
@@ -218,9 +218,9 @@ if res.content_detector_responses is not None:
 
 
 <!-- Start Server Selection -->
-# Server Selection
+## Server Selection
 
-## Select Server by Index
+### Select Server by Index
 
 You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
@@ -228,51 +228,42 @@ You can override the default server globally by passing a server index to the `s
 | - | ------ | --------- |
 | 0 | `https://enterprise-api.writer.com` | None |
 
-For example:
-
+#### Example
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
+    server_idx=0,
     api_key="",
-    organization_id=496531,
-    server_idx=0
+    organization_id=850421,
 )
 
 
-res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='string',
-), organization_id=592237)
+res = s.billing.get_subscription_details()
 
-if res.content_detector_responses is not None:
+if res.subscription_public_response_api is not None:
     # handle response
     pass
 ```
 
 
-## Override Server URL Per-Client
+### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
-
-
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
+    server_url="https://enterprise-api.writer.com",
     api_key="",
-    organization_id=496531,
-    server_url="https://enterprise-api.writer.com"
+    organization_id=850421,
 )
 
 
-res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='string',
-), organization_id=592237)
+res = s.billing.get_subscription_details()
 
-if res.content_detector_responses is not None:
+if res.subscription_public_response_api is not None:
     # handle response
     pass
 ```
@@ -281,13 +272,11 @@ if res.content_detector_responses is not None:
 
 
 <!-- Start Custom HTTP Client -->
-# Custom HTTP Client
+## Custom HTTP Client
 
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
-
-For example, you could specify a header for every request that your sdk makes as follows:
-
+For example, you could specify a header for every request that this sdk makes as follows:
 ```python
 import writer
 import requests
@@ -296,9 +285,39 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = writer.Writer(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name      | Type      | Scheme    |
+| --------- | --------- | --------- |
+| `api_key` | apiKey    | API key   |
+
+To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
+```python
+import writer
+
+s = writer.Writer(
+    api_key="",
+    organization_id=850421,
+)
+
+
+res = s.billing.get_subscription_details()
+
+if res.subscription_public_response_api is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

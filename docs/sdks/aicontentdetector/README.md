@@ -17,7 +17,6 @@ Content detector api
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -25,24 +24,29 @@ s = writer.Writer(
 )
 
 
-res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
+res = s.ai_content_detector.detect(content_detector_request=writer.ContentDetectorRequest(
     input='string',
 ), organization_id=592237)
 
-if res.content_detector_responses is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `content_detector_request`                                                     | [shared.ContentDetectorRequest](../../models/shared/contentdetectorrequest.md) | :heavy_check_mark:                                                             | N/A                                                                            |
-| `organization_id`                                                              | *Optional[int]*                                                                | :heavy_minus_sign:                                                             | N/A                                                                            |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `content_detector_request`                                           | [models.ContentDetectorRequest](../models/contentdetectorrequest.md) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `organization_id`                                                    | *Optional[int]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |
 
 
 ### Response
 
-**[operations.DetectContentResponse](../../models/operations/detectcontentresponse.md)**
+**[models.DetectContentResponse](../../models/detectcontentresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |

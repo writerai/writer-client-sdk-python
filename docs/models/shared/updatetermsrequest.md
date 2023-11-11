@@ -1,9 +1,0 @@
-# UpdateTermsRequest
-
-
-## Fields
-
-| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `fail_handling`                                                                                   | [Optional[UpdateTermsRequestFailHandling]](../../models/shared/updatetermsrequestfailhandling.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |
-| `models`                                                                                          | List[[TermUpdate](../../models/shared/termupdate.md)]                                             | :heavy_minus_sign:                                                                                | N/A                                                                                               |

@@ -1,21 +1,16 @@
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
-    organization_id=496531,
+    organization_id=850421,
 )
 
 
-res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetectorRequest(
-    input='string',
-), organization_id=592237)
+res = s.billing.get_subscription_details()
 
-if res.content_detector_responses is not None:
+if res.subscription_public_response_api is not None:
     # handle response
     pass
 ```

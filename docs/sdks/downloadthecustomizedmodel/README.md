@@ -17,7 +17,6 @@ Download your fine-tuned model (available only for Palmyra Base and Palmyra Larg
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -27,7 +26,7 @@ s = writer.Writer(
 
 res = s.download_the_customized_model.fetch_file(customization_id='string', model_id='string', organization_id=948692)
 
-if res.fetch_customized_model_file_200_application_octet_stream_binary_string is not None:
+if res.stream is not None:
     # handle response
     pass
 ```
@@ -43,5 +42,10 @@ if res.fetch_customized_model_file_200_application_octet_stream_binary_string is
 
 ### Response
 
-**[operations.FetchCustomizedModelFileResponse](../../models/operations/fetchcustomizedmodelfileresponse.md)**
+**[models.FetchCustomizedModelFileResponse](../../models/fetchcustomizedmodelfileresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |

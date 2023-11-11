@@ -17,7 +17,6 @@ Get your organization subscription details
 
 ```python
 import writer
-from writer.models import shared
 
 s = writer.Writer(
     api_key="",
@@ -35,5 +34,10 @@ if res.subscription_public_response_api is not None:
 
 ### Response
 
-**[operations.GetSubscriptionDetailsResponse](../../models/operations/getsubscriptiondetailsresponse.md)**
+**[models.GetSubscriptionDetailsResponse](../../models/getsubscriptiondetailsresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |

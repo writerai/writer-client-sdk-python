@@ -2,8 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from typing import List, Optional
-from writer import utils
-from writer.models import errors, operations, shared
+from writer import models, utils
 
 class Terminology:
     r"""Methods related to Terminology"""
@@ -13,9 +12,10 @@ class Terminology:
         self.sdk_configuration = sdk_config
         
     
-    def add(self, create_terms_request: shared.CreateTermsRequest, team_id: int, organization_id: Optional[int] = None) -> operations.AddTermsResponse:
+    
+    def add(self, create_terms_request: models.CreateTermsRequest, team_id: int, organization_id: Optional[int] = None) -> models.AddTermsResponse:
         r"""Add terms"""
-        request = operations.AddTermsRequest(
+        request = models.AddTermsRequest(
             create_terms_request=create_terms_request,
             team_id=team_id,
             organization_id=organization_id,
@@ -23,7 +23,7 @@ class Terminology:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AddTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
+        url = utils.generate_url(models.AddTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "create_terms_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -33,39 +33,43 @@ class Terminology:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.AddTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = models.AddTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.CreateTermsResponse])
+                out = utils.unmarshal_json(http_res.text, Optional[models.CreateTermsResponse])
                 res.create_terms_response = out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.FailResponse)
+                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
                 out.raw_response = http_res
                 raise out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+            raise models.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def delete(self, team_id: int, x_request_id: Optional[str] = None, ids: Optional[List[int]] = None, organization_id: Optional[int] = None) -> operations.DeleteTermsResponse:
+    
+    def delete(self, team_id: int, x_request_id: Optional[str] = None, ids: Optional[List[int]] = None, organization_id: Optional[int] = None) -> models.DeleteTermsResponse:
         r"""Delete terms"""
-        request = operations.DeleteTermsRequest(
+        request = models.DeleteTermsRequest(
             team_id=team_id,
             x_request_id=x_request_id,
             ids=ids,
@@ -74,85 +78,93 @@ class Terminology:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
+        url = utils.generate_url(models.DeleteTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
         headers = utils.get_headers(request)
-        query_params = utils.get_query_params(operations.DeleteTermsRequest, request, self.sdk_configuration.globals)
+        query_params = utils.get_query_params(models.DeleteTermsRequest, request, self.sdk_configuration.globals)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.DeleteTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = models.DeleteTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteResponse])
+                out = utils.unmarshal_json(http_res.text, Optional[models.DeleteResponse])
                 res.delete_response = out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.FailResponse)
+                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
                 out.raw_response = http_res
                 raise out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+            raise models.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def find(self, request: operations.FindTermsRequest) -> operations.FindTermsResponse:
+    
+    def find(self, request: models.FindTermsRequest) -> models.FindTermsResponse:
         r"""Find terms"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.FindTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
+        url = utils.generate_url(models.FindTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
         headers = {}
-        query_params = utils.get_query_params(operations.FindTermsRequest, request, self.sdk_configuration.globals)
+        query_params = utils.get_query_params(models.FindTermsRequest, request, self.sdk_configuration.globals)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.FindTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = models.FindTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PaginatedResultFullTermWithUser])
+                out = utils.unmarshal_json(http_res.text, Optional[models.PaginatedResultFullTermWithUser])
                 res.paginated_result_full_term_with_user = out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.FailResponse)
+                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
                 out.raw_response = http_res
                 raise out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+            raise models.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def update(self, update_terms_request: shared.UpdateTermsRequest, team_id: int, x_request_id: Optional[str] = None, organization_id: Optional[int] = None) -> operations.UpdateTermsResponse:
+    
+    def update(self, update_terms_request: models.UpdateTermsRequest, team_id: int, x_request_id: Optional[str] = None, organization_id: Optional[int] = None) -> models.UpdateTermsResponse:
         r"""Update terms"""
-        request = operations.UpdateTermsRequest(
+        request = models.UpdateTermsRequest1(
             update_terms_request=update_terms_request,
             team_id=team_id,
             x_request_id=x_request_id,
@@ -161,7 +173,7 @@ class Terminology:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
+        url = utils.generate_url(models.UpdateTermsRequest1, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
         headers = utils.get_headers(request)
         req_content_type, data, form = utils.serialize_request_body(request, "update_terms_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -171,32 +183,35 @@ class Terminology:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.UpdateTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = models.UpdateTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.CreateTermsResponse])
+                out = utils.unmarshal_json(http_res.text, Optional[models.CreateTermsResponse])
                 res.create_terms_response = out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.FailResponse)
+                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
                 out.raw_response = http_res
                 raise out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+            raise models.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

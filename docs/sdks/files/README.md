@@ -20,7 +20,6 @@ Delete file
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -30,7 +29,7 @@ s = writer.Writer(
 
 res = s.files.delete(file_id='string', organization_id=841399)
 
-if res.delete_file_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -45,8 +44,13 @@ if res.delete_file_200_application_json_object is not None:
 
 ### Response
 
-**[operations.DeleteFileResponse](../../models/operations/deletefileresponse.md)**
+**[models.DeleteFileResponse](../../models/deletefileresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
 
 ## get
 
@@ -56,7 +60,6 @@ Get file
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -81,8 +84,13 @@ if res.model_file is not None:
 
 ### Response
 
-**[operations.GetFileResponse](../../models/operations/getfileresponse.md)**
+**[models.GetFileResponse](../../models/getfileresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
 
 ## list
 
@@ -92,7 +100,6 @@ List files
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -116,8 +123,13 @@ if res.model_files_response is not None:
 
 ### Response
 
-**[operations.ListFilesResponse](../../models/operations/listfilesresponse.md)**
+**[models.ListFilesResponse](../../models/listfilesresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
 
 ## upload
 
@@ -127,7 +139,6 @@ Upload file
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -135,12 +146,12 @@ s = writer.Writer(
 )
 
 
-res = s.files.upload(upload_model_file_request=shared.UploadModelFileRequest(
-    file=shared.UploadModelFileRequestFile(
-        content='?SRSKG@^n='.encode(),
-        file='string',
+res = s.files.upload(upload_model_file_request=writer.UploadModelFileRequest(
+    file=writer.File(
+        content='0x7cbca97eC6'.encode(),
+        file_name='plastic_cli.gif',
     ),
-), organization_id=572988)
+), organization_id=360896)
 
 if res.model_file is not None:
     # handle response
@@ -149,13 +160,18 @@ if res.model_file is not None:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `upload_model_file_request`                                                    | [shared.UploadModelFileRequest](../../models/shared/uploadmodelfilerequest.md) | :heavy_check_mark:                                                             | N/A                                                                            |
-| `organization_id`                                                              | *Optional[int]*                                                                | :heavy_minus_sign:                                                             | N/A                                                                            |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `upload_model_file_request`                                          | [models.UploadModelFileRequest](../models/uploadmodelfilerequest.md) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `organization_id`                                                    | *Optional[int]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |
 
 
 ### Response
 
-**[operations.UploadFileResponse](../../models/operations/uploadfileresponse.md)**
+**[models.UploadFileResponse](../../models/uploadfileresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |

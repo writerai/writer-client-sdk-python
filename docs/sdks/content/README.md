@@ -18,7 +18,6 @@ Check your content against your preset styleguide.
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -26,9 +25,9 @@ s = writer.Writer(
 )
 
 
-res = s.content.check(content_request=shared.ContentRequest(
+res = s.content.check(content_request=writer.ContentRequest(
     content='string',
-    settings=shared.ContentSettings(
+    settings=writer.ContentSettings(
         age_and_family_status=False,
         confidence=False,
         content_safeguards=False,
@@ -55,17 +54,22 @@ if res.processed_content is not None:
 
 ### Parameters
 
-| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `content_request`                                              | [shared.ContentRequest](../../models/shared/contentrequest.md) | :heavy_check_mark:                                             | N/A                                                            |
-| `team_id`                                                      | *int*                                                          | :heavy_check_mark:                                             | N/A                                                            |
-| `organization_id`                                              | *Optional[int]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| Parameter                                            | Type                                                 | Required                                             | Description                                          |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| `content_request`                                    | [models.ContentRequest](../models/contentrequest.md) | :heavy_check_mark:                                   | N/A                                                  |
+| `team_id`                                            | *int*                                                | :heavy_check_mark:                                   | N/A                                                  |
+| `organization_id`                                    | *Optional[int]*                                      | :heavy_minus_sign:                                   | N/A                                                  |
 
 
 ### Response
 
-**[operations.ContentCheckResponse](../../models/operations/contentcheckresponse.md)**
+**[models.ContentCheckResponse](../../models/contentcheckresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
 
 ## correct
 
@@ -75,7 +79,6 @@ Apply the style guide suggestions directly to your content.
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -83,9 +86,9 @@ s = writer.Writer(
 )
 
 
-res = s.content.correct(content_request=shared.ContentRequest(
+res = s.content.correct(content_request=writer.ContentRequest(
     content='string',
-    settings=shared.ContentSettings(
+    settings=writer.ContentSettings(
         age_and_family_status=False,
         confidence=False,
         content_safeguards=False,
@@ -112,15 +115,20 @@ if res.correction_response is not None:
 
 ### Parameters
 
-| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `content_request`                                              | [shared.ContentRequest](../../models/shared/contentrequest.md) | :heavy_check_mark:                                             | N/A                                                            |
-| `team_id`                                                      | *int*                                                          | :heavy_check_mark:                                             | N/A                                                            |
-| `x_request_id`                                                 | *Optional[str]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
-| `organization_id`                                              | *Optional[int]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| Parameter                                            | Type                                                 | Required                                             | Description                                          |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| `content_request`                                    | [models.ContentRequest](../models/contentrequest.md) | :heavy_check_mark:                                   | N/A                                                  |
+| `team_id`                                            | *int*                                                | :heavy_check_mark:                                   | N/A                                                  |
+| `x_request_id`                                       | *Optional[str]*                                      | :heavy_minus_sign:                                   | N/A                                                  |
+| `organization_id`                                    | *Optional[int]*                                      | :heavy_minus_sign:                                   | N/A                                                  |
 
 
 ### Response
 
-**[operations.ContentCorrectResponse](../../models/operations/contentcorrectresponse.md)**
+**[models.ContentCorrectResponse](../../models/contentcorrectresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |

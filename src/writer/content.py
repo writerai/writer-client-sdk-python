@@ -2,8 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from typing import Optional
-from writer import utils
-from writer.models import errors, operations, shared
+from writer import models, utils
 
 class Content:
     r"""Methods related to Content"""
@@ -13,9 +12,10 @@ class Content:
         self.sdk_configuration = sdk_config
         
     
-    def check(self, content_request: shared.ContentRequest, team_id: int, organization_id: Optional[int] = None) -> operations.ContentCheckResponse:
+    
+    def check(self, content_request: models.ContentRequest, team_id: int, organization_id: Optional[int] = None) -> models.ContentCheckResponse:
         r"""Check your content against your preset styleguide."""
-        request = operations.ContentCheckRequest(
+        request = models.ContentCheckRequest(
             content_request=content_request,
             team_id=team_id,
             organization_id=organization_id,
@@ -23,7 +23,7 @@ class Content:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ContentCheckRequest, base_url, '/content/organization/{organizationId}/team/{teamId}/check', request, self.sdk_configuration.globals)
+        url = utils.generate_url(models.ContentCheckRequest, base_url, '/content/organization/{organizationId}/team/{teamId}/check', request, self.sdk_configuration.globals)
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "content_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -33,39 +33,43 @@ class Content:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.ContentCheckResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = models.ContentCheckResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.ProcessedContent])
+                out = utils.unmarshal_json(http_res.text, Optional[models.ProcessedContent])
                 res.processed_content = out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.FailResponse)
+                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
                 out.raw_response = http_res
                 raise out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+            raise models.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def correct(self, content_request: shared.ContentRequest, team_id: int, x_request_id: Optional[str] = None, organization_id: Optional[int] = None) -> operations.ContentCorrectResponse:
+    
+    def correct(self, content_request: models.ContentRequest, team_id: int, x_request_id: Optional[str] = None, organization_id: Optional[int] = None) -> models.ContentCorrectResponse:
         r"""Apply the style guide suggestions directly to your content."""
-        request = operations.ContentCorrectRequest(
+        request = models.ContentCorrectRequest(
             content_request=content_request,
             team_id=team_id,
             x_request_id=x_request_id,
@@ -74,7 +78,7 @@ class Content:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ContentCorrectRequest, base_url, '/content/organization/{organizationId}/team/{teamId}/correct', request, self.sdk_configuration.globals)
+        url = utils.generate_url(models.ContentCorrectRequest, base_url, '/content/organization/{organizationId}/team/{teamId}/correct', request, self.sdk_configuration.globals)
         headers = utils.get_headers(request)
         req_content_type, data, form = utils.serialize_request_body(request, "content_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -84,32 +88,35 @@ class Content:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.ContentCorrectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = models.ContentCorrectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.CorrectionResponse])
+                out = utils.unmarshal_json(http_res.text, Optional[models.CorrectionResponse])
                 res.correction_response = out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.FailResponse)
+                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
                 out.raw_response = http_res
                 raise out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+            raise models.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

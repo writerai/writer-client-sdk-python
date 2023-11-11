@@ -18,7 +18,6 @@ Create completion for LLM model
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -26,7 +25,7 @@ s = writer.Writer(
 )
 
 
-res = s.completions.create(completion_request=shared.CompletionRequest(
+res = s.completions.create(completion_request=writer.CompletionRequest(
     best_of=1,
     max_tokens=1024,
     min_tokens=1,
@@ -47,17 +46,22 @@ if res.completion_response is not None:
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `completion_request`                                                 | [shared.CompletionRequest](../../models/shared/completionrequest.md) | :heavy_check_mark:                                                   | N/A                                                                  |
-| `model_id`                                                           | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
-| `organization_id`                                                    | *Optional[int]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |
+| Parameter                                                  | Type                                                       | Required                                                   | Description                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `completion_request`                                       | [models.CompletionRequest](../models/completionrequest.md) | :heavy_check_mark:                                         | N/A                                                        |
+| `model_id`                                                 | *str*                                                      | :heavy_check_mark:                                         | N/A                                                        |
+| `organization_id`                                          | *Optional[int]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
 
 
 ### Response
 
-**[operations.CreateCompletionResponse](../../models/operations/createcompletionresponse.md)**
+**[models.CreateCompletionResponse](../../models/createcompletionresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
 
 ## create_model_customization_completion
 
@@ -67,7 +71,6 @@ Create completion for LLM customization model
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -75,7 +78,7 @@ s = writer.Writer(
 )
 
 
-res = s.completions.create_model_customization_completion(completion_request=shared.CompletionRequest(
+res = s.completions.create_model_customization_completion(completion_request=writer.CompletionRequest(
     best_of=1,
     max_tokens=1024,
     min_tokens=1,
@@ -96,15 +99,20 @@ if res.completion_response is not None:
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `completion_request`                                                 | [shared.CompletionRequest](../../models/shared/completionrequest.md) | :heavy_check_mark:                                                   | N/A                                                                  |
-| `customization_id`                                                   | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
-| `model_id`                                                           | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
-| `organization_id`                                                    | *Optional[int]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |
+| Parameter                                                  | Type                                                       | Required                                                   | Description                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `completion_request`                                       | [models.CompletionRequest](../models/completionrequest.md) | :heavy_check_mark:                                         | N/A                                                        |
+| `customization_id`                                         | *str*                                                      | :heavy_check_mark:                                         | N/A                                                        |
+| `model_id`                                                 | *str*                                                      | :heavy_check_mark:                                         | N/A                                                        |
+| `organization_id`                                          | *Optional[int]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
 
 
 ### Response
 
-**[operations.CreateModelCustomizationCompletionResponse](../../models/operations/createmodelcustomizationcompletionresponse.md)**
+**[models.CreateModelCustomizationCompletionResponse](../../models/createmodelcustomizationcompletionresponse.md)**
+### Errors
 
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
