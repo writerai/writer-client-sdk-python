@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import completionrequest as shared_completionrequest
-from ..shared import completionresponse as shared_completionresponse
+from ...models.shared import completionrequest as shared_completionrequest
+from ...models.shared import completionresponse as shared_completionresponse
 from typing import Dict, List, Optional
 
 

@@ -1,4 +1,4 @@
-# UserPublicResponseAccountStatus
+# AccountStatus
 
 
 ## Values

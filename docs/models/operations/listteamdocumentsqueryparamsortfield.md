@@ -1,4 +1,4 @@
-# ListTeamDocumentsSortField
+# ListTeamDocumentsQueryParamSortField
 
 
 ## Values

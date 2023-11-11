@@ -1,4 +1,4 @@
-# FindTermsSortField
+# QueryParamSortField
 
 
 ## Values

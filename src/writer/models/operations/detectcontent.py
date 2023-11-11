@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import contentdetectorrequest as shared_contentdetectorrequest
-from ..shared import contentdetectorresponse as shared_contentdetectorresponse
+from ...models.shared import contentdetectorrequest as shared_contentdetectorrequest
+from ...models.shared import contentdetectorresponse as shared_contentdetectorresponse
 from typing import Dict, List, Optional
 
 
@@ -22,7 +22,7 @@ class DetectContentResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    content_detector_responses: Optional[List[shared_contentdetectorresponse.ContentDetectorResponse]] = dataclasses.field(default=None)
+    classes: Optional[List[shared_contentdetectorresponse.ContentDetectorResponse]] = dataclasses.field(default=None)
     headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

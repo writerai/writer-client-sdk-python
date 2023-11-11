@@ -53,7 +53,12 @@ if res.model_customization is not None:
 ### Response
 
 **[operations.CreateModelCustomizationResponse](../../models/operations/createmodelcustomizationresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## delete
 
@@ -63,7 +68,7 @@ Delete Model customization
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -73,7 +78,7 @@ s = writer.Writer(
 
 res = s.model_customization.delete(customization_id='string', model_id='string', organization_id=841399)
 
-if res.delete_model_customization_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -90,7 +95,12 @@ if res.delete_model_customization_200_application_json_object is not None:
 ### Response
 
 **[operations.DeleteModelCustomizationResponse](../../models/operations/deletemodelcustomizationresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## get
 
@@ -100,7 +110,7 @@ Get model customization
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -127,7 +137,12 @@ if res.model_customization is not None:
 ### Response
 
 **[operations.GetModelCustomizationResponse](../../models/operations/getmodelcustomizationresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## list
 
@@ -137,7 +152,7 @@ List model customizations
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -163,4 +178,9 @@ if res.customizations_response is not None:
 ### Response
 
 **[operations.ListModelCustomizationsResponse](../../models/operations/listmodelcustomizationsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

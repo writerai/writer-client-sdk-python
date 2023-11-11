@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import draft as shared_draft
-from ..shared import generatetemplaterequest as shared_generatetemplaterequest
+from ...models.shared import draft as shared_draft
+from ...models.shared import generatetemplaterequest as shared_generatetemplaterequest
 from typing import Dict, List, Optional
 
 

@@ -19,7 +19,7 @@ Delete snippets
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -49,7 +49,12 @@ if res.delete_response is not None:
 ### Response
 
 **[operations.DeleteSnippetsResponse](../../models/operations/deletesnippetsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## find
 
@@ -59,7 +64,7 @@ Find snippets
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -93,7 +98,12 @@ if res.paginated_result_snippet_with_user is not None:
 ### Response
 
 **[operations.FindSnippetsResponse](../../models/operations/findsnippetsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## update
 
@@ -123,7 +133,7 @@ res = s.snippet.update(team_id=24555, request_body=[
     ),
 ], x_request_id='string', organization_id=597129)
 
-if res.snippet_with_users is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
@@ -141,4 +151,9 @@ if res.snippet_with_users is not None:
 ### Response
 
 **[operations.UpdateSnippetsResponse](../../models/operations/updatesnippetsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

@@ -7,7 +7,7 @@ from enum import Enum
 from typing import Dict, Optional
 from writer import utils
 
-class MetaDataTier(str, Enum):
+class Tier(str, Enum):
     ENTERPRISE_1 = 'enterprise-1'
     ENTERPRISE_2 = 'enterprise-2'
     ENTERPRISE_3 = 'enterprise-3'
@@ -24,6 +24,6 @@ class MetaData:
     styleguide: Dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('styleguide') }})
     team_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('teamCount') }})
     terms_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termsCount') }})
-    tier: Optional[MetaDataTier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tier'), 'exclude': lambda f: f is None }})
+    tier: Optional[Tier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tier'), 'exclude': lambda f: f is None }})
     
 

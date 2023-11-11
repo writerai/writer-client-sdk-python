@@ -3,18 +3,18 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import briefdocuments as shared_briefdocuments
+from ...models.shared import briefdocuments as shared_briefdocuments
 from enum import Enum
 from typing import Dict, List, Optional
 
-class ListTeamDocumentsSortField(str, Enum):
+class ListTeamDocumentsQueryParamSortField(str, Enum):
     TITLE = 'title'
     CREATION_TIME = 'creationTime'
     MODIFICATION_TIME = 'modificationTime'
     MODIFIED_BY_ME_TIME = 'modifiedByMeTime'
     OPENED_BY_ME_TIME = 'openedByMeTime'
 
-class ListTeamDocumentsSortOrder(str, Enum):
+class ListTeamDocumentsQueryParamSortOrder(str, Enum):
     ASC = 'asc'
     DESC = 'desc'
 
@@ -26,8 +26,8 @@ class ListTeamDocumentsRequest:
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     organization_id: Optional[int] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'organizationId', 'style': 'simple', 'explode': False }})
     search: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'search', 'style': 'form', 'explode': True }})
-    sort_field: Optional[ListTeamDocumentsSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
-    sort_order: Optional[ListTeamDocumentsSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
+    sort_field: Optional[ListTeamDocumentsQueryParamSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
+    sort_order: Optional[ListTeamDocumentsQueryParamSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
     
 
 

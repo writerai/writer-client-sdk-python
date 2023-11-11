@@ -13,6 +13,7 @@ class AIContentDetector:
         self.sdk_configuration = sdk_config
         
     
+    
     def detect(self, content_detector_request: shared.ContentDetectorRequest, organization_id: Optional[int] = None) -> operations.DetectContentResponse:
         r"""Content detector api"""
         request = operations.DetectContentRequest(
@@ -32,7 +33,10 @@ class AIContentDetector:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -44,7 +48,7 @@ class AIContentDetector:
             
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.ContentDetectorResponse]])
-                res.content_detector_responses = out
+                res.classes = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:

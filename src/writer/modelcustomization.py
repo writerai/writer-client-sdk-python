@@ -13,6 +13,7 @@ class ModelCustomization:
         self.sdk_configuration = sdk_config
         
     
+    
     def create(self, create_customization_request: shared.CreateCustomizationRequest, model_id: str, organization_id: Optional[int] = None) -> operations.CreateModelCustomizationResponse:
         r"""Create model customization"""
         request = operations.CreateModelCustomizationRequest(
@@ -33,7 +34,10 @@ class ModelCustomization:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -63,6 +67,7 @@ class ModelCustomization:
         return res
 
     
+    
     def delete(self, customization_id: str, model_id: str, organization_id: Optional[int] = None) -> operations.DeleteModelCustomizationResponse:
         r"""Delete Model customization"""
         request = operations.DeleteModelCustomizationRequest(
@@ -78,7 +83,10 @@ class ModelCustomization:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -89,8 +97,8 @@ class ModelCustomization:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteModelCustomization200ApplicationJSON])
-                res.delete_model_customization_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteModelCustomizationResponseBody])
+                res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
@@ -108,6 +116,7 @@ class ModelCustomization:
         return res
 
     
+    
     def get(self, customization_id: str, model_id: str, organization_id: Optional[int] = None) -> operations.GetModelCustomizationResponse:
         r"""Get model customization"""
         request = operations.GetModelCustomizationRequest(
@@ -123,7 +132,10 @@ class ModelCustomization:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -153,6 +165,7 @@ class ModelCustomization:
         return res
 
     
+    
     def list(self, model_id: str, organization_id: Optional[int] = None) -> operations.ListModelCustomizationsResponse:
         r"""List model customizations"""
         request = operations.ListModelCustomizationsRequest(
@@ -167,7 +180,10 @@ class ModelCustomization:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

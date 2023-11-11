@@ -1,4 +1,4 @@
-# ListTeamDocumentsSortOrder
+# ListTeamDocumentsQueryParamSortOrder
 
 
 ## Values

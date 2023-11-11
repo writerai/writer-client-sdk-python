@@ -5,15 +5,15 @@ import dataclasses
 
 
 @dataclasses.dataclass
-class UploadModelFileRequestFile:
+class File:
     content: bytes = dataclasses.field(metadata={'multipart_form': { 'content': True }})
-    file: str = dataclasses.field(metadata={'multipart_form': { 'field_name': 'file' }})
+    file_name: str = dataclasses.field(metadata={'multipart_form': { 'field_name': 'file' }})
     
 
 
 
 @dataclasses.dataclass
 class UploadModelFileRequest:
-    file: UploadModelFileRequestFile = dataclasses.field(metadata={'multipart_form': { 'file': True }})
+    file: File = dataclasses.field(metadata={'multipart_form': { 'file': True }})
     
 

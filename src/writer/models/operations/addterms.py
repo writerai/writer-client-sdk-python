@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createtermsrequest as shared_createtermsrequest
-from ..shared import createtermsresponse as shared_createtermsresponse
+from ...models.shared import createtermsrequest as shared_createtermsrequest
+from ...models.shared import createtermsresponse as shared_createtermsresponse
 from typing import Dict, List, Optional
 
 

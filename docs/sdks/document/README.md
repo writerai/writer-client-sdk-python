@@ -18,7 +18,7 @@ Get document details
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -45,7 +45,12 @@ if res.document is not None:
 ### Response
 
 **[operations.GetDocumentDetailsResponse](../../models/operations/getdocumentdetailsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## list
 
@@ -55,7 +60,7 @@ List team documents
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -83,4 +88,9 @@ if res.brief_documents is not None:
 ### Response
 
 **[operations.ListTeamDocumentsResponse](../../models/operations/listteamdocumentsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

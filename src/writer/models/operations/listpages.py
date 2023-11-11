@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import paginatedresult_pagepublicapiresponse as shared_paginatedresult_pagepublicapiresponse
+from ...models.shared import paginatedresult_pagepublicapiresponse as shared_paginatedresult_pagepublicapiresponse
 from enum import Enum
 from typing import Dict, List, Optional
 
-class ListPagesStatus(str, Enum):
+class Status(str, Enum):
     LIVE = 'live'
     OFFLINE = 'offline'
 
@@ -16,7 +16,7 @@ class ListPagesStatus(str, Enum):
 class ListPagesRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
-    status: Optional[ListPagesStatus] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'status', 'style': 'form', 'explode': True }})
+    status: Optional[Status] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'status', 'style': 'form', 'explode': True }})
     
 
 

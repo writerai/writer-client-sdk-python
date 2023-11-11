@@ -65,7 +65,12 @@ if res.processed_content is not None:
 ### Response
 
 **[operations.ContentCheckResponse](../../models/operations/contentcheckresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## correct
 
@@ -123,4 +128,9 @@ if res.correction_response is not None:
 ### Response
 
 **[operations.ContentCorrectResponse](../../models/operations/contentcorrectresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

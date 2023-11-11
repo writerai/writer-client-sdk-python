@@ -3,8 +3,8 @@
 
 ## Fields
 
-| Field                                                   | Type                                                    | Required                                                | Description                                             |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| `errors`                                                | List[[FailMessage](../../models/errors/failmessage.md)] | :heavy_minus_sign:                                      | N/A                                                     |
-| `extras`                                                | *Any*                                                   | :heavy_check_mark:                                      | N/A                                                     |
-| `tpe`                                                   | *str*                                                   | :heavy_check_mark:                                      | N/A                                                     |
+| Field                                                          | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `errors`                                                       | List[[errors.FailMessage](../../models/errors/failmessage.md)] | :heavy_minus_sign:                                             | N/A                                                            |
+| `extras`                                                       | *Any*                                                          | :heavy_check_mark:                                             | N/A                                                            |
+| `tpe`                                                          | *str*                                                          | :heavy_check_mark:                                             | N/A                                                            |

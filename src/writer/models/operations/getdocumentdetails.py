@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import document as shared_document
+from ...models.shared import document as shared_document
 from typing import Dict, List, Optional
 
 

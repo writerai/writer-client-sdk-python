@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import subscriptionpublicresponseapi as shared_subscriptionpublicresponseapi
+from ...models.shared import subscriptionpublicresponseapi as shared_subscriptionpublicresponseapi
 from typing import Dict, List, Optional
 
 

@@ -1,4 +1,4 @@
-# FindTermsSortOrder
+# QueryParamSortOrder
 
 
 ## Values
