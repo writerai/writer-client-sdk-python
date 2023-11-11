@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import termupdate as shared_termupdate
+from .termupdate import TermUpdate
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from typing import List, Optional
@@ -19,6 +19,6 @@ class UpdateTermsRequestFailHandling(str, Enum):
 @dataclasses.dataclass
 class UpdateTermsRequest:
     fail_handling: Optional[UpdateTermsRequestFailHandling] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failHandling'), 'exclude': lambda f: f is None }})
-    models: Optional[List[shared_termupdate.TermUpdate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})
+    models: Optional[List[TermUpdate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('models'), 'exclude': lambda f: f is None }})
     
 

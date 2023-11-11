@@ -18,7 +18,7 @@ Page details
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -43,7 +43,12 @@ if res.page_with_section_response is not None:
 ### Response
 
 **[operations.PageDetailsResponse](../../models/operations/pagedetailsresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## list_pages
 
@@ -53,7 +58,7 @@ List your styleguide pages
 
 ```python
 import writer
-from writer.models import operations, shared
+from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -61,7 +66,7 @@ s = writer.Writer(
 )
 
 
-res = s.styleguide.list_pages(limit=760116, offset=303332, status=operations.ListPagesStatus.LIVE)
+res = s.styleguide.list_pages(limit=760116, offset=303332, status=operations.Status.LIVE)
 
 if res.paginated_result_page_public_api_response is not None:
     # handle response
@@ -70,14 +75,19 @@ if res.paginated_result_page_public_api_response is not None:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `limit`                                                                            | *Optional[int]*                                                                    | :heavy_minus_sign:                                                                 | N/A                                                                                |
-| `offset`                                                                           | *Optional[int]*                                                                    | :heavy_minus_sign:                                                                 | N/A                                                                                |
-| `status`                                                                           | [Optional[operations.ListPagesStatus]](../../models/operations/listpagesstatus.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `limit`                                                          | *Optional[int]*                                                  | :heavy_minus_sign:                                               | N/A                                                              |
+| `offset`                                                         | *Optional[int]*                                                  | :heavy_minus_sign:                                               | N/A                                                              |
+| `status`                                                         | [Optional[operations.Status]](../../models/operations/status.md) | :heavy_minus_sign:                                               | N/A                                                              |
 
 
 ### Response
 
 **[operations.ListPagesResponse](../../models/operations/listpagesresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

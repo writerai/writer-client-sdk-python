@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import modelfile as shared_modelfile
+from .modelfile import ModelFile
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
 from writer import utils
@@ -11,6 +11,6 @@ from writer import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ModelFilesResponse:
-    files: Optional[List[shared_modelfile.ModelFile]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
+    files: Optional[List[ModelFile]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
     
 

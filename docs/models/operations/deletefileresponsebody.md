@@ -1,4 +1,4 @@
-# DeleteModelCustomization200ApplicationJSON
+# DeleteFileResponseBody
 
 
 ## Fields

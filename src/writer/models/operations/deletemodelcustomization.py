@@ -16,7 +16,7 @@ class DeleteModelCustomizationRequest:
 
 
 @dataclasses.dataclass
-class DeleteModelCustomization200ApplicationJSON:
+class DeleteModelCustomizationResponseBody:
     pass
 
 
@@ -26,8 +26,8 @@ class DeleteModelCustomizationResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_model_customization_200_application_json_object: Optional[DeleteModelCustomization200ApplicationJSON] = dataclasses.field(default=None)
     headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
+    object: Optional[DeleteModelCustomizationResponseBody] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

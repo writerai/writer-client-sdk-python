@@ -29,7 +29,7 @@ res = s.ai_content_detector.detect(content_detector_request=shared.ContentDetect
     input='string',
 ), organization_id=592237)
 
-if res.content_detector_responses is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
@@ -45,4 +45,9 @@ if res.content_detector_responses is not None:
 ### Response
 
 **[operations.DetectContentResponse](../../models/operations/detectcontentresponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.FailResponse | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

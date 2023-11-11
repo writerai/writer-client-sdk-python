@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import paginatedresult_userpublicresponse as shared_paginatedresult_userpublicresponse
+from ...models.shared import paginatedresult_userpublicresponse as shared_paginatedresult_userpublicresponse
 from enum import Enum
 from typing import Dict, List, Optional
 
-class ListUsersSortField(str, Enum):
+class ListUsersQueryParamSortField(str, Enum):
     ID = 'id'
     NAME = 'name'
     CREATION_TIME = 'creationTime'
@@ -16,7 +16,7 @@ class ListUsersSortField(str, Enum):
     EMAIL = 'email'
     LAST_SEEN = 'lastSeen'
 
-class ListUsersSortOrder(str, Enum):
+class ListUsersQueryParamSortOrder(str, Enum):
     ASC = 'asc'
     DESC = 'desc'
 
@@ -26,8 +26,8 @@ class ListUsersRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     search: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'search', 'style': 'form', 'explode': True }})
-    sort_field: Optional[ListUsersSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
-    sort_order: Optional[ListUsersSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
+    sort_field: Optional[ListUsersQueryParamSortField] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortField', 'style': 'form', 'explode': True }})
+    sort_order: Optional[ListUsersQueryParamSortOrder] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sortOrder', 'style': 'form', 'explode': True }})
     
 
 
