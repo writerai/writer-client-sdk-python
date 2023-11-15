@@ -1,0 +1,17 @@
+# BriefDocument
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `access`                                                             | [models.Access](../models/access.md)                                 | :heavy_check_mark:                                                   | N/A                                                                  |
+| `created_user`                                                       | [Optional[models.SimpleUser]](../models/simpleuser.md)               | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `creation_time`                                                      | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `id`                                                                 | *int*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `modification_time`                                                  | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `modified_user`                                                      | [Optional[models.SimpleUser]](../models/simpleuser.md)               | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `organization_id`                                                    | *int*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `score`                                                              | *int*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `team_id`                                                            | *int*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `title`                                                              | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |

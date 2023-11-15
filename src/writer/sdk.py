@@ -6,10 +6,10 @@ from .billing import Billing
 from .completions import Completions
 from .content import Content
 from .cowrite import CoWrite
-from .document import Document
+from .document_sdk import DocumentSDK
 from .download_the_customized_model import DownloadTheCustomizedModel
 from .files import Files
-from .modelcustomization import ModelCustomization
+from .modelcustomization_sdk import ModelCustomizationSDK
 from .models_ import Models
 from .sdkconfiguration import SDKConfiguration
 from .snippet import Snippet
@@ -17,8 +17,7 @@ from .styleguide import Styleguide
 from .terminology import Terminology
 from .user import User
 from typing import Callable, Dict, Union
-from writer import utils
-from writer.models import shared
+from writer import models, utils
 
 class Writer:
     billing: Billing
@@ -35,11 +34,11 @@ class Writer:
     r"""Methods related to Model"""
     completions: Completions
     r"""Methods related to Completions"""
-    model_customization: ModelCustomization
+    model_customization: ModelCustomizationSDK
     r"""Methods related to Model Customization"""
     download_the_customized_model: DownloadTheCustomizedModel
     r"""Methods related to Download the customized model"""
-    document: Document
+    document: DocumentSDK
     r"""Methods related to document"""
     snippet: Snippet
     r"""Methods related to Snippets"""
@@ -81,7 +80,7 @@ class Writer:
         if client is None:
             client = requests_http.Session()
         
-        security = shared.Security(api_key = api_key)
+        security = models.Security(api_key = api_key)
         
         if server_url is not None:
             if url_params is not None:
@@ -107,9 +106,9 @@ class Writer:
         self.files = Files(self.sdk_configuration)
         self.models = Models(self.sdk_configuration)
         self.completions = Completions(self.sdk_configuration)
-        self.model_customization = ModelCustomization(self.sdk_configuration)
+        self.model_customization = ModelCustomizationSDK(self.sdk_configuration)
         self.download_the_customized_model = DownloadTheCustomizedModel(self.sdk_configuration)
-        self.document = Document(self.sdk_configuration)
+        self.document = DocumentSDK(self.sdk_configuration)
         self.snippet = Snippet(self.sdk_configuration)
         self.styleguide = Styleguide(self.sdk_configuration)
         self.terminology = Terminology(self.sdk_configuration)

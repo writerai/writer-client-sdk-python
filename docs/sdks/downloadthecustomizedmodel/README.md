@@ -17,7 +17,6 @@ Download your fine-tuned model (available only for Palmyra Base and Palmyra Larg
 
 ```python
 import writer
-from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -43,10 +42,10 @@ if res.stream is not None:
 
 ### Response
 
-**[operations.FetchCustomizedModelFileResponse](../../models/operations/fetchcustomizedmodelfileresponse.md)**
+**[models.FetchCustomizedModelFileResponse](../../models/fetchcustomizedmodelfileresponse.md)**
 ### Errors
 
-| Error Object        | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| errors.FailResponse | 400,401,403,404,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
