@@ -17,7 +17,6 @@ List available LLM models
 
 ```python
 import writer
-from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -41,10 +40,10 @@ if res.generation_models_response is not None:
 
 ### Response
 
-**[operations.ListModelsResponse](../../models/operations/listmodelsresponse.md)**
+**[models.ListModelsResponse](../../models/listmodelsresponse.md)**
 ### Errors
 
-| Error Object        | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| errors.FailResponse | 400,401,403,404,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |

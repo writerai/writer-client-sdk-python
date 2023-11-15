@@ -2,8 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from typing import Optional
-from writer import utils
-from writer.models import errors, operations, shared
+from writer import models, utils
 
 class User:
     r"""Methods related to User"""
@@ -14,13 +13,13 @@ class User:
         
     
     
-    def list(self, request: operations.ListUsersRequest) -> operations.ListUsersResponse:
+    def list(self, request: models.ListUsersRequest) -> models.ListUsersResponse:
         r"""List users"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/user'
         headers = {}
-        query_params = utils.get_query_params(operations.ListUsersRequest, request, self.sdk_configuration.globals)
+        query_params = utils.get_query_params(models.ListUsersRequest, request, self.sdk_configuration.globals)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -32,27 +31,27 @@ class User:
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.ListUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = models.ListUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PaginatedResultUserPublicResponse])
+                out = utils.unmarshal_json(http_res.text, Optional[models.PaginatedResultUserPublicResponse])
                 res.paginated_result_user_public_response = out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.FailResponse)
+                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
                 out.raw_response = http_res
                 raise out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+            raise models.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

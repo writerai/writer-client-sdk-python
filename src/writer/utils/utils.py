@@ -881,7 +881,7 @@ def _populate_from_globals(param_name: str, value: any, param_type: str, gbls: D
 
 def decoder_with_discriminator(field_name):
     def decode_fx(obj):
-        kls = getattr(sys.modules['sdk.models.shared'], obj[field_name])
+        kls = getattr(sys.modules['sdk.models'], obj[field_name])
         return unmarshal_json(json.dumps(obj), kls)
     return decode_fx
 
