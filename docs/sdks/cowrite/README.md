@@ -18,7 +18,6 @@ Generate content using predefined templates
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -26,9 +25,9 @@ s = writer.Writer(
 )
 
 
-res = s.co_write.generate_content(generate_template_request=shared.GenerateTemplateRequest(
+res = s.co_write.generate_content(generate_template_request=writer.GenerateTemplateRequest(
     inputs=[
-        shared.MagicRequestInput(
+        writer.MagicRequestInput(
             name='string',
             value=[
                 'string',
@@ -45,22 +44,22 @@ if res.draft is not None:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `generate_template_request`                                                      | [shared.GenerateTemplateRequest](../../models/shared/generatetemplaterequest.md) | :heavy_check_mark:                                                               | N/A                                                                              |
-| `team_id`                                                                        | *int*                                                                            | :heavy_check_mark:                                                               | N/A                                                                              |
-| `organization_id`                                                                | *Optional[int]*                                                                  | :heavy_minus_sign:                                                               | N/A                                                                              |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `generate_template_request`                                            | [models.GenerateTemplateRequest](../models/generatetemplaterequest.md) | :heavy_check_mark:                                                     | N/A                                                                    |
+| `team_id`                                                              | *int*                                                                  | :heavy_check_mark:                                                     | N/A                                                                    |
+| `organization_id`                                                      | *Optional[int]*                                                        | :heavy_minus_sign:                                                     | N/A                                                                    |
 
 
 ### Response
 
-**[operations.GenerateContentResponse](../../models/operations/generatecontentresponse.md)**
+**[models.GenerateContentResponse](../../models/generatecontentresponse.md)**
 ### Errors
 
-| Error Object        | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| errors.FailResponse | 400,401,403,404,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
 
 ## list_templates
 
@@ -70,7 +69,6 @@ Get a list of your existing CoWrite templates
 
 ```python
 import writer
-from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -96,10 +94,10 @@ if res.template_details_response is not None:
 
 ### Response
 
-**[operations.ListTemplatesResponse](../../models/operations/listtemplatesresponse.md)**
+**[models.ListTemplatesResponse](../../models/listtemplatesresponse.md)**
 ### Errors
 
-| Error Object        | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| errors.FailResponse | 400,401,403,404,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |

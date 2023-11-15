@@ -19,7 +19,6 @@ Delete snippets
 
 ```python
 import writer
-from writer.models import operations
 
 s = writer.Writer(
     api_key="",
@@ -48,13 +47,13 @@ if res.delete_response is not None:
 
 ### Response
 
-**[operations.DeleteSnippetsResponse](../../models/operations/deletesnippetsresponse.md)**
+**[models.DeleteSnippetsResponse](../../models/deletesnippetsresponse.md)**
 ### Errors
 
-| Error Object        | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| errors.FailResponse | 400,401,403,404,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
 
 ## find
 
@@ -64,14 +63,13 @@ Find snippets
 
 ```python
 import writer
-from writer.models import operations
 
 s = writer.Writer(
     api_key="",
     organization_id=40141,
 )
 
-req = operations.FindSnippetsRequest(
+req = writer.FindSnippetsRequest(
     shortcuts=[
         'string',
     ],
@@ -90,20 +88,20 @@ if res.paginated_result_snippet_with_user is not None:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.FindSnippetsRequest](../../models/operations/findsnippetsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `request`                                                         | [models.FindSnippetsRequest](../../models/findsnippetsrequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
 
 
 ### Response
 
-**[operations.FindSnippetsResponse](../../models/operations/findsnippetsresponse.md)**
+**[models.FindSnippetsResponse](../../models/findsnippetsresponse.md)**
 ### Errors
 
-| Error Object        | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| errors.FailResponse | 400,401,403,404,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |
 
 ## update
 
@@ -113,7 +111,6 @@ Update snippets
 
 ```python
 import writer
-from writer.models import operations, shared
 
 s = writer.Writer(
     api_key="",
@@ -122,11 +119,11 @@ s = writer.Writer(
 
 
 res = s.snippet.update(team_id=24555, request_body=[
-    shared.SnippetUpdate(
+    writer.SnippetUpdate(
         id='<ID>',
         snippet='string',
         tags=[
-            shared.SnippetTagV2(
+            writer.SnippetTagV2(
                 tag='string',
             ),
         ],
@@ -140,20 +137,20 @@ if res.classes is not None:
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `team_id`                                                          | *int*                                                              | :heavy_check_mark:                                                 | N/A                                                                |
-| `request_body`                                                     | List[[shared.SnippetUpdate](../../models/shared/snippetupdate.md)] | :heavy_minus_sign:                                                 | N/A                                                                |
-| `x_request_id`                                                     | *Optional[str]*                                                    | :heavy_minus_sign:                                                 | N/A                                                                |
-| `organization_id`                                                  | *Optional[int]*                                                    | :heavy_minus_sign:                                                 | N/A                                                                |
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `team_id`                                                | *int*                                                    | :heavy_check_mark:                                       | N/A                                                      |
+| `request_body`                                           | List[[models.SnippetUpdate](../models/snippetupdate.md)] | :heavy_minus_sign:                                       | N/A                                                      |
+| `x_request_id`                                           | *Optional[str]*                                          | :heavy_minus_sign:                                       | N/A                                                      |
+| `organization_id`                                        | *Optional[int]*                                          | :heavy_minus_sign:                                       | N/A                                                      |
 
 
 ### Response
 
-**[operations.UpdateSnippetsResponse](../../models/operations/updatesnippetsresponse.md)**
+**[models.UpdateSnippetsResponse](../../models/updatesnippetsresponse.md)**
 ### Errors
 
-| Error Object        | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| errors.FailResponse | 400,401,403,404,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| models.FailResponseError | 400,401,403,404,500      | application/json         |
+| models.SDKError          | 400-600                  | */*                      |

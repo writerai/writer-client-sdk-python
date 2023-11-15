@@ -2,8 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from typing import Optional
-from writer import utils
-from writer.models import errors, operations, shared
+from writer import models, utils
 
 class CoWrite:
     r"""Methods related to CoWrite"""
@@ -14,9 +13,9 @@ class CoWrite:
         
     
     
-    def generate_content(self, generate_template_request: shared.GenerateTemplateRequest, team_id: int, organization_id: Optional[int] = None) -> operations.GenerateContentResponse:
+    def generate_content(self, generate_template_request: models.GenerateTemplateRequest, team_id: int, organization_id: Optional[int] = None) -> models.GenerateContentResponse:
         r"""Generate content using predefined templates"""
-        request = operations.GenerateContentRequest(
+        request = models.GenerateContentRequest(
             generate_template_request=generate_template_request,
             team_id=team_id,
             organization_id=organization_id,
@@ -24,7 +23,7 @@ class CoWrite:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GenerateContentRequest, base_url, '/cowrite/organization/{organizationId}/team/{teamId}/generate', request, self.sdk_configuration.globals)
+        url = utils.generate_url(models.GenerateContentRequest, base_url, '/cowrite/organization/{organizationId}/team/{teamId}/generate', request, self.sdk_configuration.globals)
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "generate_template_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -42,35 +41,35 @@ class CoWrite:
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GenerateContentResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = models.GenerateContentResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Draft])
+                out = utils.unmarshal_json(http_res.text, Optional[models.Draft])
                 res.draft = out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.FailResponse)
+                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
                 out.raw_response = http_res
                 raise out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+            raise models.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
     
-    def list_templates(self, team_id: int, template_id: str, organization_id: Optional[int] = None) -> operations.ListTemplatesResponse:
+    def list_templates(self, team_id: int, template_id: str, organization_id: Optional[int] = None) -> models.ListTemplatesResponse:
         r"""Get a list of your existing CoWrite templates"""
-        request = operations.ListTemplatesRequest(
+        request = models.ListTemplatesRequest(
             team_id=team_id,
             template_id=template_id,
             organization_id=organization_id,
@@ -78,7 +77,7 @@ class CoWrite:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ListTemplatesRequest, base_url, '/cowrite/organization/{organizationId}/team/{teamId}/template/{templateId}', request, self.sdk_configuration.globals)
+        url = utils.generate_url(models.ListTemplatesRequest, base_url, '/cowrite/organization/{organizationId}/team/{teamId}/template/{templateId}', request, self.sdk_configuration.globals)
         headers = {}
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -91,27 +90,27 @@ class CoWrite:
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.ListTemplatesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = models.ListTemplatesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.TemplateDetailsResponse])
+                out = utils.unmarshal_json(http_res.text, Optional[models.TemplateDetailsResponse])
                 res.template_details_response = out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.FailResponse)
+                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
                 out.raw_response = http_res
                 raise out
             else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+                raise models.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+            raise models.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
