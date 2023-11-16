@@ -35,8 +35,8 @@ class DocumentSDK:
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.GetDocumentDetailsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.GetDocumentDetailsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
@@ -79,8 +79,8 @@ class DocumentSDK:
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.ListTeamDocumentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.ListTeamDocumentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers

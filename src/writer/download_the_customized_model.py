@@ -43,8 +43,8 @@ class DownloadTheCustomizedModel:
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.FetchCustomizedModelFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.FetchCustomizedModelFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers

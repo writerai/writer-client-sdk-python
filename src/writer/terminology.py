@@ -40,8 +40,8 @@ class Terminology:
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.AddTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.AddTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
@@ -91,8 +91,8 @@ class Terminology:
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.DeleteTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.DeleteTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
@@ -135,8 +135,8 @@ class Terminology:
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.FindTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.FindTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
@@ -190,8 +190,8 @@ class Terminology:
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.UpdateTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.UpdateTermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
