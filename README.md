@@ -183,10 +183,10 @@ if res.classes is not None:
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |
 
 ### Example
 
@@ -202,7 +202,7 @@ s = writer.Writer(
 res = None
 try:
     res = s.billing.get_subscription_details()
-except (models.FailResponseError) as e:
+except (models.FailResponse) as e:
     print(e) # handle exception
 
 except (models.SDKError) as e:

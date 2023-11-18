@@ -44,10 +44,10 @@ if res.page_with_section_response is not None:
 **[models.PageDetailsResponse](../../models/pagedetailsresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |
 
 ## list_pages
 
@@ -85,7 +85,7 @@ if res.paginated_result_page_public_api_response is not None:
 **[models.ListPagesResponse](../../models/listpagesresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |

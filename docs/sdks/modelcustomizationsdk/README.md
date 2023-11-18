@@ -54,10 +54,10 @@ if res.model_customization is not None:
 **[models.CreateModelCustomizationResponse](../../models/createmodelcustomizationresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |
 
 ## delete
 
@@ -95,10 +95,10 @@ if res.object is not None:
 **[models.DeleteModelCustomizationResponse](../../models/deletemodelcustomizationresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |
 
 ## get
 
@@ -136,10 +136,10 @@ if res.model_customization is not None:
 **[models.GetModelCustomizationResponse](../../models/getmodelcustomizationresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |
 
 ## list
 
@@ -176,7 +176,7 @@ if res.customizations_response is not None:
 **[models.ListModelCustomizationsResponse](../../models/listmodelcustomizationsresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |

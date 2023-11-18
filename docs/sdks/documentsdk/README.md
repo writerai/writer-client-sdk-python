@@ -46,10 +46,10 @@ if res.document is not None:
 **[models.GetDocumentDetailsResponse](../../models/getdocumentdetailsresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |
 
 ## list
 
@@ -88,7 +88,7 @@ if res.brief_documents is not None:
 **[models.ListTeamDocumentsResponse](../../models/listteamdocumentsresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |

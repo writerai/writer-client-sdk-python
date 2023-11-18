@@ -81,10 +81,10 @@ if res.create_terms_response is not None:
 **[models.AddTermsResponse](../../models/addtermsresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |
 
 ## delete
 
@@ -125,10 +125,10 @@ if res.delete_response is not None:
 **[models.DeleteTermsResponse](../../models/deletetermsresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |
 
 ## find
 
@@ -170,10 +170,10 @@ if res.paginated_result_full_term_with_user is not None:
 **[models.FindTermsResponse](../../models/findtermsresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |
 
 ## update
 
@@ -246,7 +246,7 @@ if res.create_terms_response is not None:
 **[models.UpdateTermsResponse](../../models/updatetermsresponse.md)**
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| models.FailResponseError | 400,401,403,404,500      | application/json         |
-| models.SDKError          | 400-600                  | */*                      |
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.FailResponse | 400,401,403,404,500 | application/json    |
+| models.SDKError     | 400-600             | */*                 |

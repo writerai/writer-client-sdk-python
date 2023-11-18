@@ -44,7 +44,7 @@ class Billing:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
+                out = utils.unmarshal_json(http_res.text, models.FailResponse)
                 out.raw_response = http_res
                 raise out
             else:
