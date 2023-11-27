@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from .failmessage_error import FailMessageError
+from .failmessage import FailMessage
 from dataclasses_json import Undefined, dataclass_json
 from typing import Any, List, Optional
 from writer import utils
@@ -11,10 +11,11 @@ from writer import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class FailResponseError(Exception):
+class FailResponse(Exception):
+    r"""Bad Request"""
     extras: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extras') }})
     tpe: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tpe') }})
-    errors: Optional[List[FailMessageError]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
+    errors: Optional[List[FailMessage]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
     
 
     def __str__(self) -> str:

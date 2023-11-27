@@ -21,13 +21,14 @@ src/writer/utils/__init__.py
 src/writer/utils/retries.py
 src/writer/utils/utils.py
 src/writer/models/sdkerror.py
+tests/helpers.py
 src/writer/models/getsubscriptiondetailsop.py
 src/writer/models/subscriptionpublicresponseapi.py
 src/writer/models/usage.py
 src/writer/models/usageitem.py
 src/writer/models/metadata.py
-src/writer/models/failresponse_error.py
-src/writer/models/failmessage_error.py
+src/writer/models/failresponse.py
+src/writer/models/failmessage.py
 src/writer/models/detectcontentop.py
 src/writer/models/contentdetectorresponse.py
 src/writer/models/contentdetectorrequest.py
@@ -100,7 +101,6 @@ src/writer/models/termmistake.py
 src/writer/models/fulllinkedterm.py
 src/writer/models/approvedtermextension.py
 src/writer/models/termexample.py
-src/writer/models/failmessage.py
 src/writer/models/createtermsrequest.py
 src/writer/models/termcreate.py
 src/writer/models/termtagcreate.py
@@ -128,8 +128,8 @@ docs/usage.md
 docs/usageitem.md
 docs/tier.md
 docs/metadata.md
-docs/failresponseerror.md
-docs/failmessageerror.md
+docs/failresponse.md
+docs/failmessage.md
 docs/detectcontentrequest.md
 docs/detectcontentresponse.md
 docs/label.md
@@ -248,7 +248,6 @@ docs/fulllinkedterm.md
 docs/approvedtermextension.md
 docs/termexampletype.md
 docs/termexample.md
-docs/failmessage.md
 docs/failhandling.md
 docs/createtermsrequest.md
 docs/termcreatepos.md

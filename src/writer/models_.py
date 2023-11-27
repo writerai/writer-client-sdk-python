@@ -33,8 +33,8 @@ class Models:
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.ListModelsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.ListModelsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
@@ -48,7 +48,7 @@ class Models:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
+                out = utils.unmarshal_json(http_res.text, models.FailResponse)
                 out.raw_response = http_res
                 raise out
             else:

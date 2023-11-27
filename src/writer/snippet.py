@@ -37,8 +37,8 @@ class Snippet:
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.DeleteSnippetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.DeleteSnippetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
@@ -52,7 +52,7 @@ class Snippet:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
+                out = utils.unmarshal_json(http_res.text, models.FailResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -81,8 +81,8 @@ class Snippet:
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.FindSnippetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.FindSnippetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
@@ -96,7 +96,7 @@ class Snippet:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
+                out = utils.unmarshal_json(http_res.text, models.FailResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -134,8 +134,8 @@ class Snippet:
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
-        res = models.UpdateSnippetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        res = models.UpdateSnippetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res, headers=None)
         
         if http_res.status_code == 200:
             res.headers = http_res.headers
@@ -149,7 +149,7 @@ class Snippet:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, models.FailResponseError)
+                out = utils.unmarshal_json(http_res.text, models.FailResponse)
                 out.raw_response = http_res
                 raise out
             else:

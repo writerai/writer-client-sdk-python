@@ -22,11 +22,11 @@ class UpdateTermsRequest1:
 class UpdateTermsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    headers: Dict[str, List[str]] = dataclasses.field()
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     create_terms_response: Optional[CreateTermsResponse] = dataclasses.field(default=None)
-    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
