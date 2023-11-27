@@ -127,7 +127,7 @@ if res.subscription_public_response_api is not None:
 
 
 <!-- Start Dev Containers -->
-# Dev Containers
+# Test SDK in a Sandbox Environment
 <div align="left">
     <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
     
