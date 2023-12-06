@@ -13,6 +13,6 @@
 | `n`                 | *Optional[int]*     | :heavy_minus_sign:  | N/A                 |                     |
 | `presence_penalty`  | *Optional[float]*   | :heavy_minus_sign:  | N/A                 |                     |
 | `prompt`            | *str*               | :heavy_check_mark:  | N/A                 |                     |
-| `stop`              | List[*str*]         | :heavy_minus_sign:  | N/A                 | the,is,and          |
+| `stop`              | List[*str*]         | :heavy_minus_sign:  | N/A                 | ["the","is","and"]  |
 | `temperature`       | *Optional[float]*   | :heavy_minus_sign:  | N/A                 | 0.7                 |
 | `top_p`             | *Optional[float]*   | :heavy_minus_sign:  | N/A                 | 1                   |

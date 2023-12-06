@@ -119,7 +119,6 @@ src/writer/models/paginatedresult_userpublicresponse.py
 src/writer/models/userpublicresponse.py
 src/writer/models/security.py
 src/writer/models/__init__.py
-USAGE.md
 docs/getsubscriptiondetailsresponse.md
 docs/productname.md
 docs/subscriptionpublicresponseapistatus.md
@@ -299,6 +298,7 @@ docs/sdks/snippet/README.md
 docs/sdks/styleguide/README.md
 docs/sdks/terminology/README.md
 docs/sdks/user/README.md
+USAGE.md
 .gitattributes
 .devcontainer/README.md
 .devcontainer/devcontainer.json
