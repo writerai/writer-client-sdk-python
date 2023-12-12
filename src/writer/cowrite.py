@@ -25,7 +25,7 @@ class CoWrite:
         
         url = utils.generate_url(models.GenerateContentRequest, base_url, '/cowrite/organization/{organizationId}/team/{teamId}/generate', request, self.sdk_configuration.globals)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "generate_template_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, models.GenerateContentRequest, "generate_template_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

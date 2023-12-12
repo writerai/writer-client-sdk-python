@@ -22,7 +22,7 @@ Add terms
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=551477,
 )
 
@@ -69,11 +69,11 @@ if res.create_terms_response is not None:
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `create_terms_request`                                       | [models.CreateTermsRequest](../models/createtermsrequest.md) | :heavy_check_mark:                                           | N/A                                                          |
-| `team_id`                                                    | *int*                                                        | :heavy_check_mark:                                           | N/A                                                          |
-| `organization_id`                                            | *Optional[int]*                                              | :heavy_minus_sign:                                           | N/A                                                          |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `create_terms_request`                                          | [models.CreateTermsRequest](../../models/createtermsrequest.md) | :heavy_check_mark:                                              | N/A                                                             |
+| `team_id`                                                       | *int*                                                           | :heavy_check_mark:                                              | N/A                                                             |
+| `organization_id`                                               | *Optional[int]*                                                 | :heavy_minus_sign:                                              | N/A                                                             |
 
 
 ### Response
@@ -96,7 +96,7 @@ Delete terms
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=545907,
 )
 
@@ -140,7 +140,7 @@ Find terms
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=40141,
 )
 
@@ -185,7 +185,7 @@ Update terms
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=857478,
 )
 
@@ -233,12 +233,12 @@ if res.create_terms_response is not None:
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `update_terms_request`                                       | [models.UpdateTermsRequest](../models/updatetermsrequest.md) | :heavy_check_mark:                                           | N/A                                                          |
-| `team_id`                                                    | *int*                                                        | :heavy_check_mark:                                           | N/A                                                          |
-| `x_request_id`                                               | *Optional[str]*                                              | :heavy_minus_sign:                                           | N/A                                                          |
-| `organization_id`                                            | *Optional[int]*                                              | :heavy_minus_sign:                                           | N/A                                                          |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `update_terms_request`                                          | [models.UpdateTermsRequest](../../models/updatetermsrequest.md) | :heavy_check_mark:                                              | N/A                                                             |
+| `team_id`                                                       | *int*                                                           | :heavy_check_mark:                                              | N/A                                                             |
+| `x_request_id`                                                  | *Optional[str]*                                                 | :heavy_minus_sign:                                              | N/A                                                             |
+| `organization_id`                                               | *Optional[int]*                                                 | :heavy_minus_sign:                                              | N/A                                                             |
 
 
 ### Response

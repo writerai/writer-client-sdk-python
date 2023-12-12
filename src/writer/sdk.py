@@ -16,7 +16,7 @@ from .snippet import Snippet
 from .styleguide import Styleguide
 from .terminology import Terminology
 from .user import User
-from typing import Callable, Dict, Union
+from typing import Dict
 from writer import models, utils
 
 class Writer:
@@ -52,7 +52,7 @@ class Writer:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key: Union[str,Callable[[], str]],
+                 api_key: str ,
                  organization_id: int = None,
                  server_idx: int = None,
                  server_url: str = None,

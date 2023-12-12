@@ -20,7 +20,7 @@ Check your content against your preset styleguide.
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=935464,
 )
 
@@ -54,11 +54,11 @@ if res.processed_content is not None:
 
 ### Parameters
 
-| Parameter                                            | Type                                                 | Required                                             | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `content_request`                                    | [models.ContentRequest](../models/contentrequest.md) | :heavy_check_mark:                                   | N/A                                                  |
-| `team_id`                                            | *int*                                                | :heavy_check_mark:                                   | N/A                                                  |
-| `organization_id`                                    | *Optional[int]*                                      | :heavy_minus_sign:                                   | N/A                                                  |
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `content_request`                                       | [models.ContentRequest](../../models/contentrequest.md) | :heavy_check_mark:                                      | N/A                                                     |
+| `team_id`                                               | *int*                                                   | :heavy_check_mark:                                      | N/A                                                     |
+| `organization_id`                                       | *Optional[int]*                                         | :heavy_minus_sign:                                      | N/A                                                     |
 
 
 ### Response
@@ -81,7 +81,7 @@ Apply the style guide suggestions directly to your content.
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=501355,
 )
 
@@ -115,12 +115,12 @@ if res.correction_response is not None:
 
 ### Parameters
 
-| Parameter                                            | Type                                                 | Required                                             | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `content_request`                                    | [models.ContentRequest](../models/contentrequest.md) | :heavy_check_mark:                                   | N/A                                                  |
-| `team_id`                                            | *int*                                                | :heavy_check_mark:                                   | N/A                                                  |
-| `x_request_id`                                       | *Optional[str]*                                      | :heavy_minus_sign:                                   | N/A                                                  |
-| `organization_id`                                    | *Optional[int]*                                      | :heavy_minus_sign:                                   | N/A                                                  |
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `content_request`                                       | [models.ContentRequest](../../models/contentrequest.md) | :heavy_check_mark:                                      | N/A                                                     |
+| `team_id`                                               | *int*                                                   | :heavy_check_mark:                                      | N/A                                                     |
+| `x_request_id`                                          | *Optional[str]*                                         | :heavy_minus_sign:                                      | N/A                                                     |
+| `organization_id`                                       | *Optional[int]*                                         | :heavy_minus_sign:                                      | N/A                                                     |
 
 
 ### Response

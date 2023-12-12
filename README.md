@@ -36,7 +36,7 @@ If you cannot see your secret API keys in the Dashboard, this means you do not h
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
@@ -149,7 +149,7 @@ The following global parameter is available. The required parameter must be set 
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=496531,
 )
 
@@ -182,7 +182,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
@@ -223,7 +223,7 @@ import writer
 
 s = writer.Writer(
     server_idx=0,
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
@@ -244,7 +244,7 @@ import writer
 
 s = writer.Writer(
     server_url="https://enterprise-api.writer.com",
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
@@ -293,7 +293,7 @@ To authenticate with the API the `api_key` parameter must be set when initializi
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 

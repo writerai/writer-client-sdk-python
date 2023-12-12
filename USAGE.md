@@ -3,7 +3,7 @@
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
