@@ -9,13 +9,13 @@
   <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
 </div>
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ```bash
 pip install writerai
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
 ## Authentication
 
@@ -27,15 +27,16 @@ Your API keys are available in the account dashboard. We include randomly genera
 
 If you cannot see your secret API keys in the Dashboard, this means you do not have access to them. Contact your Writer account owner and ask to be added to their team as a developer.
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```python
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
@@ -46,11 +47,10 @@ if res.subscription_public_response_api is not None:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [billing](docs/sdks/billing/README.md)
 
@@ -123,22 +123,10 @@ if res.subscription_public_response_api is not None:
 ### [user](docs/sdks/user/README.md)
 
 * [list](docs/sdks/user/README.md#list) - List users
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
-<!-- Start Dev Containers -->
-# Test SDK in a Sandbox Environment
-<div align="left">
-    <a href="https://codespaces.new/writerai/writer-client-sdk-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
-    
-</div>
-
-Experience our SDK in an enhanced sandbox environment. Try it now in **GitHub Codespaces**!
-
-* [Explore Dev Containers](.devcontainer/README.md)
-<!-- End Dev Containers -->
-
-<!-- Start Global Parameters -->
+<!-- Start Global Parameters [global-parameters] -->
 ## Global Parameters
 
 A parameter is configured globally. This parameter must be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, This global value will be used as the default on the operations that use it. When such operations are called, there is a place in each to override the global value, if needed.
@@ -152,7 +140,7 @@ The following global parameter is available. The required parameter must be set 
 
 | Name | Type | Required | Description |
 | ---- | ---- |:--------:| ----------- |
-| organizationId | int | ✔️ | The organizationId parameter. |
+| organization_id | int | ✔️ | The organization_id parameter. |
 
 
 ### Example
@@ -161,7 +149,7 @@ The following global parameter is available. The required parameter must be set 
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=496531,
 )
 
@@ -174,11 +162,11 @@ if res.classes is not None:
     # handle response
     pass
 ```
-<!-- End Global Parameters -->
+<!-- End Global Parameters [global-parameters] -->
 
 
 
-<!-- Start Error Handling -->
+<!-- Start Error Handling [errors] -->
 ## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
@@ -194,7 +182,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
@@ -202,22 +190,22 @@ s = writer.Writer(
 res = None
 try:
     res = s.billing.get_subscription_details()
-except (models.FailResponse) as e:
-    print(e) # handle exception
-
-except (models.SDKError) as e:
-    print(e) # handle exception
-
+except models.FailResponse as e:
+    print(e)  # handle exception
+    raise(e)
+except models.SDKError as e:
+    print(e)  # handle exception
+    raise(e)
 
 if res.subscription_public_response_api is not None:
     # handle response
     pass
 ```
-<!-- End Error Handling -->
+<!-- End Error Handling [errors] -->
 
 
 
-<!-- Start Server Selection -->
+<!-- Start Server Selection [server] -->
 ## Server Selection
 
 ### Select Server by Index
@@ -235,7 +223,7 @@ import writer
 
 s = writer.Writer(
     server_idx=0,
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
@@ -256,7 +244,7 @@ import writer
 
 s = writer.Writer(
     server_url="https://enterprise-api.writer.com",
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
@@ -267,11 +255,11 @@ if res.subscription_public_response_api is not None:
     # handle response
     pass
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
 
 
-<!-- Start Custom HTTP Client -->
+<!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
@@ -285,11 +273,11 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = writer.Writer(client: http_client)
 ```
-<!-- End Custom HTTP Client -->
+<!-- End Custom HTTP Client [http-client] -->
 
 
 
-<!-- Start Authentication -->
+<!-- Start Authentication [security] -->
 ## Authentication
 
 ### Per-Client Security Schemes
@@ -305,7 +293,7 @@ To authenticate with the API the `api_key` parameter must be set when initializi
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=850421,
 )
 
@@ -316,7 +304,7 @@ if res.subscription_public_response_api is not None:
     # handle response
     pass
 ```
-<!-- End Authentication -->
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

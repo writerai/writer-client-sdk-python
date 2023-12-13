@@ -19,7 +19,7 @@ Content detector api
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=496531,
 )
 
@@ -35,10 +35,10 @@ if res.classes is not None:
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `content_detector_request`                                           | [models.ContentDetectorRequest](../models/contentdetectorrequest.md) | :heavy_check_mark:                                                   | N/A                                                                  |
-| `organization_id`                                                    | *Optional[int]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `content_detector_request`                                              | [models.ContentDetectorRequest](../../models/contentdetectorrequest.md) | :heavy_check_mark:                                                      | N/A                                                                     |
+| `organization_id`                                                       | *Optional[int]*                                                         | :heavy_minus_sign:                                                      | N/A                                                                     |
 
 
 ### Response

@@ -20,7 +20,7 @@ Page details
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=700347,
 )
 
@@ -59,7 +59,7 @@ List your styleguide pages
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=763372,
 )
 
@@ -73,11 +73,11 @@ if res.paginated_result_page_public_api_response is not None:
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `limit`                                                            | *Optional[int]*                                                    | :heavy_minus_sign:                                                 | N/A                                                                |
-| `offset`                                                           | *Optional[int]*                                                    | :heavy_minus_sign:                                                 | N/A                                                                |
-| `status`                                                           | [Optional[models.QueryParamStatus]](../models/queryparamstatus.md) | :heavy_minus_sign:                                                 | N/A                                                                |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `limit`                                                               | *Optional[int]*                                                       | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `offset`                                                              | *Optional[int]*                                                       | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `status`                                                              | [Optional[models.QueryParamStatus]](../../models/queryparamstatus.md) | :heavy_minus_sign:                                                    | N/A                                                                   |
 
 
 ### Response

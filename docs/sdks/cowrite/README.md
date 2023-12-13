@@ -20,7 +20,7 @@ Generate content using predefined templates
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=569932,
 )
 
@@ -44,11 +44,11 @@ if res.draft is not None:
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `generate_template_request`                                            | [models.GenerateTemplateRequest](../models/generatetemplaterequest.md) | :heavy_check_mark:                                                     | N/A                                                                    |
-| `team_id`                                                              | *int*                                                                  | :heavy_check_mark:                                                     | N/A                                                                    |
-| `organization_id`                                                      | *Optional[int]*                                                        | :heavy_minus_sign:                                                     | N/A                                                                    |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `generate_template_request`                                               | [models.GenerateTemplateRequest](../../models/generatetemplaterequest.md) | :heavy_check_mark:                                                        | N/A                                                                       |
+| `team_id`                                                                 | *int*                                                                     | :heavy_check_mark:                                                        | N/A                                                                       |
+| `organization_id`                                                         | *Optional[int]*                                                           | :heavy_minus_sign:                                                        | N/A                                                                       |
 
 
 ### Response
@@ -71,7 +71,7 @@ Get a list of your existing CoWrite templates
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=380445,
 )
 

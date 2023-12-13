@@ -25,7 +25,7 @@ class Content:
         
         url = utils.generate_url(models.ContentCheckRequest, base_url, '/content/organization/{organizationId}/team/{teamId}/check', request, self.sdk_configuration.globals)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "content_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, models.ContentCheckRequest, "content_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -80,7 +80,7 @@ class Content:
         
         url = utils.generate_url(models.ContentCorrectRequest, base_url, '/content/organization/{organizationId}/team/{teamId}/correct', request, self.sdk_configuration.globals)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "content_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, models.ContentCorrectRequest, "content_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

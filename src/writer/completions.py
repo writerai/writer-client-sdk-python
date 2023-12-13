@@ -25,7 +25,7 @@ class Completions:
         
         url = utils.generate_url(models.CreateCompletionRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/completions', request, self.sdk_configuration.globals)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "completion_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, models.CreateCompletionRequest, "completion_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -80,7 +80,7 @@ class Completions:
         
         url = utils.generate_url(models.CreateModelCustomizationCompletionRequest, base_url, '/llm/organization/{organizationId}/model/{modelId}/customization/{customizationId}/completions', request, self.sdk_configuration.globals)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "completion_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, models.CreateModelCustomizationCompletionRequest, "completion_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

@@ -167,7 +167,7 @@ class Files:
         
         url = utils.generate_url(models.UploadFileRequest, base_url, '/llm/organization/{organizationId}/file', request, self.sdk_configuration.globals)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "upload_model_file_request", False, False, 'multipart')
+        req_content_type, data, form = utils.serialize_request_body(request, models.UploadFileRequest, "upload_model_file_request", False, False, 'multipart')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

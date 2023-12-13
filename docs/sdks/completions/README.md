@@ -20,7 +20,7 @@ Create completion for LLM model
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=486589,
 )
 
@@ -46,11 +46,11 @@ if res.completion_response is not None:
 
 ### Parameters
 
-| Parameter                                                  | Type                                                       | Required                                                   | Description                                                |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `completion_request`                                       | [models.CompletionRequest](../models/completionrequest.md) | :heavy_check_mark:                                         | N/A                                                        |
-| `model_id`                                                 | *str*                                                      | :heavy_check_mark:                                         | N/A                                                        |
-| `organization_id`                                          | *Optional[int]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
+| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `completion_request`                                          | [models.CompletionRequest](../../models/completionrequest.md) | :heavy_check_mark:                                            | N/A                                                           |
+| `model_id`                                                    | *str*                                                         | :heavy_check_mark:                                            | N/A                                                           |
+| `organization_id`                                             | *Optional[int]*                                               | :heavy_minus_sign:                                            | N/A                                                           |
 
 
 ### Response
@@ -73,7 +73,7 @@ Create completion for LLM customization model
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=919503,
 )
 
@@ -99,12 +99,12 @@ if res.completion_response is not None:
 
 ### Parameters
 
-| Parameter                                                  | Type                                                       | Required                                                   | Description                                                |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `completion_request`                                       | [models.CompletionRequest](../models/completionrequest.md) | :heavy_check_mark:                                         | N/A                                                        |
-| `customization_id`                                         | *str*                                                      | :heavy_check_mark:                                         | N/A                                                        |
-| `model_id`                                                 | *str*                                                      | :heavy_check_mark:                                         | N/A                                                        |
-| `organization_id`                                          | *Optional[int]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
+| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `completion_request`                                          | [models.CompletionRequest](../../models/completionrequest.md) | :heavy_check_mark:                                            | N/A                                                           |
+| `customization_id`                                            | *str*                                                         | :heavy_check_mark:                                            | N/A                                                           |
+| `model_id`                                                    | *str*                                                         | :heavy_check_mark:                                            | N/A                                                           |
+| `organization_id`                                             | *Optional[int]*                                               | :heavy_minus_sign:                                            | N/A                                                           |
 
 
 ### Response

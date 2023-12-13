@@ -22,7 +22,7 @@ Delete file
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=545907,
 )
 
@@ -62,7 +62,7 @@ Get file
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=700347,
 )
 
@@ -102,7 +102,7 @@ List files
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=768578,
 )
 
@@ -141,7 +141,7 @@ Upload file
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=403654,
 )
 
@@ -160,10 +160,10 @@ if res.model_file is not None:
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `upload_model_file_request`                                          | [models.UploadModelFileRequest](../models/uploadmodelfilerequest.md) | :heavy_check_mark:                                                   | N/A                                                                  |
-| `organization_id`                                                    | *Optional[int]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `upload_model_file_request`                                             | [models.UploadModelFileRequest](../../models/uploadmodelfilerequest.md) | :heavy_check_mark:                                                      | N/A                                                                     |
+| `organization_id`                                                       | *Optional[int]*                                                         | :heavy_minus_sign:                                                      | N/A                                                                     |
 
 
 ### Response

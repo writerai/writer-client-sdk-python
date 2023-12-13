@@ -22,7 +22,7 @@ Create model customization
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=486589,
 )
 
@@ -42,11 +42,11 @@ if res.model_customization is not None:
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `create_customization_request`                                               | [models.CreateCustomizationRequest](../models/createcustomizationrequest.md) | :heavy_check_mark:                                                           | N/A                                                                          |
-| `model_id`                                                                   | *str*                                                                        | :heavy_check_mark:                                                           | N/A                                                                          |
-| `organization_id`                                                            | *Optional[int]*                                                              | :heavy_minus_sign:                                                           | N/A                                                                          |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `create_customization_request`                                                  | [models.CreateCustomizationRequest](../../models/createcustomizationrequest.md) | :heavy_check_mark:                                                              | N/A                                                                             |
+| `model_id`                                                                      | *str*                                                                           | :heavy_check_mark:                                                              | N/A                                                                             |
+| `organization_id`                                                               | *Optional[int]*                                                                 | :heavy_minus_sign:                                                              | N/A                                                                             |
 
 
 ### Response
@@ -69,7 +69,7 @@ Delete Model customization
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=545907,
 )
 
@@ -110,7 +110,7 @@ Get model customization
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=700347,
 )
 
@@ -151,7 +151,7 @@ List model customizations
 import writer
 
 s = writer.Writer(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
     organization_id=768578,
 )
 

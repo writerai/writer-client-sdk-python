@@ -24,7 +24,7 @@ class AIContentDetector:
         
         url = utils.generate_url(models.DetectContentRequest, base_url, '/content/organization/{organizationId}/detect', request, self.sdk_configuration.globals)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "content_detector_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, models.DetectContentRequest, "content_detector_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

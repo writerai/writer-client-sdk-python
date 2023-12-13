@@ -25,7 +25,7 @@ class Terminology:
         
         url = utils.generate_url(models.AddTermsRequest, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "create_terms_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, models.AddTermsRequest, "create_terms_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -175,7 +175,7 @@ class Terminology:
         
         url = utils.generate_url(models.UpdateTermsRequest1, base_url, '/terminology/organization/{organizationId}/team/{teamId}', request, self.sdk_configuration.globals)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "update_terms_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, models.UpdateTermsRequest1, "update_terms_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
