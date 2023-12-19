@@ -174,7 +174,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 | Error Object        | Status Code         | Content Type        |
 | ------------------- | ------------------- | ------------------- |
 | models.FailResponse | 400,401,403,404,500 | application/json    |
-| models.SDKError     | 400-600             | */*                 |
+| models.SDKError     | 4x-5xx              | */*                 |
 
 ### Example
 

@@ -59,7 +59,7 @@ if res.draft is not None:
 | Error Object        | Status Code         | Content Type        |
 | ------------------- | ------------------- | ------------------- |
 | models.FailResponse | 400,401,403,404,500 | application/json    |
-| models.SDKError     | 400-600             | */*                 |
+| models.SDKError     | 4x-5xx              | */*                 |
 
 ## list_templates
 
@@ -100,4 +100,4 @@ if res.template_details_response is not None:
 | Error Object        | Status Code         | Content Type        |
 | ------------------- | ------------------- | ------------------- |
 | models.FailResponse | 400,401,403,404,500 | application/json    |
-| models.SDKError     | 400-600             | */*                 |
+| models.SDKError     | 4x-5xx              | */*                 |
