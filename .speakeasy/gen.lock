@@ -4,16 +4,16 @@ management:
   docChecksum: 044ba6ea348a6fb8206cacad6926373d
   docVersion: "1.7"
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 1.2.1
-  configChecksum: 4e7afb130f00a5d0994a213b7ce71f06
+  generationVersion: 2.228.1
+  releaseVersion: 1.2.2
+  configChecksum: 7bbf9db11a80cfb6af0176e8b29b3e5b
   repoURL: https://github.com/writerai/writer-client-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/writerai/writer-client-sdk-python.git
   published: true
 features:
   python:
-    core: 4.4.0
+    core: 4.4.1
     devContainers: 2.86.0
     downloadStreams: 0.0.2
     errors: 2.81.8
