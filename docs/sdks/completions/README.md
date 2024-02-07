@@ -26,10 +26,10 @@ s = writer.Writer(
 
 
 res = s.completions.create(completion_request=writer.CompletionRequest(
+    prompt='string',
     best_of=1,
     max_tokens=1024,
     min_tokens=1,
-    prompt='string',
     stop=[
         'the',
         'is',
@@ -79,10 +79,10 @@ s = writer.Writer(
 
 
 res = s.completions.create_model_customization_completion(completion_request=writer.CompletionRequest(
+    prompt='string',
     best_of=1,
     max_tokens=1024,
     min_tokens=1,
-    prompt='string',
     stop=[
         'the',
         'is',

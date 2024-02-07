@@ -30,12 +30,14 @@ s = writer.Writer(
 res = s.terminology.add(create_terms_request=writer.CreateTermsRequest(
     models=[
         writer.TermCreate(
+            case_sensitive=False,
+            term='string',
+            type=writer.TermCreateType.PENDING,
             approved_term_extension=writer.ApprovedTermExtensionCreate(
                 capitalize=False,
                 fix_case=False,
                 fix_common_mistakes=False,
             ),
-            case_sensitive=False,
             examples=[
                 writer.TermExampleCreate(
                     example='string',
@@ -56,8 +58,6 @@ res = s.terminology.add(create_terms_request=writer.CreateTermsRequest(
                     tag='string',
                 ),
             ],
-            term='string',
-            type=writer.TermCreateType.BANNED,
         ),
     ],
 ), team_id=623445, organization_id=822001)
@@ -145,10 +145,10 @@ s = writer.Writer(
 )
 
 req = writer.FindTermsRequest(
+    team_id=326883,
     tags=[
         'string',
     ],
-    team_id=326883,
 )
 
 res = s.terminology.find(req)
@@ -193,19 +193,21 @@ s = writer.Writer(
 res = s.terminology.update(update_terms_request=writer.UpdateTermsRequest(
     models=[
         writer.TermUpdate(
+            case_sensitive=False,
+            id=24555,
+            term='string',
+            type=writer.TermUpdateType.BANNED,
             approved_term_extension=writer.ApprovedTermExtensionCreate(
                 capitalize=False,
                 fix_case=False,
                 fix_common_mistakes=False,
             ),
-            case_sensitive=False,
             examples=[
                 writer.TermExampleCreate(
                     example='string',
                     type=writer.TermExampleCreateType.GOOD,
                 ),
             ],
-            id=597129,
             linked_terms=[
                 writer.LinkedTermCreate(),
             ],
@@ -220,8 +222,6 @@ res = s.terminology.update(update_terms_request=writer.UpdateTermsRequest(
                     tag='string',
                 ),
             ],
-            term='string',
-            type=writer.TermUpdateType.APPROVED,
         ),
     ],
 ), team_id=344620, x_request_id='string', organization_id=708455)

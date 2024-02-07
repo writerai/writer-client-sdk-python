@@ -26,6 +26,7 @@ s = writer.Writer(
 
 
 res = s.co_write.generate_content(generate_template_request=writer.GenerateTemplateRequest(
+    template_id='string',
     inputs=[
         writer.MagicRequestInput(
             name='string',
@@ -34,7 +35,6 @@ res = s.co_write.generate_content(generate_template_request=writer.GenerateTempl
             ],
         ),
     ],
-    template_id='string',
 ), team_id=888452, organization_id=926220)
 
 if res.draft is not None:
