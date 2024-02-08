@@ -37,10 +37,10 @@ class ListUsersResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     headers: Dict[str, List[str]] = dataclasses.field()
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     paginated_result_user_public_response: Optional[PaginatedResultUserPublicResponse] = dataclasses.field(default=None)
     
 

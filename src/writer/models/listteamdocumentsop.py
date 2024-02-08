@@ -37,10 +37,10 @@ class ListTeamDocumentsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     headers: Dict[str, List[str]] = dataclasses.field()
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     brief_documents: Optional[BriefDocuments] = dataclasses.field(default=None)
     
 

@@ -8,8 +8,10 @@ generation:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
 python:
-  version: 1.2.4
+  version: 3.0.0
   author: writerai
   clientServerStatusCodesAsErrors: true
   description: Python SDK for Writer API

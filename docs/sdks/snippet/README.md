@@ -70,13 +70,13 @@ s = writer.Writer(
 )
 
 req = writer.FindSnippetsRequest(
+    team_id=326883,
     shortcuts=[
         'string',
     ],
     tags=[
         'string',
     ],
-    team_id=326883,
 )
 
 res = s.snippet.find(req)
