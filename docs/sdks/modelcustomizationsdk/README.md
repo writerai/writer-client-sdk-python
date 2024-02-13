@@ -30,10 +30,7 @@ s = writer.Writer(
 res = s.model_customization.create(create_customization_request=writer.CreateCustomizationRequest(
     name='string',
     training_dataset_file_id='string',
-    additional_hyper_parameters=writer.HyperParameters(
-        num_virtual_tokens=489382,
-    ),
-), model_id='string', organization_id=638424)
+), model_id='string', organization_id=489382)
 
 if res.model_customization is not None:
     # handle response

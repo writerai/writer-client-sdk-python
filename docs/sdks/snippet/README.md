@@ -71,12 +71,6 @@ s = writer.Writer(
 
 req = writer.FindSnippetsRequest(
     team_id=326883,
-    shortcuts=[
-        'string',
-    ],
-    tags=[
-        'string',
-    ],
 )
 
 res = s.snippet.find(req)
@@ -122,11 +116,6 @@ res = s.snippet.update(team_id=24555, request_body=[
     writer.SnippetUpdate(
         id='<ID>',
         snippet='string',
-        tags=[
-            writer.SnippetTagV2(
-                tag='string',
-            ),
-        ],
     ),
 ], x_request_id='string', organization_id=597129)
 

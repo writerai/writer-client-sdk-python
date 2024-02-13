@@ -27,40 +27,7 @@ s = writer.Writer(
 )
 
 
-res = s.terminology.add(create_terms_request=writer.CreateTermsRequest(
-    models=[
-        writer.TermCreate(
-            case_sensitive=False,
-            term='string',
-            type=writer.TermCreateType.PENDING,
-            approved_term_extension=writer.ApprovedTermExtensionCreate(
-                capitalize=False,
-                fix_case=False,
-                fix_common_mistakes=False,
-            ),
-            examples=[
-                writer.TermExampleCreate(
-                    example='string',
-                    type=writer.TermExampleCreateType.BAD,
-                ),
-            ],
-            linked_terms=[
-                writer.LinkedTermCreate(),
-            ],
-            mistakes=[
-                writer.TermMistakeCreate(
-                    case_sensitive=False,
-                    mistake='string',
-                ),
-            ],
-            tags=[
-                writer.TermTagCreate(
-                    tag='string',
-                ),
-            ],
-        ),
-    ],
-), team_id=623445, organization_id=822001)
+res = s.terminology.add(create_terms_request=writer.CreateTermsRequest(), team_id=823436, organization_id=554561)
 
 if res.create_terms_response is not None:
     # handle response
@@ -146,9 +113,6 @@ s = writer.Writer(
 
 req = writer.FindTermsRequest(
     team_id=326883,
-    tags=[
-        'string',
-    ],
 )
 
 res = s.terminology.find(req)
@@ -190,41 +154,7 @@ s = writer.Writer(
 )
 
 
-res = s.terminology.update(update_terms_request=writer.UpdateTermsRequest(
-    models=[
-        writer.TermUpdate(
-            case_sensitive=False,
-            id=24555,
-            term='string',
-            type=writer.TermUpdateType.BANNED,
-            approved_term_extension=writer.ApprovedTermExtensionCreate(
-                capitalize=False,
-                fix_case=False,
-                fix_common_mistakes=False,
-            ),
-            examples=[
-                writer.TermExampleCreate(
-                    example='string',
-                    type=writer.TermExampleCreateType.GOOD,
-                ),
-            ],
-            linked_terms=[
-                writer.LinkedTermCreate(),
-            ],
-            mistakes=[
-                writer.TermMistakeCreate(
-                    case_sensitive=False,
-                    mistake='string',
-                ),
-            ],
-            tags=[
-                writer.TermTagCreate(
-                    tag='string',
-                ),
-            ],
-        ),
-    ],
-), team_id=344620, x_request_id='string', organization_id=708455)
+res = s.terminology.update(update_terms_request=writer.UpdateTermsRequest(), team_id=24555, x_request_id='string', organization_id=597129)
 
 if res.create_terms_response is not None:
     # handle response

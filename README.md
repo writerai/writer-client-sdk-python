@@ -180,6 +180,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import writer
+from writer import models
 
 s = writer.Writer(
     api_key="<YOUR_API_KEY_HERE>",
@@ -191,10 +192,10 @@ res = None
 try:
     res = s.billing.get_subscription_details()
 except models.FailResponse as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except models.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.subscription_public_response_api is not None:

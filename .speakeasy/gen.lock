@@ -4,7 +4,7 @@ management:
   docChecksum: 044ba6ea348a6fb8206cacad6926373d
   docVersion: "1.7"
   speakeasyVersion: internal
-  generationVersion: 2.250.12
+  generationVersion: 2.253.0
   releaseVersion: 3.0.0
   configChecksum: 2e3c91e1909bee052466cee0d28b48b4
   repoURL: https://github.com/writerai/writer-client-sdk-python.git
