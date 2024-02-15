@@ -68,7 +68,7 @@ s = writer.Writer(
 )
 
 
-res = s.terminology.delete(team_id=841399, x_request_id='string', ids=[
+res = s.terminology.delete(team_id=841399, x_request_id='<value>', ids=[
     698486,
 ], organization_id=557937)
 
@@ -154,7 +154,7 @@ s = writer.Writer(
 )
 
 
-res = s.terminology.update(update_terms_request=writer.UpdateTermsRequest(), team_id=24555, x_request_id='string', organization_id=597129)
+res = s.terminology.update(update_terms_request=writer.UpdateTermsRequest(), team_id=24555, x_request_id='<value>', organization_id=597129)
 
 if res.create_terms_response is not None:
     # handle response

@@ -28,9 +28,9 @@ s = writer.Writer(
 
 
 res = s.model_customization.create(create_customization_request=writer.CreateCustomizationRequest(
-    name='string',
-    training_dataset_file_id='string',
-), model_id='string', organization_id=489382)
+    name='<value>',
+    training_dataset_file_id='<value>',
+), model_id='<value>', organization_id=489382)
 
 if res.model_customization is not None:
     # handle response
@@ -71,7 +71,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.delete(customization_id='string', model_id='string', organization_id=841399)
+res = s.model_customization.delete(customization_id='<value>', model_id='<value>', organization_id=841399)
 
 if res.object is not None:
     # handle response
@@ -112,7 +112,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.get(customization_id='string', model_id='string', organization_id=90065)
+res = s.model_customization.get(customization_id='<value>', model_id='<value>', organization_id=90065)
 
 if res.model_customization is not None:
     # handle response
@@ -153,7 +153,7 @@ s = writer.Writer(
 )
 
 
-res = s.model_customization.list(model_id='string', organization_id=99895)
+res = s.model_customization.list(model_id='<value>', organization_id=99895)
 
 if res.customizations_response is not None:
     # handle response

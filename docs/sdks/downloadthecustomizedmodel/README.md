@@ -24,7 +24,7 @@ s = writer.Writer(
 )
 
 
-res = s.download_the_customized_model.fetch_file(customization_id='string', model_id='string', organization_id=948692)
+res = s.download_the_customized_model.fetch_file(customization_id='<value>', model_id='<value>', organization_id=948692)
 
 if res.stream is not None:
     # handle response

@@ -25,7 +25,7 @@ s = writer.Writer(
 
 
 res = s.ai_content_detector.detect(content_detector_request=writer.ContentDetectorRequest(
-    input='string',
+    input='<value>',
 ), organization_id=592237)
 
 if res.classes is not None:

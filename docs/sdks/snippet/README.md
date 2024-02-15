@@ -26,8 +26,8 @@ s = writer.Writer(
 )
 
 
-res = s.snippet.delete(team_id=841399, x_request_id='string', ids=[
-    'string',
+res = s.snippet.delete(team_id=841399, x_request_id='<value>', ids=[
+    '<value>',
 ], organization_id=698486)
 
 if res.delete_response is not None:
@@ -114,10 +114,10 @@ s = writer.Writer(
 
 res = s.snippet.update(team_id=24555, request_body=[
     writer.SnippetUpdate(
-        id='<ID>',
-        snippet='string',
+        id='<id>',
+        snippet='<value>',
     ),
-], x_request_id='string', organization_id=597129)
+], x_request_id='<value>', organization_id=597129)
 
 if res.classes is not None:
     # handle response

@@ -27,7 +27,7 @@ s = writer.Writer(
 )
 
 
-res = s.files.delete(file_id='string', organization_id=841399)
+res = s.files.delete(file_id='<value>', organization_id=841399)
 
 if res.object is not None:
     # handle response
@@ -67,7 +67,7 @@ s = writer.Writer(
 )
 
 
-res = s.files.get(file_id='string', organization_id=90065)
+res = s.files.get(file_id='<value>', organization_id=90065)
 
 if res.model_file is not None:
     # handle response

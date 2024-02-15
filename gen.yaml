@@ -11,7 +11,7 @@ generation:
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
 python:
-  version: 3.0.0
+  version: 3.0.1
   author: writerai
   clientServerStatusCodesAsErrors: true
   description: Python SDK for Writer API
