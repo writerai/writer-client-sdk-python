@@ -18,6 +18,7 @@ from .terminology import Terminology
 from .user import User
 from typing import Callable, Dict, Union
 from writer import models, utils
+from writer._hooks import SDKHooks
 
 class Writer:
     billing: Billing
@@ -99,6 +100,16 @@ class Writer:
                 },
             },
         }, retry_config=retry_config)
+
+        hooks = SDKHooks()
+
+        current_server_url, *_ = self.sdk_configuration.get_server_details()
+        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
+        if current_server_url != server_url:
+            self.sdk_configuration.server_url = server_url
+
+        # pylint: disable=protected-access
+        self.sdk_configuration._hooks=hooks
        
         self._init_sdks()
     
