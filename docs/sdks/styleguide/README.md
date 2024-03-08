@@ -30,6 +30,7 @@ res = s.styleguide.get(page_id=90065)
 if res.page_with_section_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ res = s.styleguide.list_pages(limit=760116, offset=303332, status=writer.QueryPa
 if res.paginated_result_page_public_api_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

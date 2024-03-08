@@ -29,6 +29,7 @@ res = s.models.list(organization_id=99895)
 if res.generation_models_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

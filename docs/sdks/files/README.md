@@ -32,6 +32,7 @@ res = s.files.delete(file_id='<value>', organization_id=841399)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -72,6 +73,7 @@ res = s.files.get(file_id='<value>', organization_id=90065)
 if res.model_file is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -112,6 +114,7 @@ res = s.files.list(organization_id=99895)
 if res.model_files_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -156,6 +159,7 @@ res = s.files.upload(upload_model_file_request=writer.UploadModelFileRequest(
 if res.model_file is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

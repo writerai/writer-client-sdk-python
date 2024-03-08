@@ -31,6 +31,7 @@ res = s.ai_content_detector.detect(content_detector_request=writer.ContentDetect
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

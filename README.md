@@ -46,6 +46,7 @@ res = s.billing.get_subscription_details()
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -161,6 +162,7 @@ res = s.ai_content_detector.detect(content_detector_request=writer.ContentDetect
 if res.classes is not None:
     # handle response
     pass
+
 ```
 <!-- End Global Parameters [global-parameters] -->
 
@@ -201,6 +203,7 @@ except models.SDKError as e:
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -234,6 +237,7 @@ res = s.billing.get_subscription_details()
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 
 
@@ -255,6 +259,7 @@ res = s.billing.get_subscription_details()
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -304,6 +309,7 @@ res = s.billing.get_subscription_details()
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 

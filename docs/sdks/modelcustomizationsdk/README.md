@@ -35,6 +35,7 @@ res = s.model_customization.create(create_customization_request=writer.CreateCus
 if res.model_customization is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -76,6 +77,7 @@ res = s.model_customization.delete(customization_id='<value>', model_id='<value>
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -117,6 +119,7 @@ res = s.model_customization.get(customization_id='<value>', model_id='<value>', 
 if res.model_customization is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -158,6 +161,7 @@ res = s.model_customization.list(model_id='<value>', organization_id=99895)
 if res.customizations_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

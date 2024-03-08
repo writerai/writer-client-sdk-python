@@ -29,6 +29,7 @@ res = s.download_the_customized_model.fetch_file(customization_id='<value>', mod
 if res.stream is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

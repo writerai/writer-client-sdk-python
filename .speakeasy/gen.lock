@@ -3,17 +3,17 @@ id: c42e71b9-4aa9-47ee-ac21-777d77b21280
 management:
   docChecksum: 044ba6ea348a6fb8206cacad6926373d
   docVersion: "1.7"
-  speakeasyVersion: internal
-  generationVersion: 2.275.4
-  releaseVersion: 3.1.0
-  configChecksum: 95d315ded7651c8eff0ff1bcc5c99fb3
+  speakeasyVersion: 1.204.1
+  generationVersion: 2.279.1
+  releaseVersion: 3.2.0
+  configChecksum: 143779ad103f6a2757bfcc1e02f8e170
   repoURL: https://github.com/writerai/writer-client-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/writerai/writer-client-sdk-python.git
   published: true
 features:
   python:
-    core: 4.5.0
+    core: 4.5.1
     devContainers: 2.86.0
     downloadStreams: 0.0.2
     errors: 2.81.8
@@ -22,6 +22,7 @@ features:
     globalServerURLs: 2.82.1
     globals: 2.81.1
     nameOverrides: 2.81.1
+    responseFormat: 0.1.0
 generatedFiles:
   - src/writer/sdkconfiguration.py
   - src/writer/billing.py
@@ -39,6 +40,7 @@ generatedFiles:
   - src/writer/terminology.py
   - src/writer/user.py
   - src/writer/sdk.py
+  - py.typed
   - pylintrc
   - setup.py
   - src/writer/__init__.py

@@ -42,6 +42,7 @@ res = s.completions.create(completion_request=writer.CompletionRequest(
 if res.completion_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -95,6 +96,7 @@ res = s.completions.create_model_customization_completion(completion_request=wri
 if res.completion_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -30,6 +30,7 @@ res = s.document.get(document_id=90065, team_id=558834, organization_id=844199)
 if res.document is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -74,6 +75,7 @@ res = s.document.list(req)
 if res.brief_documents is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
