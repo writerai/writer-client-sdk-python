@@ -16,8 +16,9 @@ from .snippet import Snippet
 from .styleguide import Styleguide
 from .terminology import Terminology
 from .user import User
-from typing import Callable, Dict, Union
+from typing import Callable, Dict, Optional, Union
 from writer import models, utils
+from writer._hooks import SDKHooks
 
 class Writer:
     billing: Billing
@@ -54,14 +55,14 @@ class Writer:
     def __init__(self,
                  api_key: Union[str, Callable[[], str]],
                  organization_id: int = None,
-                 server_idx: int = None,
-                 server_url: str = None,
-                 url_params: Dict[str, str] = None,
-                 client: requests_http.Session = None,
-                 retry_config: utils.RetryConfig = None
+                 server_idx: Optional[int] = None,
+                 server_url: Optional[str] = None,
+                 url_params: Optional[Dict[str, str]] = None,
+                 client: Optional[requests_http.Session] = None,
+                 retry_config: Optional[utils.RetryConfig] = None
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
-        
+
         :param api_key: The api_key required for authentication
         :type api_key: Union[str, Callable[[], str]]
         :param organization_id: Configures the organization_id parameter for all supported operations
@@ -79,18 +80,17 @@ class Writer:
         """
         if client is None:
             client = requests_http.Session()
-        
+
         if callable(api_key):
             def security():
                 return models.Security(api_key = api_key())
         else:
             security = models.Security(api_key = api_key)
-        
+
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
-
-        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, {
+        global_params = {
             'parameters': {
                 'queryParam': {
                 },
@@ -98,10 +98,30 @@ class Writer:
                     'organization_id': organization_id,
                 },
             },
-        }, retry_config=retry_config)
-       
+        }
+
+        self.sdk_configuration = SDKConfiguration(
+            client,
+            security,
+            server_url,
+            server_idx,
+            global_params,
+            retry_config=retry_config
+        )
+
+        hooks = SDKHooks()
+
+        current_server_url, *_ = self.sdk_configuration.get_server_details()
+        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
+        if current_server_url != server_url:
+            self.sdk_configuration.server_url = server_url
+
+        # pylint: disable=protected-access
+        self.sdk_configuration._hooks = hooks
+
         self._init_sdks()
-    
+
+
     def _init_sdks(self):
         self.billing = Billing(self.sdk_configuration)
         self.ai_content_detector = AIContentDetector(self.sdk_configuration)
@@ -117,4 +137,3 @@ class Writer:
         self.styleguide = Styleguide(self.sdk_configuration)
         self.terminology = Terminology(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
-    

@@ -46,6 +46,7 @@ res = s.billing.get_subscription_details()
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -155,12 +156,13 @@ s = writer.Writer(
 
 
 res = s.ai_content_detector.detect(content_detector_request=writer.ContentDetectorRequest(
-    input='string',
+    input='<value>',
 ), organization_id=592237)
 
 if res.classes is not None:
     # handle response
     pass
+
 ```
 <!-- End Global Parameters [global-parameters] -->
 
@@ -180,6 +182,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import writer
+from writer import models
 
 s = writer.Writer(
     api_key="<YOUR_API_KEY_HERE>",
@@ -191,15 +194,16 @@ res = None
 try:
     res = s.billing.get_subscription_details()
 except models.FailResponse as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except models.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -233,6 +237,7 @@ res = s.billing.get_subscription_details()
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 
 
@@ -254,6 +259,7 @@ res = s.billing.get_subscription_details()
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -303,6 +309,7 @@ res = s.billing.get_subscription_details()
 if res.subscription_public_response_api is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 

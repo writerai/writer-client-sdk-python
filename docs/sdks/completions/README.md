@@ -26,7 +26,7 @@ s = writer.Writer(
 
 
 res = s.completions.create(completion_request=writer.CompletionRequest(
-    prompt='string',
+    prompt='<value>',
     best_of=1,
     max_tokens=1024,
     min_tokens=1,
@@ -37,11 +37,12 @@ res = s.completions.create(completion_request=writer.CompletionRequest(
     ],
     temperature=0.7,
     top_p=1,
-), model_id='string', organization_id=489382)
+), model_id='<value>', organization_id=489382)
 
 if res.completion_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -79,7 +80,7 @@ s = writer.Writer(
 
 
 res = s.completions.create_model_customization_completion(completion_request=writer.CompletionRequest(
-    prompt='string',
+    prompt='<value>',
     best_of=1,
     max_tokens=1024,
     min_tokens=1,
@@ -90,11 +91,12 @@ res = s.completions.create_model_customization_completion(completion_request=wri
     ],
     temperature=0.7,
     top_p=1,
-), customization_id='string', model_id='string', organization_id=41297)
+), customization_id='<value>', model_id='<value>', organization_id=41297)
 
 if res.completion_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

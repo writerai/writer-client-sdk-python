@@ -26,20 +26,13 @@ s = writer.Writer(
 
 
 res = s.co_write.generate_content(generate_template_request=writer.GenerateTemplateRequest(
-    template_id='string',
-    inputs=[
-        writer.MagicRequestInput(
-            name='string',
-            value=[
-                'string',
-            ],
-        ),
-    ],
+    template_id='<value>',
 ), team_id=888452, organization_id=926220)
 
 if res.draft is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -76,11 +69,12 @@ s = writer.Writer(
 )
 
 
-res = s.co_write.list_templates(team_id=882866, template_id='string', organization_id=55511)
+res = s.co_write.list_templates(team_id=882866, template_id='<value>', organization_id=55511)
 
 if res.template_details_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -26,7 +26,7 @@ s = writer.Writer(
 
 
 res = s.content.check(content_request=writer.ContentRequest(
-    content='string',
+    content='<value>',
     settings=writer.ContentSettings(
         age_and_family_status=False,
         confidence=False,
@@ -50,6 +50,7 @@ res = s.content.check(content_request=writer.ContentRequest(
 if res.processed_content is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -87,7 +88,7 @@ s = writer.Writer(
 
 
 res = s.content.correct(content_request=writer.ContentRequest(
-    content='string',
+    content='<value>',
     settings=writer.ContentSettings(
         age_and_family_status=False,
         confidence=False,
@@ -106,11 +107,12 @@ res = s.content.correct(content_request=writer.ContentRequest(
         unclear_reference=False,
         wordiness=False,
     ),
-), team_id=31310, x_request_id='string', organization_id=383223)
+), team_id=31310, x_request_id='<value>', organization_id=383223)
 
 if res.correction_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

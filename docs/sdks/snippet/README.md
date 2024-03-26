@@ -26,13 +26,14 @@ s = writer.Writer(
 )
 
 
-res = s.snippet.delete(team_id=841399, x_request_id='string', ids=[
-    'string',
+res = s.snippet.delete(team_id=841399, x_request_id='<value>', ids=[
+    '<value>',
 ], organization_id=698486)
 
 if res.delete_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -71,12 +72,6 @@ s = writer.Writer(
 
 req = writer.FindSnippetsRequest(
     team_id=326883,
-    shortcuts=[
-        'string',
-    ],
-    tags=[
-        'string',
-    ],
 )
 
 res = s.snippet.find(req)
@@ -84,6 +79,7 @@ res = s.snippet.find(req)
 if res.paginated_result_snippet_with_user is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -120,19 +116,15 @@ s = writer.Writer(
 
 res = s.snippet.update(team_id=24555, request_body=[
     writer.SnippetUpdate(
-        id='<ID>',
-        snippet='string',
-        tags=[
-            writer.SnippetTagV2(
-                tag='string',
-            ),
-        ],
+        id='<id>',
+        snippet='<value>',
     ),
-], x_request_id='string', organization_id=597129)
+], x_request_id='<value>', organization_id=597129)
 
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

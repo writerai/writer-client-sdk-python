@@ -10,8 +10,14 @@ generation:
     nameResolutionDec2023: false
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
 python:
-  version: 3.0.0
+  version: 3.2.1
+  additionalDependencies:
+    dependencies: {}
+    extraDependencies:
+      dev: {}
   author: writerai
   clientServerStatusCodesAsErrors: true
   description: Python SDK for Writer API
@@ -28,3 +34,4 @@ python:
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: writerai
+  responseFormat: envelope
