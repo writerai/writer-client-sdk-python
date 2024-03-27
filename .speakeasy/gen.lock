@@ -3,24 +3,24 @@ id: c42e71b9-4aa9-47ee-ac21-777d77b21280
 management:
   docChecksum: 044ba6ea348a6fb8206cacad6926373d
   docVersion: "1.7"
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 3.2.1
-  configChecksum: bcf81f5a0f8e1557d7431725e6714441
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 3.3.0
+  configChecksum: 48b411950232de21450d13e3c51b3386
   repoURL: https://github.com/writerai/writer-client-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/writerai/writer-client-sdk-python.git
   published: true
 features:
   python:
-    core: 4.5.1
+    core: 4.5.2
     devContainers: 2.86.0
     downloadStreams: 0.0.2
     errors: 2.81.8
     flattening: 2.81.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
-    globals: 2.81.1
+    globals: 2.82.0
     nameOverrides: 2.81.1
     responseFormat: 0.1.0
 generatedFiles:

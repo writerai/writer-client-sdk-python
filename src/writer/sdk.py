@@ -97,6 +97,8 @@ class Writer:
                 'pathParam': {
                     'organization_id': organization_id,
                 },
+                'header': {
+                },
             },
         }
 
